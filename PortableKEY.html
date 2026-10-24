@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cassaforte Password</title>
+<style>
+:root{--b:#e5e7eb;--t:#1f2937;--m:#6b7280;--a:#0f766e;--r:#dc2626}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--t);font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:14px 20px;border-bottom:1px solid var(--b)}
+h1{font-size:17px;font-weight:600;margin:0;display:flex;gap:8px;align-items:center;margin-right:auto;color:var(--a)}
+svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+button,input,select,textarea{font:inherit;color:inherit}
+.btn{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--b);background:#fff;border-radius:8px;padding:7px 12px;cursor:pointer}
+.btn:hover{background:#f3f4f6}.pri{background:var(--a);border-color:var(--a);color:#fff}.pri:hover{background:#115e59}
+.ib{border:0;background:none;padding:5px;border-radius:6px;cursor:pointer;color:var(--m)}.ib:hover{background:#f0fdfa;color:var(--a)}
+input,select,textarea{border:1px solid var(--b);border-radius:8px;padding:8px 10px;width:100%;background:#fff}
+:focus-visible{outline:2px solid #5eead4;outline-offset:1px}
+main{padding:16px 20px;max-width:1100px;margin:auto}
+#q{max-width:340px;margin-bottom:12px}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse}
+th{text-align:left;color:var(--m);font-weight:500;font-size:12px;padding:8px;border-bottom:1px solid var(--b)}
+td{padding:9px 8px;border-bottom:1px solid #f1f2f4;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.s{color:var(--m);font-size:12px}.acts{text-align:right;white-space:nowrap}
+.empty{text-align:center;color:var(--m);padding:60px 10px}
+dialog{border:1px solid var(--b);border-radius:12px;padding:22px;width:min(500px,94vw);box-shadow:0 20px 50px #0002;color:var(--t)}
+dialog::backdrop{background:#0004}h3{margin:0 0 6px}
+label{display:block;font-size:12px;color:var(--m);margin:10px 0 4px}
+.row{display:flex;gap:8px;align-items:center}.end{justify-content:flex-end;margin-top:18px}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1f2937;color:#fff;padding:9px 16px;border-radius:8px;display:none;z-index:9}
+.g h4{margin:14px 0 3px;font-size:14px}.g p,.g li{color:#374151;margin:3px 0}.g ul{padding-left:18px;margin:3px 0}
+.lg{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--b);border-radius:8px;padding:0 6px 0 9px;color:var(--m)}.lg select{border:0;width:auto;padding:7px 2px;background:none;cursor:pointer;color:var(--t)}
+.so{cursor:pointer;user-select:none}.so:hover{color:var(--t)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:8px}.cd{border:1px solid var(--b);border-radius:10px;padding:14px}
+.big{font-size:28px;font-weight:600;line-height:1.2}.bar{height:6px;background:#f1f2f4;border-radius:4px;overflow:hidden;margin:8px 0}.bar i{display:block;height:100%}.bar .g{background:var(--a)}.bar .r{background:var(--r)}
+.row .bar{margin:0;flex:none}.ok{color:var(--a)}h2{font-size:15px;margin:22px 0 4px}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--b);margin-bottom:16px}.tab{display:inline-flex;gap:6px;align-items:center;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;background:none;padding:10px 16px;cursor:pointer;color:var(--m);font-weight:500;font-size:15px}.tab:hover{color:var(--t)}.tab.on{color:var(--a);border-bottom-color:var(--a)}
+.bar .a{background:#d97706}.exp{color:var(--r);font-weight:500}.soon{color:#b45309}
+</style></head><body>
+<header>
+<h1><i data-i="shield"></i><span data-t="app"></span></h1>
+<button class="btn pri" onclick="edit()"><i data-i="plus"></i><span data-t="new"></span></button>
+<button class="btn" onclick="$('#fi').click()"><i data-i="up"></i><span data-t="imp"></span></button>
+<button class="btn" onclick="$('#dX').showModal()"><i data-i="down"></i><span data-t="save"></span></button>
+<button class="btn" onclick="lock()"><i data-i="lock"></i><span data-t="lock"></span></button>
+<button class="btn" onclick="$('#dG').showModal()"><i data-i="help"></i><span data-t="guide"></span></button>
+<span class="lg"><i data-i="globe"></i><select id="lg" onchange="setLang(this.value)" aria-label="Language"><option value="it">Italiano</option><option value="en">English</option></select></span>
+<input id="fi" type="file" accept=".csv,.xlsx,.txt,.pwm" hidden>
+</header>
+<main>
+<nav class="tabs"><button class="tab" data-v="l" onclick="setView('l')"><i data-i="list"></i><span data-t="list"></span></button><button class="tab" data-v="s" onclick="setView('s')"><i data-i="chart"></i><span data-t="sum"></span></button></nav>
+<div id="vL"><input id="q" data-p="search" oninput="render()">
+<div class="tw"><table><thead><tr><th class="so" data-k="t" onclick="sortBy('t')"><span data-t="title"></span><span class="ar"></span></th><th class="so" data-k="g" onclick="sortBy('g')"><span data-t="group"></span><span class="ar"></span></th><th class="so" data-k="u" onclick="sortBy('u')"><span data-t="user"></span><span class="ar"></span></th><th data-t="pwd"></th><th class="so" data-k="l" onclick="sortBy('l')"><span data-t="url"></span><span class="ar"></span></th><th class="so" data-k="m" onclick="sortBy('m')"><span data-t="mfa"></span><span class="ar"></span></th><th class="so" data-k="d" onclick="sortBy('d')"><span data-t="dIns"></span><span class="ar"></span></th><th class="so" data-k="x" onclick="sortBy('x')"><span data-t="dExp"></span><span class="ar"></span></th><th></th></tr></thead><tbody id="tb"></tbody></table></div>
+<div id="em" class="empty" data-h="empty"></div></div>
+<div id="vS" style="display:none"></div>
+</main>
+
+<dialog id="dE"><h3 data-t="entry"></h3><input type="hidden" id="ei">
+<label data-t="title"></label><input id="et"><label data-t="user"></label><input id="eu" autocomplete="off">
+<label data-t="pwd"></label><div class="row"><input id="ep" type="password" autocomplete="off">
+<button class="ib" data-ti="tShow" onclick="$('#ep').type=$('#ep').type=='password'?'text':'password'"><i data-i="eye"></i></button>
+<button class="ib" data-ti="tGen" onclick="$('#ep').value=gen();$('#ep').type='text'"><i data-i="refresh"></i></button></div>
+<label>URL</label><input id="el"><label data-t="group"></label><input id="eg"><label data-t="notes"></label><textarea id="en" rows="3"></textarea>
+<div class="row"><div style="flex:1"><label data-t="lblD"></label><input id="ed" type="date"></div><div style="flex:1"><label data-t="lblX"></label><input id="ex" type="date"></div></div>
+<label style="display:flex;gap:8px;align-items:center;font-size:14px;color:var(--t);margin-top:12px"><input id="ef" type="checkbox" style="width:auto"><span data-t="mfaOn"></span></label>
+<div class="row end"><button class="btn" onclick="$('#dE').close()" data-t="cancel"></button><button class="btn pri" onclick="saveE()" data-t="saveE"></button></div></dialog>
+
+<dialog id="dP"><h3 data-t="pwT"></h3><div id="pm" class="s"></div>
+<label data-t="pwd"></label><input id="p1" type="password" autocomplete="off">
+<div id="pc"><label data-t="confirmPw"></label><input id="p2" type="password" autocomplete="off"></div>
+<div id="pe" style="color:var(--r);min-height:20px;margin-top:6px"></div>
+<div class="row end" style="margin-top:6px"><button class="btn" id="pn" data-t="cancel"></button><button class="btn pri" id="po" data-t="confirm"></button></div></dialog>
+
+<dialog id="dX"><h3 data-t="save"></h3>
+<label data-t="fmt"></label><select id="xf"><option value="pwm" data-t="fPwm"></option><option value="txt">TXT</option><option value="pdf">PDF</option><option value="csv">CSV</option><option value="xlsx">XLSX</option></select>
+<label style="display:flex;gap:8px;align-items:center;font-size:14px;color:var(--t)"><input id="xc" type="checkbox" checked style="width:auto"><span data-t="encOpt"></span></label>
+<p class="s" data-t="xHint"></p>
+<div class="row end"><button class="btn" onclick="$('#dX').close()" data-t="cancel"></button><button class="btn pri" onclick="exp()" data-t="exp"></button></div></dialog>
+
+<dialog id="dG"><div class="g"><div data-h="gd"></div>
+<div class="row" style="margin-top:12px;flex-wrap:wrap"><span class="s" data-t="tplT"></span><button class="btn" onclick="tpl('csv')"><i data-i="down"></i>CSV</button><button class="btn" onclick="tpl('xlsx')"><i data-i="down"></i>XLSX</button></div><div class="row end"><button class="btn pri" onclick="$('#dG').close()" data-t="close"></button></div></div></dialog>
+<div id="toast"></div>
+
+<script>
+const $=s=>document.querySelector(s),enc=new TextEncoder(),dec=new TextDecoder();
+const P={globe:'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM2 12h20M12 2c3 3 4.5 6.5 4.5 10S15 19 12 22M12 2C9 5 7.5 8.5 7.5 12S9 19 12 22',check:'M5 12l5 5L20 7',list:'M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01',chart:'M4 20V10M10 20V4M16 20v-7M22 20H2',shield:'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z',plus:'M12 5v14M5 12h14',up:'M12 16V4M7 9l5-5 5 5M4 20h16',down:'M12 4v12M7 11l5 5 5-5M4 20h16',lock:'M6 11h12v10H6zM8 11V7a4 4 0 0 1 8 0v4',help:'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01',eye:'M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z',copy:'M9 9h11v11H9zM5 15V4h11',edit:'M4 20h4L19 9l-4-4L4 16v4z',trash:'M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3',refresh:'M20 11a8 8 0 0 0-14-4L4 9M4 4v5h5M4 13a8 8 0 0 0 14 4l2-2M20 20v-5h-5',user:'M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM4 21c0-4 4-6 8-6s8 2 8 6'};
+const T={it:{app:`Cassaforte Password`,new:`Nuovo`,imp:`Importa`,save:`Salva / Esporta`,lock:`Blocca`,guide:`Guida`,search:`Cerca…`,title:`Titolo`,user:`Utente`,pwd:`Password`,url:`URL`,group:`Gruppo`,notes:`Note`,
+empty:`Nessuna voce. Premi <b>Nuovo</b> per aggiungerne una, oppure <b>Importa</b> un file.`,entry:`Voce`,cancel:`Annulla`,saveE:`Salva voce`,confirm:`Conferma`,confirmPw:`Conferma password`,pwT:`Password di cifratura`,fmt:`Formato`,fPwm:`Archivio cifrato (.pwm) – consigliato`,encOpt:`Cifra il contenuto con AES-256`,
+xHint:`La password di cifratura ti sarà chiesta ora e non verrà salvata: conservala tu. Senza cifratura le password vengono scritte in chiaro nel file.`,exp:`Esporta`,close:`Chiudi`,tShow:`Mostra/nascondi`,tCu:`Copia utente`,tCp:`Copia password`,tEdit:`Modifica`,tDel:`Elimina`,tGen:`Genera`,
+mfaOn:`MFA attiva`,mfa:`MFA`,yes:`Sì`,no:`No`,sum:`Riepilogo`,list:`Elenco`,stOf:`su`,stTot:`Account totali`,stMfa:`Account con MFA`,stWeak:`Password deboli (< 12 caratteri)`,stReuse:`Password riutilizzate`,stEmailT:`Esposizione per indirizzo email`,stDomT:`Distribuzione per dominio email`,stEmail:`Indirizzo email`,stDom:`Dominio`,stAcc:`Account`,stPct:`% del totale`,stNoMfa:`Senza MFA`,stWeakC:`Password deboli`,stNoEmail:`Account con utente che non è un indirizzo email`,stEmpty:`Aggiungi o importa dei dati per vedere il riepilogo.`,stHint:`Se uno di questi indirizzi viene compromesso, gli account collegati sono esposti a reimpostazioni password non autorizzate e phishing mirato. Passa il mouse sull’indirizzo per vedere quali account usa.`,stTop:`Indirizzo più esposto`,
+tplT:`Scarica il modello per l’import:`,tplN:`modello-import`,tplEx:[`Email`,`Posta personale`,`nome@esempio.it`,`PasswordDiEsempio!2026`,`https://mail.esempio.it`,`Riga di esempio: cancellala`,`Sì`,`2026-01-15`,`2027-01-15`],
+dIns:`Inserimento`,dExp:`Scadenza`,lblD:`Data di inserimento (facoltativa)`,lblX:`Data di scadenza (facoltativa)`,stat:`Stato`,age:`Anzianità`,day:`giorni`,day1:`giorno`,mon:`mesi`,mon1:`mese`,yr:`anni`,yr1:`anno`,stExp:`scaduta da {n}`,stIn:`tra {n}`,today:`scade oggi`,rExpT:`Report scadenze`,rAgeT:`Report anzianità delle password`,rWithX:`account con data di scadenza`,rWithD:`account con data di inserimento`,noX:`Nessun account ha una data di scadenza: compila il campo “Scadenza” per vedere questo report.`,noD:`Nessun account ha una data di inserimento: compila il campo “Inserimento” per vedere questo report.`,eExp:`Scadute`,e30:`Entro 30 giorni`,e90:`Tra 31 e 90 giorni`,eLong:`Oltre 90 giorni`,a90:`Meno di 90 giorni`,a180:`90–180 giorni`,a365:`181–365 giorni`,aOld:`Oltre 1 anno`,aAvg:`Anzianità media`,more:`…e altri {n}`,
+copied:`Copiato (sarà rimosso dagli appunti tra 20 s)`,needOne:`Inserisci almeno titolo, utente o password`,delQ:`Eliminare questa voce?`,lockQ:`Ci sono modifiche non salvate. Bloccare e svuotare comunque?`,min8:`Usa almeno 8 caratteri.`,nomatch:`Le password non coincidono.`,
+encMsg:`Scegli la password per cifrare il file. Non viene salvata da nessuna parte: conservala tu, senza non potrai riaprirlo.`,openMsg:`Archivio cifrato: inserisci la password per aprirlo.`,wrong:`Password errata o file danneggiato`,repQ:`OK = sostituisci i dati attuali\nAnnulla = aggiungi a quelli esistenti`,imported:`voci importate`,readErr:`Impossibile leggere il file`,unrec:`File non riconosciuto`,savedEnc:`File cifrato salvato`,savedPlain:`File salvato (non cifrato)`,pdfT:`ELENCO PASSWORD`,
+gd:`<h3>Guida</h3>
+<h4>Come iniziare</h4><p>Il file funziona subito, anche vuoto: premi <b>Nuovo</b> e inserisci titolo, utente, password, URL, gruppo e note. Il pulsante con le frecce nel campo password genera una password casuale di 20 caratteri. La lingua si cambia dall’icona del globo in alto.</p>
+<h4>Elenco e riepilogo</h4><ul><li>Clicca sulle intestazioni Titolo, Gruppo, Utente, URL, MFA, Inserimento o Scadenza per ordinare l’elenco (secondo clic: ordine inverso).</li><li>Il pulsante <b>Riepilogo</b> mostra la percentuale di account con MFA, di password deboli (meno di 12 caratteri) e riutilizzate, e quanti account dipendono da ciascun indirizzo email o dominio: più è alto, maggiore è l’esposizione se quell’indirizzo viene compromesso.</li><li>Le date di inserimento e di scadenza sono <b>facoltative</b> (puoi compilarne una, entrambe o nessuna). Con esse il Riepilogo mostra due report: uno sulle scadenze (scadute, entro 30 giorni, entro 90 giorni) e uno sull’anzianità delle password, per capire da quanto tempo non vengono cambiate. Ogni report considera solo gli account in cui la data è presente.</li></ul>
+<h4>Importare</h4><ul><li><b>CSV / XLSX</b>: usa il modello che puoi scaricare con i pulsanti in fondo a questa guida. Una riga per account; la prima riga contiene i nomi delle colonne (Gruppo, Titolo, Utente, Password, URL, Note, MFA, Inserimento, Scadenza) e non va modificata. Nella colonna MFA scrivi Sì oppure No; le date vanno scritte come AAAA-MM-GG (o GG/MM/AAAA) e possono restare vuote. Cancella la riga di esempio prima di importare. Sono accettate anche le intestazioni inglesi e quelle dell’export di KeePass.</li><li><b>.pwm / TXT / CSV / XLSX cifrati</b>: vengono riconosciuti da soli e ti viene chiesta la password per aprirli.</li></ul>
+<h4>Salvare ed esportare</h4><p>Con <b>Salva / Esporta</b> scegli TXT, PDF, CSV, XLSX o l’archivio .pwm. Con l’opzione AES-256 attiva il contenuto è cifrato dentro al file (AES-256-GCM, chiave derivata dalla password con PBKDF2-SHA256, 300.000 iterazioni). Ad ogni salvataggio cifrato ti viene chiesta la password (con conferma). Non viene memorizzata da nessuna parte, né nel file né nel browser: dopo l’uso viene dimenticata, quindi conservala tu in un posto sicuro.</p>
+<p>Un file cifrato in CSV o XLSX appare come una sola colonna di testo: non modificarla, altrimenti non si apre più. I PDF cifrati servono come copia di archivio e non si possono reimportare: per riaprire i dati usa .pwm, TXT, CSV o XLSX.</p>
+<h4>Sicurezza</h4><ul><li>Lo strumento non usa internet e non invia nulla: i dati restano nel browser finché non li salvi.</li><li><b>Se dimentichi la password non c’è modo di recuperare i dati.</b></li><li>Il file HTML non salva da solo: chiudendo la pagina senza esportare perdi le modifiche.</li><li>Le password copiate vengono rimosse dagli appunti dopo 20 secondi.</li><li>Usa una password lunga e conserva più copie dell’archivio.</li></ul>`},
+en:{app:`Password Vault`,new:`New`,imp:`Import`,save:`Save / Export`,lock:`Lock`,guide:`Guide`,search:`Search…`,title:`Title`,user:`Username`,pwd:`Password`,url:`URL`,group:`Group`,notes:`Notes`,
+empty:`No entries. Press <b>New</b> to add one, or <b>Import</b> a file.`,entry:`Entry`,cancel:`Cancel`,saveE:`Save entry`,confirm:`Confirm`,confirmPw:`Confirm password`,pwT:`Encryption password`,fmt:`Format`,fPwm:`Encrypted archive (.pwm) – recommended`,encOpt:`Encrypt the content with AES-256`,
+xHint:`You will be asked for the encryption password now; it is not stored anywhere, so keep it yourself. Without encryption, passwords are written in plain text in the file.`,exp:`Export`,close:`Close`,tShow:`Show/hide`,tCu:`Copy username`,tCp:`Copy password`,tEdit:`Edit`,tDel:`Delete`,tGen:`Generate`,
+mfaOn:`MFA enabled`,mfa:`MFA`,yes:`Yes`,no:`No`,sum:`Summary`,list:`List`,stOf:`of`,stTot:`Total accounts`,stMfa:`Accounts with MFA`,stWeak:`Weak passwords (< 12 characters)`,stReuse:`Reused passwords`,stEmailT:`Exposure by email address`,stDomT:`Distribution by email domain`,stEmail:`Email address`,stDom:`Domain`,stAcc:`Accounts`,stPct:`% of total`,stNoMfa:`Without MFA`,stWeakC:`Weak passwords`,stNoEmail:`Accounts whose username is not an email address`,stEmpty:`Add or import data to see the summary.`,stHint:`If one of these addresses is compromised, the linked accounts are exposed to unauthorized password resets and targeted phishing. Hover over an address to see which accounts use it.`,stTop:`Most exposed address`,
+tplT:`Download the import template:`,tplN:`import-template`,tplEx:[`Email`,`Personal mail`,`name@example.com`,`ExamplePassword!2026`,`https://mail.example.com`,`Example row: delete it`,`Yes`,`2026-01-15`,`2027-01-15`],
+dIns:`Added`,dExp:`Expires`,lblD:`Date added (optional)`,lblX:`Expiry date (optional)`,stat:`Status`,age:`Age`,day:`days`,day1:`day`,mon:`months`,mon1:`month`,yr:`years`,yr1:`year`,stExp:`expired {n} ago`,stIn:`in {n}`,today:`expires today`,rExpT:`Expiry report`,rAgeT:`Password age report`,rWithX:`accounts have an expiry date`,rWithD:`accounts have a date added`,noX:`No account has an expiry date: fill in the “Expires” field to see this report.`,noD:`No account has a date added: fill in the “Added” field to see this report.`,eExp:`Expired`,e30:`Within 30 days`,e90:`In 31–90 days`,eLong:`More than 90 days`,a90:`Under 90 days`,a180:`90–180 days`,a365:`181–365 days`,aOld:`Over 1 year`,aAvg:`Average age`,more:`…and {n} more`,
+copied:`Copied (it will be cleared from the clipboard in 20 s)`,needOne:`Enter at least a title, username or password`,delQ:`Delete this entry?`,lockQ:`There are unsaved changes. Lock and clear anyway?`,min8:`Use at least 8 characters.`,nomatch:`The passwords don’t match.`,
+encMsg:`Choose the password to encrypt the file. It is not stored anywhere: keep it yourself, without it you won’t be able to reopen the file.`,openMsg:`Encrypted archive: enter the password to open it.`,wrong:`Wrong password or damaged file`,repQ:`OK = replace the current data\nCancel = add to the existing entries`,imported:`entries imported`,readErr:`Unable to read the file`,unrec:`File not recognized`,savedEnc:`Encrypted file saved`,savedPlain:`File saved (not encrypted)`,pdfT:`PASSWORD LIST`,
+gd:`<h3>Guide</h3>
+<h4>Getting started</h4><p>The tool works right away, even empty: press <b>New</b> and enter title, username, password, URL, group and notes. The arrows button in the password field generates a random 20-character password. Change the language with the globe icon at the top.</p>
+<h4>List and summary</h4><ul><li>Click the Title, Group, Username, URL, MFA, Added or Expires headers to sort the list (second click: reverse order).</li><li>The <b>Summary</b> button shows the percentage of accounts with MFA, with weak passwords (under 12 characters) and with reused passwords, and how many accounts depend on each email address or domain: the higher, the greater the exposure if that address is compromised.</li><li>The date added and expiry date are <b>optional</b> (fill in one, both or neither). With them the Summary shows two reports: one on expirations (expired, within 30 days, within 90 days) and one on password age, to see how long passwords have gone unchanged. Each report only considers accounts where the date is present.</li></ul>
+<h4>Importing</h4><ul><li><b>CSV / XLSX</b>: use the template you can download with the buttons at the bottom of this guide. One row per account; the first row holds the column names (Group, Title, Username, Password, URL, Notes, MFA, Added, Expires) and must not be changed. In the MFA column write Yes or No; dates are written as YYYY-MM-DD (or DD/MM/YYYY) and may be left empty. Delete the example row before importing. Italian headers and KeePass export headers are also accepted.</li><li><b>Encrypted .pwm / TXT / CSV / XLSX</b>: they are recognized automatically and you are asked for the password to open them.</li></ul>
+<h4>Saving and exporting</h4><p>With <b>Save / Export</b> choose TXT, PDF, CSV, XLSX or the .pwm archive. With the AES-256 option on, the content is encrypted inside the file (AES-256-GCM, key derived from the password with PBKDF2-SHA256, 300,000 iterations). Each encrypted save asks for the password (with confirmation). It is not stored anywhere, neither in the file nor in the browser: it is forgotten after use, so keep it somewhere safe.</p>
+<p>An encrypted CSV or XLSX file shows as a single column of text: don’t edit it, or it won’t open anymore. Encrypted PDFs are archive copies and can’t be re-imported: use .pwm, TXT, CSV or XLSX to reopen your data.</p>
+<h4>Security</h4><ul><li>The tool doesn’t use the internet and sends nothing: data stays in the browser until you save it.</li><li><b>If you forget the password, there is no way to recover the data.</b></li><li>The HTML file doesn’t save by itself: closing the page without exporting loses your changes.</li><li>Copied passwords are cleared from the clipboard after 20 seconds.</li><li>Use a long password and keep several copies of the archive.</li></ul>`}};
+let L='it';try{L=localStorage.getItem('lg')||(navigator.language||'it').slice(0,2)}catch{}if(!T[L])L='it';
+const t=k=>T[L][k];
+function setLang(v){L=v;try{localStorage.setItem('lg',v)}catch{}applyLang()}
+function applyLang(){document.documentElement.lang=L;document.title=t('app');$('#lg').value=L;
+document.querySelectorAll('[data-t]').forEach(e=>e.textContent=t(e.dataset.t));
+document.querySelectorAll('[data-h]').forEach(e=>e.innerHTML=t(e.dataset.h));
+document.querySelectorAll('[data-p]').forEach(e=>e.placeholder=t(e.dataset.p));
+document.querySelectorAll('[data-ti]').forEach(e=>e.title=t(e.dataset.ti));render()}
+const ic=n=>`<svg viewBox="0 0 24 24"><path d="${P[n]}"/></svg>`;
+document.querySelectorAll('[data-i]').forEach(e=>e.innerHTML=ic(e.dataset.i));
+let E=[],uid=0,dirty=0,sh={};const H=()=>[t('group'),t('title'),t('user'),'Password','URL',t('notes'),'MFA',t('dIns'),t('dExp')];
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function toast(m){const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(t.h);t.h=setTimeout(()=>t.style.display='none',2800)}
+const pc=(a,b)=>b?Math.round(a*100/b):0,
+cd=(l,a,b,c)=>`<div class="cd"><div class="s">${l}</div><div class="big">${pc(a,b)}%</div><div class="bar"><i class="${c}" style="width:${pc(a,b)}%"></i></div><div class="s">${a} ${t('stOf')} ${b}</div></div>`,
+un=(n,k)=>n+' '+t(n==1?k+'1':k),fa=d=>d<60?un(d,'day'):d<730?un(Math.round(d/30.4),'mon'):un(+(d/365).toFixed(1),'yr'),
+fd=v=>v?new Date(v+'T00:00').toLocaleDateString(L):'',
+dd=v=>{const z=new Date();return Math.round((Date.parse(v)-Date.UTC(z.getFullYear(),z.getMonth(),z.getDate()))/864e5)},
+xc=v=>v?(dd(v)<0?'exp':dd(v)<=30?'soon':''):'';
+function nd(v){v=String(v==null?'':v).trim();if(!v)return'';let y,m,d,a;
+if(a=v.match(/^(\d{4})[-\/.](\d{1,2})[-\/.](\d{1,2})/))[y,m,d]=a.slice(1);
+else if(a=v.match(/^(\d{1,2})[-\/.](\d{1,2})[-\/.](\d{4})/))[d,m,y]=a.slice(1);
+else if(/^\d{5}(\.\d+)?$/.test(v))return new Date(Date.UTC(1899,11,30)+Math.floor(+v)*864e5).toISOString().slice(0,10);
+else return'';
+const z=new Date(Date.UTC(+y,m-1,+d));return z.getUTCMonth()==m-1&&z.getUTCDate()==+d?z.toISOString().slice(0,10):''}
+function dReports(n){const X=E.filter(e=>e.x).map(e=>({e,k:dd(e.x)})).sort((a,b)=>a.k-b.k),A=E.filter(e=>e.d).map(e=>({e,k:Math.max(0,-dd(e.d))})).sort((a,b)=>b.k-a.k),
+tbl=(R,hd,key,hs,st)=>`<div class="tw"><table><thead><tr><th>${t('title')}</th><th>${t('user')}</th><th>${hd}</th><th>${hs}</th></tr></thead><tbody>${R.slice(0,25).map(({e,k})=>{const[x,c]=st(k);return`<tr><td>${esc(e.t)}</td><td>${esc(e.u)}</td><td>${fd(e[key])}</td><td class="${c}">${esc(x)}</td></tr>`}).join('')}</tbody></table></div>`+(R.length>25?`<p class="s">${t('more').replace('{n}',R.length-25)}</p>`:''),
+bk=(R,F)=>`<div class="cards">${F.map(([l,f,c])=>cd(t(l),R.filter(x=>f(x.k)).length,R.length,c)).join('')}</div>`,
+sec=(ti,inf,L2,body)=>`<h2>${ti}</h2><p class="s">${L2.length} ${t('stOf')} ${n} ${t(inf)}</p>`+(L2.length?body:`<p>${t(inf=='rWithX'?'noX':'noD')}</p>`);
+return sec(t('rExpT'),'rWithX',X,bk(X,[['eExp',k=>k<0,'r'],['e30',k=>k>=0&&k<=30,'a'],['e90',k=>k>30&&k<=90,'g'],['eLong',k=>k>90,'g']])+tbl(X,t('dExp'),'x',t('stat'),k=>k<0?[t('stExp').replace('{n}',fa(-k)),'exp']:k==0?[t('today'),'exp']:[t('stIn').replace('{n}',fa(k)),k<=30?'soon':'']))
++sec(t('rAgeT'),'rWithD',A,`<p>${t('aAvg')}: <b>${fa(Math.round(A.reduce((a,x)=>a+x.k,0)/A.length))}</b></p>`+bk(A,[['a90',k=>k<90,'g'],['a180',k=>k>=90&&k<=180,'g'],['a365',k=>k>180&&k<=365,'a'],['aOld',k=>k>365,'r']])+tbl(A,t('dIns'),'d',t('age'),k=>[fa(k),k>365?'exp':k>180?'soon':'']))}
+let view='l',so={k:'t',d:1};
+function sortBy(k){so=so.k==k?{k,d:-so.d}:{k,d:1};render()}
+function setView(v){view=v;render()}
+function render(){$('#vL').style.display=view=='l'?'':'none';$('#vS').style.display=view=='s'?'':'none';document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.v==view));
+if(view=='s')return stats();
+const q=$('#q').value.toLowerCase(),f=so.k,L=E.filter(e=>!q||[e.g,e.t,e.u,e.l,e.n].join(' ').toLowerCase().includes(q)).sort((a,b)=>{const x=String(a[f]||''),y=String(b[f]||'');if(!x!=!y)return x?-1:1;return so.d*x.localeCompare(y,undefined,{numeric:true,sensitivity:'base'})});
+document.querySelectorAll('th[data-k]').forEach(h=>h.querySelector('.ar').textContent=h.dataset.k==so.k?(so.d>0?' ↑':' ↓'):'');
+$('#em').style.display=L.length?'none':'';
+$('#tb').innerHTML=L.map(e=>`<tr><td>${esc(e.t)}</td><td>${esc(e.g)}</td><td>${esc(e.u)}</td><td>${sh[e.id]?esc(e.p):'••••••••'}</td><td>${/^https?:\/\//i.test(e.l)?`<a href="${esc(e.l)}" target="_blank" rel="noopener noreferrer">${esc(e.l)}</a>`:esc(e.l)}</td><td>${e.m?`<span class="ok">${ic('check')}</span>`:'<span class="s">—</span>'}</td><td>${fd(e.d)}</td><td class="${xc(e.x)}">${fd(e.x)}</td>
+<td class="acts"><button class="ib" title="${t('tShow')}" onclick="sh[${e.id}]=!sh[${e.id}];render()">${ic('eye')}</button><button class="ib" title="${t('tCu')}" onclick="cp(${e.id},'u')">${ic('user')}</button><button class="ib" title="${t('tCp')}" onclick="cp(${e.id},'p')">${ic('copy')}</button><button class="ib" title="${t('tEdit')}" onclick="edit(${e.id})">${ic('edit')}</button><button class="ib" title="${t('tDel')}" onclick="del(${e.id})">${ic('trash')}</button></td></tr>`).join('')}
+function stats(){const n=E.length,v=$('#vS');if(!n){v.innerHTML=`<div class="empty">${t('stEmpty')}</div>`;return}
+const wp=E.filter(e=>e.p),weak=wp.filter(e=>e.p.length<12).length,cn={};wp.forEach(e=>cn[e.p]=(cn[e.p]||0)+1);
+const re=wp.filter(e=>cn[e.p]>1).length,mf=E.filter(e=>e.m).length,
+em=E.filter(e=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.u.trim())),
+gp=f=>{const m={};em.forEach(e=>{const k=f(e.u.trim().toLowerCase());(m[k]=m[k]||[]).push(e)});return Object.entries(m).sort((a,b)=>b[1].length-a[1].length||a[0].localeCompare(b[0]))},
+tb=(R,h)=>`<div class="tw"><table><thead><tr><th>${h}</th><th>${t('stAcc')}</th><th>${t('stPct')}</th><th>${t('stNoMfa')}</th><th>${t('stWeakC')}</th></tr></thead><tbody>${R.map(([k,x])=>`<tr><td title="${esc(x.map(e=>e.t).join(', '))}">${esc(k)}</td><td>${x.length}</td><td><div class="row"><div class="bar" style="width:90px"><i class="r" style="width:${pc(x.length,n)}%"></i></div>${pc(x.length,n)}%</div></td><td>${x.filter(e=>!e.m).length}</td><td>${x.filter(e=>e.p&&e.p.length<12).length}</td></tr>`).join('')}</tbody></table></div>`,
+E1=gp(k=>k),D1=gp(k=>k.split('@').pop());
+v.innerHTML=`<div class="cards"><div class="cd"><div class="s">${t('stTot')}</div><div class="big">${n}</div></div>${cd(t('stMfa'),mf,n,'g')}${cd(t('stWeak'),weak,wp.length,'r')}${cd(t('stReuse'),re,wp.length,'r')}</div>`+(E1.length?`<h2>${t('stEmailT')}</h2><p class="s">${t('stHint')}</p><p>${t('stTop')}: <b>${esc(E1[0][0])}</b> — ${E1[0][1].length} ${t('stAcc').toLowerCase()} (${pc(E1[0][1].length,n)}%)</p>${tb(E1,t('stEmail'))}<h2>${t('stDomT')}</h2>${tb(D1,t('stDom'))}`:'')+`<p class="s">${t('stNoEmail')}: ${n-em.length}</p>`+dReports(n)}
+async function cp(id,k){const v=E.find(e=>e.id==id)[k];try{await navigator.clipboard.writeText(v)}catch{const a=document.createElement('textarea');a.value=v;document.body.append(a);a.select();document.execCommand('copy');a.remove()}
+toast(t('copied'));setTimeout(()=>navigator.clipboard&&navigator.clipboard.writeText('').catch(()=>{}),20000)}
+function gen(){const c='abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789!@#$%^&*-_=+?',r=crypto.getRandomValues(new Uint32Array(20));return[...r].map(x=>c[x%c.length]).join('')}
+const KF=['g','t','u','p','l','n'],KM=[...KF,'m','d','x'];
+function edit(id){const e=E.find(x=>x.id==id)||{};KF.forEach(k=>$('#e'+k).value=e[k]||'');$('#ei').value=id||'';$('#ef').checked=!!e.m;$('#ed').value=e.d||'';$('#ex').value=e.x||'';$('#ep').type='password';$('#dE').showModal()}
+function saveE(){const o={};KF.forEach(k=>o[k]=$('#e'+k).value);o.m=$('#ef').checked?'1':'';o.d=$('#ed').value;o.x=$('#ex').value;if(!o.t&&!o.u&&!o.p)return toast(t('needOne'));
+const id=$('#ei').value;if(id)Object.assign(E.find(x=>x.id==id),o);else E.push({id:++uid,...o});dirty=1;$('#dE').close();render()}
+function del(id){if(confirm(t('delQ'))){E=E.filter(e=>e.id!=id);dirty=1;render()}}
+function lock(){if(dirty&&!confirm(t('lockQ')))return;E=[];dirty=0;sh={};$('#q').value='';render()}
+onbeforeunload=e=>{if(dirty){e.preventDefault();return''}};
+/* password */
+function askPw(cf,msg){return new Promise(res=>{const d=$('#dP');$('#pm').textContent=msg||'';$('#pc').style.display=cf?'':'none';$('#p1').value=$('#p2').value=$('#pe').textContent='';
+const done=v=>{$('#p1').value=$('#p2').value='';d.close();res(v)};$('#pn').onclick=()=>done(null);d.oncancel=()=>res(null);
+$('#po').onclick=()=>{const a=$('#p1').value;if(cf){if(a.length<8)return $('#pe').textContent=t('min8');if(a!=$('#p2').value)return $('#pe').textContent=t('nomatch')}else if(!a)return;done(a)};
+$('#p1').onkeydown=$('#p2').onkeydown=e=>{if(e.key=='Enter')$('#po').click()};d.showModal();$('#p1').focus()})}
+/* AES-256-GCM */
+const b64=u=>{let s='';for(let i=0;i<u.length;i+=8192)s+=String.fromCharCode.apply(null,u.subarray(i,i+8192));return btoa(s)};
+async function key(pw,salt){const k=await crypto.subtle.importKey('raw',enc.encode(pw),'PBKDF2',0,['deriveKey']);return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:300000,hash:'SHA-256'},k,{name:'AES-GCM',length:256},0,['encrypt','decrypt'])}
+async function encr(pw,t){const s=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12)),c=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv},await key(pw,s),enc.encode(t))),o=new Uint8Array(28+c.length);o.set(s);o.set(iv,16);o.set(c,28);return'PWM1:'+b64(o)}
+async function decr(pw,a){const u=Uint8Array.from(atob(a.slice(5)),c=>c.charCodeAt(0));return dec.decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:u.slice(16,28)},await key(pw,u.slice(0,16)),u.slice(28)))}
+const arm=s=>{const i=s.indexOf('PWM1:');return i<0?null:s.slice(i).replace(/[^A-Za-z0-9+\/=:]/g,'')};
+/* CSV */
+function pcsv(t){const l=t.split('\n')[0],d=(l.match(/;/g)||[]).length>(l.match(/,/g)||[]).length?';':',';let R=[],r=[],c='',q=0;
+for(let i=0;i<t.length;i++){const h=t[i];if(q){if(h=='"'){if(t[i+1]=='"'){c+='"';i++}else q=0}else c+=h}
+else if(h=='"')q=1;else if(h==d){r.push(c);c=''}else if(h=='\n'||h=='\r'){if(h=='\r'&&t[i+1]=='\n')i++;r.push(c);R.push(r);r=[];c=''}else c+=h}
+if(c||r.length){r.push(c);R.push(r)}return R}
+const csv=R=>R.map(r=>r.map(x=>'"'+String(x??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');
+/* XLSX lettura */
+async function inflate(u){return new Uint8Array(await new Response(new Blob([u]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).arrayBuffer())}
+async function unzip(buf){const v=new DataView(buf),u=new Uint8Array(buf),F={};let e=u.length-22;while(e>0&&v.getUint32(e,true)!=0x06054b50)e--;
+let n=v.getUint16(e+10,true),o=v.getUint32(e+16,true);
+for(;n--;){const m=v.getUint16(o+10,true),cs=v.getUint32(o+20,true),nl=v.getUint16(o+28,true),xl=v.getUint16(o+30,true),cl=v.getUint16(o+32,true),lo=v.getUint32(o+42,true),nm=dec.decode(u.subarray(o+46,o+46+nl)),st=lo+30+v.getUint16(lo+26,true)+v.getUint16(lo+28,true),d=u.subarray(st,st+cs);
+F[nm]=m?await inflate(d):d;o+=46+nl+xl+cl}return F}
+async function readX(buf){const F=await unzip(buf),X=k=>F[k]?new DOMParser().parseFromString(dec.decode(F[k]),'text/xml'):null,
+ss=X('xl/sharedStrings.xml'),tx=n=>[...n.getElementsByTagName('t')].map(t=>t.textContent).join(''),
+S=ss?[...ss.getElementsByTagName('si')].map(tx):[],sk=F['xl/worksheets/sheet1.xml']?'xl/worksheets/sheet1.xml':Object.keys(F).find(k=>/^xl\/worksheets\/sheet\d+\.xml$/.test(k));
+if(!sk)throw 0;const R=[];
+for(const c of X(sk).getElementsByTagName('c')){const m=/([A-Z]+)(\d+)/.exec(c.getAttribute('r')),ty=c.getAttribute('t'),vv=c.getElementsByTagName('v')[0],
+ci=[...m[1]].reduce((a,x)=>a*26+x.charCodeAt(0)-64,0)-1,ri=+m[2]-1;(R[ri]=R[ri]||[])[ci]=ty=='s'?S[+vv.textContent]:ty=='inlineStr'?tx(c):vv?vv.textContent:''}
+return Array.from(R,r=>r?Array.from(r,x=>x??''):[])}
+/* XLSX scrittura */
+const crcT=(()=>{const t=[];for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}return t})();
+const crc=u=>{let c=-1;for(const b of u)c=crcT[(c^b)&255]^(c>>>8);return(c^-1)>>>0};
+function zip(files){const P=[],C=[];let off=0;
+for(const[n,s]of Object.entries(files)){const nb=enc.encode(n),d=enc.encode(s),c=crc(d),h=new DataView(new ArrayBuffer(30)),g=new DataView(new ArrayBuffer(46));
+h.setUint32(0,0x04034b50,true);h.setUint16(4,20,true);h.setUint32(14,c,true);h.setUint32(18,d.length,true);h.setUint32(22,d.length,true);h.setUint16(26,nb.length,true);
+g.setUint32(0,0x02014b50,true);g.setUint16(4,20,true);g.setUint16(6,20,true);g.setUint32(16,c,true);g.setUint32(20,d.length,true);g.setUint32(24,d.length,true);g.setUint16(28,nb.length,true);g.setUint32(42,off,true);
+P.push(new Uint8Array(h.buffer),nb,d);C.push(new Uint8Array(g.buffer),nb);off+=30+nb.length+d.length}
+const e=new DataView(new ArrayBuffer(22)),k=C.length/2;e.setUint32(0,0x06054b50,true);e.setUint16(8,k,true);e.setUint16(10,k,true);e.setUint32(12,C.reduce((a,x)=>a+x.length,0),true);e.setUint32(16,off,true);
+return new Blob([...P,...C,e.buffer],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'})}
+const xe=x=>String(x??'').replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g,'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const R_='http://schemas.openxmlformats.org/',XH='<?xml version="1.0" encoding="UTF-8"?>';
+function xlsx(rows){const sd=rows.map((r,i)=>`<row r="${i+1}">`+r.map((x,j)=>`<c r="${String.fromCharCode(65+j)}${i+1}" t="inlineStr"><is><t xml:space="preserve">${xe(x)}</t></is></c>`).join('')+'</row>').join('');
+return zip({'[Content_Types].xml':XH+`<Types xmlns="${R_}package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/></Types>`,
+'_rels/.rels':XH+`<Relationships xmlns="${R_}package/2006/relationships"><Relationship Id="rId1" Type="${R_}officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>`,
+'xl/workbook.xml':XH+`<workbook xmlns="${R_}spreadsheetml/2006/main" xmlns:r="${R_}officeDocument/2006/relationships"><sheets><sheet name="Password" sheetId="1" r:id="rId1"/></sheets></workbook>`,
+'xl/_rels/workbook.xml.rels':XH+`<Relationships xmlns="${R_}package/2006/relationships"><Relationship Id="rId1" Type="${R_}officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/></Relationships>`,
+'xl/worksheets/sheet1.xml':XH+`<worksheet xmlns="${R_}spreadsheetml/2006/main"><sheetData>${sd}</sheetData></worksheet>`})}
+/* PDF */
+function pdf(lines){const L=[];lines.flatMap(l=>String(l).split(/\r?\n/)).forEach(l=>{l=l.replace(/[^\x20-\x7E\xA0-\xFF]/g,'?');do{L.push(l.slice(0,100));l=l.slice(100)}while(l)});
+const pg=[];for(let i=0;i<L.length;i+=72)pg.push(L.slice(i,i+72));const o=[],n=pg.length;
+o[1]='<</Type/Catalog/Pages 2 0 R>>';o[2]=`<</Type/Pages/Kids[${pg.map((_,i)=>(4+2*i)+' 0 R').join(' ')}]/Count ${n}>>`;o[3]='<</Type/Font/Subtype/Type1/BaseFont/Courier>>';
+pg.forEach((p,i)=>{const s='BT /F1 8 Tf 10 TL 40 800 Td\n'+p.map(l=>`(${l.replace(/[\\()]/g,'\\$&')}) '`).join('\n')+'\nET';
+o[4+2*i]=`<</Type/Page/Parent 2 0 R/MediaBox[0 0 595 842]/Resources<</Font<</F1 3 0 R>>>>/Contents ${5+2*i} 0 R>>`;o[5+2*i]=`<</Length ${s.length}>>\nstream\n${s}\nendstream`});
+let t='%PDF-1.4\n',x=[];for(let i=1;i<o.length;i++){x[i]=t.length;t+=`${i} 0 obj\n${o[i]}\nendobj\n`}
+const xr=t.length;t+=`xref\n0 ${o.length}\n0000000000 65535 f \n`+x.slice(1).map(p=>String(p).padStart(10,'0')+' 00000 n \n').join('')+`trailer\n<</Size ${o.length}/Root 1 0 R>>\nstartxref\n${xr}\n%%EOF`;
+return new Blob([Uint8Array.from(t,c=>c.charCodeAt(0))],{type:'application/pdf'})}
+/* esporta */
+function dl(b,n){const u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=n;a.click();setTimeout(()=>URL.revokeObjectURL(u),5000)}
+function tpl(f){const R=[H(),t('tplEx')];dl(f=='csv'?new Blob(['\uFEFF'+csv(R)],{type:'text/csv'}):xlsx(R),t('tplN')+'.'+f)}
+const plain=()=>E.flatMap(e=>[`[${e.g||'-'}] ${e.t}`,`  ${t('user')}: ${e.u}`,`  Password: ${e.p}`,`  URL: ${e.l}`,`  ${t('notes')}: ${e.n}`,`  MFA: ${e.m?t('yes'):t('no')}`,`  ${t('dIns')}: ${e.d||''}`,`  ${t('dExp')}: ${e.x||''}`,'']);
+async function exp(){const f=$('#xf').value,c=f=='pwm'||$('#xc').checked,rows=[H(),...E.map(e=>[...KF.map(k=>e[k]),e.m?t('yes'):t('no'),e.d||'',e.x||''])];let a,wr,tl;
+if(c){const pw=await askPw(1,t('encMsg'));if(!pw)return;a=await encr(pw,JSON.stringify(rows));wr=a.match(/.{1,8000}/g).map(x=>[x]);tl=a.match(/.{1,76}/g)}
+let b;
+if(f=='pwm'||f=='txt')b=new Blob([c?tl.join('\n'):plain().join('\n')],{type:'text/plain'});
+else if(f=='csv')b=new Blob(['\uFEFF'+csv(c?wr:rows)],{type:'text/csv'});
+else if(f=='xlsx')b=xlsx(c?wr:rows);else b=pdf(c?tl:[t('pdfT'),'',...plain()]);
+const u=URL.createObjectURL(b),a2=document.createElement('a');a2.href=u;a2.download='password-'+new Date().toISOString().slice(0,10)+'.'+(f=='pwm'?'pwm':f);a2.click();setTimeout(()=>URL.revokeObjectURL(u),5000);
+dirty=0;$('#dX').close();toast(t(c?'savedEnc':'savedPlain'))}
+/* importa */
+function mapRows(R){R=R.filter(r=>r.some(x=>String(x).trim()));if(!R.length)return[];
+const K={g:/grup|group|folder|cartella/i,u:/user|utente|login|mail/i,p:/pass|pwd/i,l:/url|web|sito|link/i,t:/tit|name|nome|account/i,n:/note|comment|descr/i,m:/mfa|2fa|otp|totp|two.?f|autent/i,x:/scad|expir|valid/i,d:/inser|creat|aggiunt|added/i},I={};
+R[0].forEach((h,i)=>{for(const k in K)if(I[k]==null&&K[k].test(h)){I[k]=i;break}});
+if(I.p==null){KM.forEach((k,i)=>I[k]=i)}else R=R.slice(1);
+return R.map(r=>{const o={id:++uid};KM.forEach(k=>o[k]=I[k]==null?'':String(r[I[k]]??''));o.m=/^(1|true|yes|y|s[iì]|x|on)$/i.test(o.m.trim())?'1':'';o.d=nd(o.d);o.x=nd(o.x);return o})}
+$('#fi').onchange=async ev=>{const f=ev.target.files[0];ev.target.value='';if(!f)return;
+try{const n=f.name.toLowerCase();let R,a,pw;
+if(n.endsWith('.xlsx'))R=await readX(await f.arrayBuffer());
+else{const t=dec.decode(await f.arrayBuffer()).replace(/^\uFEFF/,'');if(n.endsWith('.csv'))R=pcsv(t);else{a=arm(t);if(!a)return toast(t('unrec'))}}
+if(R)a=arm(R.flat().join(''));
+if(a){for(;;){pw=await askPw(0,t('openMsg'));if(pw==null)return;try{R=JSON.parse(await decr(pw,a));break}catch{toast(t('wrong'))}}}
+const N=mapRows(R);let rep=0;if(E.length)rep=confirm(t('repQ'));
+E=rep?N:[...E,...N];dirty=1;render();toast(N.length+' '+t('imported'))}catch(e){toast(t('readErr'))}};
+applyLang();
+</script></body></html>
