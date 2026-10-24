@@ -1,6 +1,6 @@
 # 🔐 PortableKEY
 
-**🇬🇧 English** · [🇮🇹 Italiano](README.it.md)
+**EN English**
 
 **The password manager that is a single file.** No installation, no account, no cloud. Open it, use it, carry it with you.
 
@@ -12,9 +12,9 @@ PortableKEY is a password manager packed into one HTML file: double-click it and
 
 Traditional open source tells you: *"the code is public, go download it, build it, install it."*
 
-PortableKEY goes further: **the program is the code**.
+PortableKEY goes further ! Open `PortableKEY.html` in Notepad and read everything it does
 
-Open `PortableKEY.html` in Notepad and read everything it does. There is no binary to trust, no obfuscated code, no build step that could hide something else. What you read is exactly what runs, line by line.
+There is no binary to trust, no obfuscated code, no build step that could hide something else. What you read is exactly what runs, line by line.
 
 | | Typical password manager | PortableKEY |
 |---|---|---|
