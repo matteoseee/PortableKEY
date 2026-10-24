@@ -6,6 +6,9 @@
 
 PortableKEY is a password manager packed into one HTML file: double-click it and it works, even without internet, on any computer with a modern browser. Your passwords stay yours: they are never sent anywhere, and the password that protects them isn't stored either.
 
+<img width="1900" height="889" alt="image" src="https://github.com/user-attachments/assets/23cfdc24-59ee-48e9-a26f-165c5ab212b3" />
+
+
 ---
 
 ## ✨ Open Source 2.0
@@ -63,6 +66,9 @@ To reopen the archive: *Import*, pick the file, enter the password. That's it.
 - Search, sorting by column, random 20-character password generator
 - One-click copy: the clipboard is cleared after 20 seconds
 
+<img width="1904" height="905" alt="image" src="https://github.com/user-attachments/assets/99868889-cc27-4a75-bd6e-68e56f6d0473" />
+
+
 **Security summary** 📊
 
 A dedicated tab gives you the full picture:
@@ -71,6 +77,11 @@ A dedicated tab gives you the full picture:
 - **exposure by email address and domain**: how many accounts fall if a single mailbox is compromised
 - **expiry report**: expired, expiring within 30 and 90 days
 - **age report**: how long it has been since you changed certain passwords
+
+<img width="1888" height="889" alt="image" src="https://github.com/user-attachments/assets/64a0f164-69b9-4466-ba4b-4229d1484a0b" />
+
+
+<img width="1886" height="903" alt="image" src="https://github.com/user-attachments/assets/5fa5ce52-6e26-493d-b3a7-7af060714bdc" />
 
 ---
 
@@ -137,12 +148,6 @@ The project is a single file: reading it, understanding it and improving it is w
 - 🌍 Want to add a language? Just add a new entry to the translations dictionary.
 
 Golden rule: **no external dependencies and no network requests**. If your change needs them, it isn't PortableKEY.
-
----
-
-## 📄 License
-
-Released under the MIT license. See the [LICENSE](LICENSE) file.
 
 ---
 
