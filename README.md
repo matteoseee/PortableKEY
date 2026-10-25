@@ -7,11 +7,17 @@
 
 **The standalone portable password manager**
 
-**Passwords are stored only inside an AES-256 encrypted .pwm file. The master password is never stored and is intentionally forgotten after the file is created or opened** .
-
 PortableKEY requires no installation, no account, no internet but only a browser. Open it, use it, carry it with you.
 
-<img width="1195" height="490" alt="image" src="https://github.com/user-attachments/assets/b0d9cb3c-4dfa-4020-8727-e80083f3bc1a" />
+<img width="1195" height="427" alt="image" src="https://github.com/user-attachments/assets/3030a66f-75ad-4d03-aceb-d26b4b9ecad7" />
+
+---
+
+## 🕵️ How it works?
+
+**Passwords are stored only inside an AES-256 encrypted .pwm file. The master password is never stored and is intentionally forgotten after the file is created or opened** .
+
+<img width="1185" height="298" alt="image" src="https://github.com/user-attachments/assets/6924485c-cf86-4e99-95e6-52b8d5413898" />
 
 ---
 
