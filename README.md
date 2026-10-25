@@ -1,3 +1,6 @@
+[![Release](https://img.shields.io/github/v/release/matteoseee/PortableKEY)](https://github.com/UTENTE/REPOSITORY/releases) [![License](https://img.shields.io/github/license/matteoseee/PortableKEY)](LICENSE)
+
+
 # 🔐 PortableKEY
 
 **EN English**
