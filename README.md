@@ -6,8 +6,7 @@
 
 PortableKEY is a password manager packed into one HTML file: double-click it and it works, even without internet, on any computer with a modern browser. Your passwords stay yours: they are never sent anywhere, and the password that protects them isn't stored either.
 
-<img width="1195" height="667" alt="Screenshot 2026-10-25 123738" src="https://github.com/user-attachments/assets/c23f12ad-66af-49a2-a1b7-8f3a6dc24266" />
-
+<img width="1195" height="490" alt="image" src="https://github.com/user-attachments/assets/b0d9cb3c-4dfa-4020-8727-e80083f3bc1a" />
 
 ---
 
