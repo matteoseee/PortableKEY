@@ -52,7 +52,7 @@ Want to check that it sends nothing over the network? Open the file and search f
 4. **Save** with *Save / Export*: choose an encryption password, keep it yourself, and get your `.pwm` archive.
 
 To reopen the archive: *Import*, pick the file, enter the password. That's it.
-
+ 
 > 💡 Inside the app you'll find a **Guide** with a downloadable import template (CSV or XLSX) ready to fill in.
 
 ---
@@ -60,10 +60,10 @@ To reopen the archive: *Import*, pick the file, enter the password. That's it.
 ## 🧰 What it can do
 
 **Entry management**
-- Title, group, username, password, URL, notes
+- Title, group, email, username, password, URL, notes
 - **MFA** column to track where you've enabled multi-factor authentication
 - **Date added** and **expiry date**, both optional
-- Search, sorting by column, random 20-character password generator
+- Search, A→Z sorting on every column, combinable dropdown filters on each column, random 20-character password generator
 - One-click copy: the clipboard is cleared after 20 seconds
 
 <img width="1904" height="905" alt="image" src="https://github.com/user-attachments/assets/99868889-cc27-4a75-bd6e-68e56f6d0473" />
@@ -75,6 +75,7 @@ A dedicated tab gives you the full picture:
 - percentage of accounts with **MFA**
 - percentage of **weak** passwords (under 12 characters) and **reused** ones
 - **exposure by email address and domain**: how many accounts fall if a single mailbox is compromised
+- **username report**: which usernames are reused across accounts
 - **expiry report**: expired, expiring within 30 and 90 days
 - **age report**: how long it has been since you changed certain passwords
 
@@ -111,7 +112,6 @@ A dedicated tab gives you the full picture:
 | CSV | ✅ | ✅ | ✅ |
 | XLSX | ✅ | ✅ | ✅ |
 | TXT | ✅ (if encrypted) | ✅ | ✅ |
-| PDF | ❌ | ✅ | ✅ |
 
 Import detects encrypted files on its own and asks for the password. Column headers can be in Italian or English, including those from KeePass exports.
 
