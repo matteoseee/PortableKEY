@@ -6,7 +6,7 @@
 
 PortableKEY is a password manager packed into one HTML file: double-click it and it works, even without internet, on any computer with a modern browser. Your passwords stay yours: they are never sent anywhere, and the password that protects them isn't stored either.
 
-<img width="1900" height="889" alt="image" src="https://github.com/user-attachments/assets/23cfdc24-59ee-48e9-a26f-165c5ab212b3" />
+<img width="1195" height="667" alt="Screenshot 2026-10-25 123738" src="https://github.com/user-attachments/assets/c23f12ad-66af-49a2-a1b7-8f3a6dc24266" />
 
 
 ---
@@ -41,6 +41,8 @@ Want to check that it sends nothing over the network? Open the file and search f
 - 🔄 **Import/export without lock-in**: CSV and XLSX in (KeePass exports supported); TXT, PDF, CSV, XLSX and `.pwm` archive out.
 - 📊 **Security summary**: MFA, weak and reused passwords, exposure by email, expirations and password age.
 - 🌍 **Italian and English**, with a clean white interface.
+- ❓ **Guide**, on up-right corner there's always accessible guide in case you have any doubts.
+- 🌙 **Dark theme**, now with Light or Dark theme switch
 
 ---
 
@@ -66,7 +68,7 @@ To reopen the archive: *Import*, pick the file, enter the password. That's it.
 - Search, A→Z sorting on every column, combinable dropdown filters on each column, random 20-character password generator
 - One-click copy: the clipboard is cleared after 20 seconds
 
-<img width="1904" height="905" alt="image" src="https://github.com/user-attachments/assets/99868889-cc27-4a75-bd6e-68e56f6d0473" />
+<img width="1199" height="781" alt="Screenshot 2026-10-25 123755" src="https://github.com/user-attachments/assets/53705ba2-0819-436b-82ef-2fbd9234f343" />
 
 
 **Security summary** 📊
@@ -79,10 +81,10 @@ A dedicated tab gives you the full picture:
 - **expiry report**: expired, expiring within 30 and 90 days
 - **age report**: how long it has been since you changed certain passwords
 
-<img width="1888" height="889" alt="image" src="https://github.com/user-attachments/assets/64a0f164-69b9-4466-ba4b-4229d1484a0b" />
+<img width="1189" height="705" alt="Screenshot 2026-10-25 123816" src="https://github.com/user-attachments/assets/a50aecf0-952f-4de5-8de6-749041c385a4" />
 
 
-<img width="1886" height="903" alt="image" src="https://github.com/user-attachments/assets/5fa5ce52-6e26-493d-b3a7-7af060714bdc" />
+<img width="1187" height="901" alt="Screenshot 2026-10-25 123846" src="https://github.com/user-attachments/assets/6866a918-2183-4f8f-8ff6-ae2f0be7450f" />
 
 ---
 
