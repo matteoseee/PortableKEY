@@ -2,9 +2,11 @@
 
 **EN English**
 
-**The password manager that is a single file.** No installation, no account, no cloud. Open it, use it, carry it with you.
+**The standalone portable password manager**
 
-PortableKEY is a password manager packed into one HTML file: double-click it and it works, even without internet, on any computer with a modern browser. Your passwords stay yours: they are never sent anywhere, and the password that protects them isn't stored either.
+**Passwords are stored only inside an AES-256 encrypted .pwm file. The master password is never stored and is intentionally forgotten after the file is created or opened** .
+
+PortableKEY requires no installation, no account, no internet but only a browser. Open it, use it, carry it with you.
 
 <img width="1195" height="490" alt="image" src="https://github.com/user-attachments/assets/b0d9cb3c-4dfa-4020-8727-e80083f3bc1a" />
 
