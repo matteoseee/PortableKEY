@@ -17,7 +17,7 @@ PortableKEY requires no installation, no account, no internet but only a browser
 
 **Passwords are stored only inside an AES-256 encrypted .pwm file. The master password is never stored and is intentionally forgotten after the file is created or opened** .
 
-<img width="1189" height="300" alt="image" src="https://github.com/user-attachments/assets/22161e87-c650-4aad-8b9a-06713927f288" />
+<img width="1007" height="265" alt="image" src="https://github.com/user-attachments/assets/8fe62066-0dd1-446d-b17f-c0ec106159bf" />
 
 ---
 
