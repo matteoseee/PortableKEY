@@ -1,4 +1,4 @@
-[![Release](https://img.shields.io/github/v/release/matteoseee/PortableKEY)](https://github.com/UTENTE/REPOSITORY/releases) [![License](https://img.shields.io/github/license/matteoseee/PortableKEY)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/matteoseee/PortableKEY)](https://github.com/matteoseee/PortableKEY/releases) [![License](https://img.shields.io/github/license/matteoseee/PortableKEY)](LICENSE)
 
 
 # 🔐 PortableKEY
@@ -37,7 +37,7 @@ There is no binary to trust, no obfuscated code, no build step that could hide s
 | Internet connection | Often required | **Never** |
 | Where your data lives | A service, an app, a database | **A file you control** |
 
-Want to check that it sends nothing over the network? Open the file and search for `fetch` or `XMLHttpRequest`: you won't find them.
+Want to check that it sends nothing over the network? Open the file and search for `fetch` or `XMLHttpRequest`: you won't find them. On top of that, a Content Security Policy makes the browser itself refuse any network access from the page.
 
 ---
 
@@ -45,14 +45,18 @@ Want to check that it sends nothing over the network? Open the file and search f
 
 - 🧳 **Truly portable**: one file, zero dependencies. USB stick, shared folder, external drive.
 - 🔌 **Works offline**: no network requests, no telemetry.
-- 🛡️ **AES-256-GCM encryption**: the archive is encrypted with a key derived from your password (PBKDF2-SHA256, 300,000 iterations).
+- 🛡️ **AES-256-GCM encryption**: the archive is encrypted with a key derived from your password (PBKDF2-SHA256, 1,000,000 iterations), with a 12-character minimum for the encryption password.
 - 🧠 **Password forgotten right after use**: it isn't saved in the file or in the browser. Keeping it safe is up to you.
 - 👁️ **Readable, unencrypted code**: inspect it with any text editor.
-- 🔄 **Import/export without lock-in**: CSV and XLSX in (KeePass exports supported); TXT, PDF, CSV, XLSX and `.pwm` archive out.
+- 🔄 **Import/export without lock-in**: CSV and XLSX in (KeePass exports supported); TXT, CSV, XLSX and `.pwm` archive out.
 - 📊 **Security summary**: MFA, weak and reused passwords, exposure by email, expirations and password age.
-- 🌍 **Italian and English**, with a clean white interface.
+- 🌍 **Italian and English**, with a clean interface.
 - ❓ **Guide**, on up-right corner there's always accessible guide in case you have any doubts.
 - 🌙 **Dark theme**, now with Light or Dark theme switch
+- ⏱️ **Auto-lock** after 3 minutes of inactivity.
+- 🔑 **Help with strong passwords**: a strength indicator and a generator of random 8-word passphrases (about 80 bits).
+- 🧱 **Passwords stay encrypted in memory** while the archive is open (best effort), and a revealed password hides again after 15 seconds.
+- 🧯 **Content Security Policy**: the browser itself blocks every network request from the page.
 
 ---
 
@@ -77,6 +81,8 @@ To reopen the archive: *Import*, pick the file, enter the password. That's it.
 - **Date added** and **expiry date**, both optional
 - Search, A→Z sorting on every column, combinable dropdown filters on each column, random 20-character password generator
 - One-click copy: the clipboard is cleared after 20 seconds
+- Eye button to reveal a password: it hides again by itself after 15 seconds
+- Exported files are named with date and time (`password-YYYY-MM-DD_HH-MM.ext`), so you can keep progressive versions
 
 <img width="1199" height="781" alt="Screenshot 2026-10-25 123755" src="https://github.com/user-attachments/assets/53705ba2-0819-436b-82ef-2fbd9234f343" />
 
@@ -103,16 +109,33 @@ A dedicated tab gives you the full picture:
 - Encryption uses your browser's **Web Crypto API**, the same technology that protects HTTPS connections. No third-party libraries.
 - Every encrypted save generates fresh random values: saving the same archive twice produces two different files.
 - Encrypted files don't state which algorithm they use: they contain only encrypted data.
-- Encrypted CSV and XLSX exports contain a single text column that must not be edited; the encrypted PDF is an archive copy and can't be re-imported.
+- Encrypted CSV and XLSX exports contain a single text column that must not be edited.
+- The archive format (`PWM2`) records its own version and iteration count in a header that is authenticated together with the data; archives from earlier versions (`PWM1`) can still be opened and are upgraded the next time you save.
+- A **Content Security Policy** makes the browser block every network request from the page.
+- While an archive is open, passwords are kept **encrypted in memory** with a random session key, and are decrypted only to show, copy, edit or export them. This is a best-effort extra layer, not a guarantee: whoever controls the browser or the page can still use the same functions.
+- In unencrypted CSV and XLSX exports, values starting with `=`, `+`, `-` or `@` get a leading apostrophe to prevent **formula injection** in spreadsheets (it is removed again when you re-import the file).
 
 ### ⚠️ Good to know
 
 - **Forgotten password = lost data.** There is no recovery, and that's the point.
 - The HTML file **doesn't save by itself**: if you close the page without exporting, changes are lost (the browser warns you).
-- **Unencrypted** exports write passwords in plain text: use them only when you really need to.
+- **Unencrypted** exports write passwords in plain text: use them only when you really need to (the app warns you and asks for confirmation first).
+- **Auto-lock:** after 3 minutes without activity the page releases the data (to reopen the archive you import it again with its password). If you have unsaved changes, to avoid losing them the data stays in memory but is hidden behind a lock screen until you save an encrypted archive or resume. Releasing data from the page does not guarantee physical erasure from RAM.
+- Archives saved in the new format cannot be opened by older copies of PortableKEY: keep the old archive until you have checked the new one.
 - No software can protect you from an already compromised computer (keyloggers, malware). Use PortableKEY on devices you trust.
 - The project hasn't undergone an independent security audit. The code is right there, readable: if you do this for a living, **review it and tell us what you find**.
 - Always download the file from a source you trust: a tampered copy is the real risk of any program, and here you can at least verify it.
+
+---
+
+## ✅ Verify your download
+
+The SHA-256 hash of each release is published in the release notes on GitHub. Before using a copy of `PortableKEY.html`, compute its hash and compare it with the one on the release page:
+
+- **Windows (PowerShell):** `Get-FileHash .\PortableKEY.html -Algorithm SHA256`
+- **macOS / Linux:** `shasum -a 256 PortableKEY.html`
+
+The two values must be identical. Take the reference hash from the release page on GitHub, not from the same place the file was handed to you: a matching hash only proves something if the hash itself comes from a trustworthy source.
 
 ---
 
@@ -149,6 +172,12 @@ No, on purpose. Fewer features, smaller attack surface, more code you can read i
 **Does it open KeePass `.kdbx` files?**
 No. You can export from KeePass to CSV and import that file into PortableKEY.
 
+**Can I open archives created by older versions?**
+Yes. Older `.pwm` files (300,000 iterations) still open, and are saved in the new format the next time you save. The opposite doesn't work: older copies of the app can't read new archives.
+
+**What does the password strength indicator tell me?**
+It is a rough estimate in bits, not a guarantee. For the encryption password the best option is a random passphrase: the *Generate phrase* button creates 8 words (about 80 bits). Write it down: it is never stored.
+
 ---
 
 ## 🤝 Contributing
@@ -160,6 +189,12 @@ The project is a single file: reading it, understanding it and improving it is w
 - 🌍 Want to add a language? Just add a new entry to the translations dictionary.
 
 Golden rule: **no external dependencies and no network requests**. If your change needs them, it isn't PortableKEY.
+
+---
+
+## 📄 License
+
+PortableKEY is free software, released under the **GNU General Public License v3.0**. See the [LICENSE](LICENSE) file.
 
 ---
 
