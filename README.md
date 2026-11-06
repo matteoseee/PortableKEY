@@ -49,13 +49,18 @@ Want to check that it sends nothing over the network? Open the file and search f
 - 🧠 **Password forgotten right after use**: it isn't saved in the file or in the browser. Keeping it safe is up to you.
 - 👁️ **Readable, unencrypted code**: inspect it with any text editor.
 - 🔄 **Import/export without lock-in**: CSV and XLSX in (KeePass exports supported); TXT, CSV, XLSX and `.pwm` archive out.
-- 📊 **Security summary**: MFA, weak and reused passwords, exposure by email, expirations and password age.
+- 📊 **Security summary**: MFA, weak and reused passwords, email domains, expirations and password age.
 - 🌍 **Italian and English**, with a clean interface.
 - ❓ **Guide**, on up-right corner there's always accessible guide in case you have any doubts.
 - 🌙 **Dark theme**, now with Light or Dark theme switch
-- ⏱️ **Auto-lock** after 3 minutes of inactivity.
+- ⏱️ **Auto-lock** after 2 minutes of inactivity, and a full wipe of the data after 10 more minutes of lock (unsaved changes included).
+- ☑️ **Multiple selection with group actions** (move to group, MFA on/off, set expiry, delete), **duplicate entry**, **quick expiry** buttons (+30/+60/+90 days, +6 months, +1 year) and a **Caps Lock warning** on password fields.
+- 🗂️ **Table or card view** of the list, your choice remembered; cards are comfortable on phones, with sorting and filters.
+- 🪟 **Pause when you leave the tab** (after 1 second): data hidden, *Resume* screen, 10 minutes from the switch to come back (even with no unsaved changes); then the data is released. Adds to the inactivity lock (2 + 10 minutes). Lists and summary are emptied from the page while locked.
+- ⚠️ **Warning if the page is opened from a website** instead of from a local file.
+- 🔔 **Unsaved-changes indicator** and a warning 15 seconds before the auto-lock, with a *Save now* button.
 - 🔑 **Help with strong passwords**: a strength indicator and a generator of random 8-word passphrases (about 80 bits).
-- 🧱 **Passwords stay encrypted in memory** while the archive is open (best effort), and a revealed password hides again after 15 seconds.
+- 🧱 **Everything that is not shown in the list stays encrypted in memory** while the archive is open (best effort): password, email, username, URL and notes. Only title, group, MFA and dates are kept in clear.
 - 🧯 **Content Security Policy**: the browser itself blocks every network request from the page.
 
 ---
@@ -79,9 +84,11 @@ To reopen the archive: *Import*, pick the file, enter the password. That's it.
 - Title, group, email, username, password, URL, notes
 - **MFA** column to track where you've enabled multi-factor authentication
 - **Date added** and **expiry date**, both optional
-- Search, A→Z sorting on every column, combinable dropdown filters on each column, random 20-character password generator
+- A deliberately minimal list (title, group, MFA, added and expiry dates): email, username, URL, password and notes appear only when you open an entry or copy them with one click
+- Search (title and group, the visible data), A→Z sorting and combinable dropdown filters on every visible column, configurable password generator (length, character types, ambiguous characters, or a random passphrase)
 - One-click copy: the clipboard is cleared after 20 seconds
-- Eye button to reveal a password: it hides again by itself after 15 seconds
+- Eye button on the password fields of the entry form and of the encryption dialog (there is none in the list, which only has copy buttons)
+- Strength indicator on every entry password (it never blocks anything), with a warning when the password is reused in other entries
 - Exported files are named with date and time (`password-YYYY-MM-DD_HH-MM.ext`), so you can keep progressive versions
 
 <img width="1199" height="781" alt="Screenshot 2026-10-25 123755" src="https://github.com/user-attachments/assets/53705ba2-0819-436b-82ef-2fbd9234f343" />
@@ -92,8 +99,8 @@ To reopen the archive: *Import*, pick the file, enter the password. That's it.
 A dedicated tab gives you the full picture:
 - percentage of accounts with **MFA**
 - percentage of **weak** passwords (under 12 characters) and **reused** ones
-- **exposure by email address and domain**: how many accounts fall if a single mailbox is compromised
-- **username report**: which usernames are reused across accounts
+- **reused and weak password lists**: only the titles of the affected accounts, flagged in red with a warning triangle
+- **email domain distribution**: how many accounts use addresses on the same domain (domains are counted through one-way fingerprints; at most one email per displayed domain is decrypted, only to write its name)
 - **expiry report**: expired, expiring within 30 and 90 days
 - **age report**: how long it has been since you changed certain passwords
 
@@ -112,7 +119,7 @@ A dedicated tab gives you the full picture:
 - Encrypted CSV and XLSX exports contain a single text column that must not be edited.
 - The archive format (`PWM2`) records its own version and iteration count in a header that is authenticated together with the data; archives from earlier versions (`PWM1`) can still be opened and are upgraded the next time you save.
 - A **Content Security Policy** makes the browser block every network request from the page.
-- While an archive is open, passwords are kept **encrypted in memory** with a random session key, and are decrypted only to show, copy, edit or export them. This is a best-effort extra layer, not a guarantee: whoever controls the browser or the page can still use the same functions.
+- While an archive is open, password, email, username, URL and notes are kept **encrypted in memory** with a random session key, and are decrypted only to copy, edit, export or build the Summary. Title, group, MFA and dates stay in clear because the list shows them. This is a best-effort extra layer, not a guarantee: whoever controls the browser or the page can still use the same functions.
 - In unencrypted CSV and XLSX exports, values starting with `=`, `+`, `-` or `@` get a leading apostrophe to prevent **formula injection** in spreadsheets (it is removed again when you re-import the file).
 
 ### ⚠️ Good to know
@@ -120,7 +127,14 @@ A dedicated tab gives you the full picture:
 - **Forgotten password = lost data.** There is no recovery, and that's the point.
 - The HTML file **doesn't save by itself**: if you close the page without exporting, changes are lost (the browser warns you).
 - **Unencrypted** exports write passwords in plain text: use them only when you really need to (the app warns you and asks for confirmation first).
-- **Auto-lock:** after 3 minutes without activity the page releases the data (to reopen the archive you import it again with its password). If you have unsaved changes, to avoid losing them the data stays in memory but is hidden behind a lock screen until you save an encrypted archive or resume. Releasing data from the page does not guarantee physical erasure from RAM.
+- **Quick lock:** press `Esc` twice or `Ctrl+Shift+L`: with no unsaved changes the data leaves the page immediately; otherwise the lock screen appears.
+- **Read-only:** a header button (or the *Open as read-only* box when entering the password) turns off editing, importing and exporting for the session, to consult the archive on a computer that is not yours. It turns off only by locking and reopening the archive.
+- **User only:** the page ignores clicks and keys generated by scripts or extensions and, while locked, accepts only *Resume* and *Save / Export*. Hardening, not a guarantee: an extension with elevated permissions, or a program simulating input at operating-system level, looks the same as a user.
+- **Safer use:** open the file in a private window or a dedicated browser profile **with no extensions** (an extension with access to pages can read their content; on Firefox they also run on local files). Turn on disk encryption and, if you can, disable hibernation: temporary copies of data in memory cannot be zeroed from a web page and might end up on disk.
+- **Clipboard and revealed passwords:** copied passwords are cleared after 20 seconds (or immediately on lock); passwords shown with the eye button hide again after 20 seconds. The browser may refuse to clear the clipboard if the page is in the background.
+- **Auto-lock:** after 2 minutes without activity the page releases the data (to reopen the archive you import it again with its password). If you have unsaved changes, to avoid losing them the data stays in memory but is hidden behind a lock screen, with a countdown. **If you do nothing for 10 more minutes (12 in total), the data and the unsaved changes are deleted**: save an encrypted archive or resume before that.
+- **Hidden tab:** if you leave the tab for at least 1 second, the session is paused (data hidden, *Resume* screen). If you are back within 20 seconds, the page reopens by itself; *Resume* restores your search and position. You have 10 minutes from the switch to resume, with or without unsaved changes; after that the data is released from the page. It never exceeds 12 minutes from the last activity.
+- **Opened from a website:** if the address is `http(s)://`, a banner warns that the site could have modified the file. Download it from a trusted source, verify its hash and open it locally. Releasing data from the page does not guarantee physical erasure from RAM.
 - Archives saved in the new format cannot be opened by older copies of PortableKEY: keep the old archive until you have checked the new one.
 - No software can protect you from an already compromised computer (keyloggers, malware). Use PortableKEY on devices you trust.
 - The project hasn't undergone an independent security audit. The code is right there, readable: if you do this for a living, **review it and tell us what you find**.
