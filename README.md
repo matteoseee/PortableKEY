@@ -182,7 +182,7 @@ A dedicated tab gives you the full picture:
 
 The SHA-256 hash of each release is published here and in the release notes on GitHub. 
 
-**SHA-256 file hash:** `215fe2064700f3ef0a573de70aeebd0d8a932bd5af69f90214db2d5a9c5d334d`
+**Hash:** `215fe2064700f3ef0a573de70aeebd0d8a932bd5af69f90214db2d5a9c5d334d`
 
 Before using a copy of `PortableKEY.html`, compute its hash and compare it with the one on the release page:
 
