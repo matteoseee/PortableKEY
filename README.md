@@ -81,6 +81,9 @@ Want to check that it sends nothing over the network? Open the file and search f
 - 👁️ **Readable, unencrypted code**: inspect it with any text editor.
 - 🔄 **Import/export without lock-in**: CSV and XLSX in (KeePass exports supported); TXT, CSV, XLSX and `.pwm` archive out.
 - 📊 **Security summary**: MFA, weak and reused passwords, email domains, expirations and password age.
+- 📱 **Phone friendly**: on narrow screens the menu becomes a slide-in drawer opened with the three-line button.
+- 📅 **Due dates**: side-menu section with expiry and password-age reports and quick edit.
+- 🗂️ **Groups**: side-menu section to see, rename (or merge) and remove groups.
 - 🌍 **Italian and English**, with a clean interface.
 - ❓ **Guide**, on up-right corner there's always accessible guide in case you have any doubts.
 - 🌙 **Dark theme**, now with Light or Dark theme switch
@@ -118,6 +121,11 @@ To reopen the archive: *Import*, pick the file, enter the password. That's it.
 - A deliberately minimal list (title, group, MFA, added and expiry dates): email, username, URL, password and notes appear only when you open an entry or copy them with one click
 - Search (title and group, the visible data), A→Z sorting and combinable dropdown filters on every visible column, configurable password generator (length, character types, ambiguous characters, or a random passphrase)
 - One-click copy: the clipboard is cleared after 20 seconds
+- The Content-Security-Policy pins the app's code by hash (`script-src 'sha256-…'`): the browser refuses to run any other script, and a modified file does not start. No external dependencies, no network access. If you edit the script you must recalculate that hash, and keep LF line endings (use `*.html -text` in `.gitattributes`)
+- Side menu (same look as PortableBUDGET) with list, summary, groups with counts (click to filter), archive status, Lock and Read only; **Ctrl+K** jumps to the search box
+- **Open website** button on every entry: new tab without link back to the app, only http/https, with warnings for http, look-alike (IDN) domains, numeric addresses and credentials in the address
+- **Import preview** when merging into an open archive: new, different and already-present entries, with the choice of what to add or update
+- Plain-text export requires retyping a random code and produces a file named `…IN-CHIARO…`/`…PLAINTEXT…`
 - Eye button on the password fields of the entry form and of the encryption dialog (there is none in the list, which only has copy buttons)
 - Strength indicator on every entry password (it never blocks anything), with a warning when the password is reused in other entries
 - Exported files are named with date and time (`password-YYYY-MM-DD_HH-MM.ext`), so you can keep progressive versions
@@ -138,13 +146,13 @@ A dedicated tab gives you the full picture:
 
 **Smartphone** 📱
 
-On screens narrower than 760 px the interface switches to a phone layout, with no separate app and no extra file:
+On screens narrower than 900 px the interface switches to a phone layout, with no separate app and no extra file:
 
-a top bar with the three-line button, the search and the quick New button
-the side menu becomes a slide-in drawer (List, Due dates, Summary, Groups, archive status, Lock, Read only, language and theme); it closes by tapping outside it, and always closes on Lock
-card view of the list, with the same actions as on the computer (copy, open website, edit)
-Due dates, Summary and Groups adapt to the narrow width, and the light and dark themes work the same
-the same protections apply: auto-lock, lock when the tab goes to the background, clipboard cleared after 20 seconds, no network access
+- a **top bar** with the three-line button, the search and the quick **New** button
+- the side menu becomes a **slide-in drawer** (List, Due dates, Summary, Groups, archive status, Lock, Read only, language and theme); it closes by tapping outside it, and always closes on Lock
+- **card view** of the list, with the same actions as on the computer (copy, open website, edit)
+- Due dates, Summary and Groups adapt to the narrow width, and the light and dark themes work the same
+- the same protections apply: auto-lock, lock when the tab goes to the background, clipboard cleared after 20 seconds, no network access
 
 Tested so far on emulated phone screens in Chromium; real devices, Safari on iOS included, are still to be verified, so please report anything odd.
 
@@ -193,7 +201,7 @@ Tested so far on emulated phone screens in Chromium; real devices, Safari on iOS
 
 The SHA-256 hash of each release is published here and in the release notes on GitHub. 
 
-**Hash:** `215fe2064700f3ef0a573de70aeebd0d8a932bd5af69f90214db2d5a9c5d334d`
+**Hash:** `8b9b652ba05bfed72a21c1d0ea780621126269c928dfffa6c9dfe245d4d46571`
 
 Before using a copy of `PortableKEY.html`, compute its hash and compare it with the one on the release page:
 
@@ -265,3 +273,4 @@ PortableKEY is free software, released under the **GNU General Public License v3
 ---
 
 <p align="center"><b>PortableKEY</b><br>One file. Your code. Your keys. 🔑</p>
+ding README.md…]()
