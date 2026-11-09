@@ -197,8 +197,14 @@ Before using a copy of `PortableKEY.html`, compute its hash and compare it with 
 - **Windows (PowerShell):** `Get-FileHash .\PortableKEY.html -Algorithm SHA256`
 - **macOS / Linux:** `shasum -a 256 PortableKEY.html`
 
-
 The two values must be identical. Take the reference hash from the release page on GitHub, not from the same place the file was handed to you: a matching hash only proves something if the hash itself comes from a trustworthy source.
+
+---
+
+## 🫆 Security Scan
+
+This release is scanned with Virus Total services, and it's security report is fully available at the link below:
+https://www.virustotal.com/gui/file/8b9b652ba05bfed72a21c1d0ea780621126269c928dfffa6c9dfe245d4d46571
 
 ---
 
@@ -262,4 +268,3 @@ PortableKEY is free software, released under the **GNU General Public License v3
 ---
 
 <p align="center"><b>PortableKEY</b><br>One file. Your code. Your keys. 🔑</p>
-ding README.md…]()
