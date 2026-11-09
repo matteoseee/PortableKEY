@@ -19,17 +19,6 @@ PortableKEY requires no installation, no account, no internet but only a browser
 
 <img width="1342" height="882" alt="PortableKey_Workflow" src="https://github.com/user-attachments/assets/e2f24e47-5844-40f2-bf8c-229619fa5666" />
 
-### 📋 The same flow as a table
-
-| # | Step | What you do | What PortableKEY does | Master password |
-|---|------|-------------|------------------------|-----------------|
-| 1 | Open the file | Open `PortableKEY.html` from your disk | Runs offline: the CSP blocks every network request. A banner warns if the file was opened from a website | — |
-| 2 | New or open? | **New**: start with an empty archive. **Open**: *Import* a `.pwm` (or CSV, XLSX, TXT) | — | — |
-| 3 | Open an archive | Type the password; optionally turn on the *Read only* switch | Derives the key (PBKDF2-SHA256, 1,000,000 iterations) and decrypts with AES-256-GCM; the header is authenticated | Used once, then **forgotten** |
-| 4 | Work | Search, filter, table or cards, summary; new, edit, duplicate, delete, multi-select; copy; generator | Password, email, username, URL and notes stay **encrypted in memory** with a random session key; title, group, MFA and dates are shown in clear. Clipboard cleared after 20 s | Not kept |
-| 5 | Save / Export | Choose the format: `.pwm` (encrypted, recommended), or CSV, XLSX, TXT | Asks for a **new** password (12+ characters, confirmed), then encrypts with AES-256-GCM using a fresh salt and IV. Plain-text exports show a warning first | Used once, then **forgotten** |
-| 6 | Next time | Open the new file with its password | Back to step 3 | — |
-
 ### 🛡️ Protections while the page is open
 
 | Protection | Trigger | What happens |
