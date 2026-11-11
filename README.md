@@ -5,7 +5,7 @@
 
 **EN English**
 
-**The standalone multidevice password manager**
+**The standalone multi device, multi OS, password manager**
 
 PortableKEY only requires a browser, no installation, no account, no internet. Open it, use it, carry it with you.
 
@@ -38,6 +38,12 @@ PortableKEY only requires a browser, no installation, no account, no internet. O
 | Entries (password, email, username, URL, notes) | Encrypted (AES-256-GCM) | Encrypted with a session key | Never |
 | Title, group, MFA, dates | Encrypted | In clear (the list shows them) | Never |
 | Preferences (language, theme, table/cards) | No | No | Yes: only these |
+
+---
+
+## 🌐 Compatibility
+
+Works with any modern, up-to-date browsers, on any OS with a GUI.
 
 ---
 
@@ -115,7 +121,7 @@ On screens narrower than 900 px the interface switches to a phone layout, with n
 - Due dates, Summary and Groups adapt to the narrow width, and the light and dark themes work the same
 - the same protections apply: auto-lock, lock when the tab goes to the background, clipboard cleared after 20 seconds, no network access
 
-Tested so far on emulated phone screens in Chromium; real devices, Safari on iOS included, are still to be verified, so please report anything odd.
+Tested on real devices and emulated phone screens in Chromium, Safari on iOS included, are still to be verified, so please report anything odd.
 
 <img width="2400" height="1500" alt="features-phone" src="https://github.com/user-attachments/assets/15a0ef12-1985-43f4-bca8-f9cc0e3d8e28" />
 
@@ -127,9 +133,14 @@ Tested so far on emulated phone screens in Chromium; real devices, Safari on iOS
 - Every encrypted save generates fresh random values: saving the same archive twice produces two different files.
 - Encrypted files don't state which algorithm they use: they contain only encrypted data.
 - Encrypted CSV and XLSX exports contain a single text column that must not be edited.
-- The archive format (`PWM2`) records its own version and iteration count in a header that is authenticated together with the data; archives from earlier versions (`PWM1`) can still be opened and are upgraded the next time you save.
+- The archive format (`PWM4`, since 1.2.0) is an encrypted index (title, group, MFA, dates) followed by one separately encrypted record per field of every entry (password, email, username, URL, notes), each padded to a multiple of 32 bytes so that record lengths do not reveal the length of a password, all under keys derived from your password with PBKDF2 and HKDF. A keyed HMAC over all the records is checked when the file is opened, so a modified or damaged archive is rejected. Archives from earlier versions (`PWM1`, `PWM2`) can still be opened and are upgraded the next time you save.
 - A **Content Security Policy** makes the browser block every network request from the page.
-- While an archive is open, password, email, username, URL and notes are kept **encrypted in memory** with a random session key, and are decrypted only to copy, edit, export or build the Summary. Title, group, MFA and dates stay in clear because the list shows them. This is a best-effort extra layer, not a guarantee: whoever controls the browser or the page can still use the same functions.
+- While an archive is open, password, email, username, URL and notes are kept **encrypted in memory** and are decrypted only to copy, edit, export or build the Summary. Opening a current-format file (`PWM4`) decrypts **only the index**: the sensitive fields stay encrypted exactly as stored in the file (copying a field decrypts only that field), and the keys are non-extractable Web Crypto keys. Archives in the older formats (`PWM1`/`PWM2`) have to be decrypted as a whole once when opened (then re-encrypted entry by entry); saving upgrades them. Saving re-encrypts one entry at a time. Title, group, MFA and dates stay in clear because the list shows them. This is a best-effort extra layer, not a guarantee: whoever controls the browser or the page can still use the same functions.
+- On computers with a mouse, the **master password field is a secure field** (since 1.2.0): each key you press is turned into a byte right away and kept in a byte array that is zeroed as soon as the key has been derived, so the full password never exists as text in the page (the field shows only dots and the key derivation receives the bytes directly). It accepts printable ASCII only, with no paste, eye button or generator; for accents, special symbols, phones and tablets the page uses the normal field, and a button in the password window switches between the two. Files are interchangeable between the two fields. A single typed character still exists briefly as a one-character string in the browser, and a script or extension that controls the page can still read your keystrokes.
+- **Editing is on demand** (since 1.2.0): opening an entry decrypts nothing. Secret fields are placeholders; **Show** decrypts just that field and draws it on a canvas from its bytes (never as one text string, and not as text in the page), then hides it after 20 seconds, on closing and on locking. **Change** opens a box for that field only; untouched fields stay encrypted as they are. Complex scripts (Arabic, Indic…) are drawn character by character without shaping.
+- **Secure field for the entry password** (since 1.2.0): when you type or generate a password for an entry (mouse computers), it stays in a zeroed byte buffer, is drawn on a canvas when you press the eye, and goes to encryption as bytes. ASCII only, no paste. Copying to the clipboard is the one step that still needs a string.
+- **Secure/Standard switch** on the entry password (new entries and Change): Secure is the default on mouse computers; the **Paste** button reads the clipboard as bytes (never a string), accepts one line of ASCII only and then clears the clipboard. Standard allows accents and normal paste but the password becomes text in the browser.
+- **"Change" opens a dedicated window for one field** (since 1.2.0): it shows only that field and its tools; **Apply** puts the new value on hold (the form shows a "Changed" label and **Cancel change**) and nothing is encrypted until you press Save entry. Empty + Apply deletes the field.
 - In unencrypted CSV and XLSX exports, values starting with `=`, `+`, `-` or `@` get a leading apostrophe to prevent **formula injection** in spreadsheets (it is removed again when you re-import the file).
 
 ---
@@ -137,11 +148,11 @@ Tested so far on emulated phone screens in Chromium; real devices, Safari on iOS
 ## ✅ Verify your download
 
 The SHA-256 hash of each release is published here and in the release notes on GitHub. 
-
-**Hash:** `8b9b652ba05bfed72a21c1d0ea780621126269c928dfffa6c9dfe245d4d46571`
-
+ 
+**Hash:** `43d4124aa6605277da1164c775a4cc09db1cbcb8533aa489426334694cf3e0f8`
+ 
 Before using a copy of `PortableKEY.html`, compute its hash and compare it with the one on the release page:
-
+ 
 - **Windows (PowerShell):** `Get-FileHash .\PortableKEY.html -Algorithm SHA256`
 - **macOS / Linux:** `shasum -a 256 PortableKEY.html`
 
@@ -166,12 +177,6 @@ https://www.virustotal.com/gui/file/8b9b652ba05bfed72a21c1d0ea780621126269c928df
 | TXT | ✅ (if encrypted) | ✅ | ✅ |
 
 Import detects encrypted files on its own and asks for the password. Column headers can be in Italian or English, including those from KeePass exports.
-
----
-
-## 🌐 Compatibility
-
-Works with modern, up-to-date browsers (Chrome, Edge, Firefox, Safari). No plugins, no extensions, no apps to install.
 
 ---
 
@@ -232,19 +237,19 @@ Works with modern, up-to-date browsers (Chrome, Edge, Firefox, Safari). No plugi
 
 **Where are my passwords stored?**
 Only where you save them, in the file you export. While you use it they stay in the page's memory and disappear when you close it.
-
+ 
 **Can I run it from a USB stick?**
 Yes, that's what it's for. Remember to export the updated archive before closing.
-
+ 
 **Does it autofill forms or integrate with the browser?**
 No, on purpose. Fewer features, smaller attack surface, more code you can read in one evening.
-
+ 
 **Does it open KeePass `.kdbx` files?**
 No. You can export from KeePass to CSV and import that file into PortableKEY.
-
+ 
 **Can I open archives created by older versions?**
-Yes. Older `.pwm` files (300,000 iterations) still open, and are saved in the new format the next time you save. The opposite doesn't work: older copies of the app can't read new archives.
-
+Yes. Older `.pwm` files (`PWM1` with 300,000 iterations, `PWM2`) still open, and are saved in the new format (`PWM4`) the next time you save. The opposite doesn't work: older copies of the app can't read new archives.
+ 
 **What does the password strength indicator tell me?**
 It is a rough estimate in bits, not a guarantee. For the encryption password the best option is a random passphrase: the *Generate phrase* button creates 8 words (about 80 bits). Write it down: it is never stored.
 
