@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!-- PortableKEY v1.1.0 - https://github.com/matteoseee/PortableKEY - GNU General Public License v3.0 -->
+<!-- PortableKEY v1.2.0 - https://github.com/matteoseee/PortableKEY - GNU General Public License v3.0 -->
 <html lang="it" translate="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="google" content="notranslate">
 <!-- CSP: nessun accesso di rete dalla pagina (connect-src, img-src, frame, font, script e stili esterni bloccati). Script e stili inline restano ammessi perché il programma è un unico file, modificabile con un editor di testo. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-+c4+Eoltg+IHptQ63qtTvqvWYVJmEBhVOz/xdVRSFgQ='; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-eIfZLIxFO4/b8LFfioNTK4xHUJaeZDXVDy8qdrSpDRw='; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <title>PortableKEY</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2032%2032%27%3E%3Crect%20width=%2732%27%20height=%2732%27%20rx=%277%27%20fill=%27%230e3d38%27/%3E%3Cg%20fill=%27none%27%20stroke=%27%23fff%27%20stroke-width=%272.6%27%20stroke-linecap=%27round%27%20stroke-linejoin=%27round%27%3E%3Ccircle%20cx=%2711%27%20cy=%2716%27%20r=%275%27/%3E%3Cpath%20d=%27M16%2016h11M22.5%2016v4.5M27%2016v3%27/%3E%3C/g%3E%3C/svg%3E">
 <style>
@@ -43,7 +43,7 @@ td{padding:9px 8px;border-bottom:1px solid var(--row);max-width:230px;overflow:h
 .hrw{padding:0}.hero{background:var(--hero);color:#fff;border:0;border-radius:20px;padding:26px 28px;text-align:left}.hero h2{font-size:26px;margin:0 0 8px;color:#fff}.hero p{color:var(--herot);max-width:660px;margin:0 0 18px;line-height:1.5}.hero .row{flex-wrap:wrap;gap:8px}.hero .btn{background:#fff;color:#17201d;border-color:#fff;border-radius:12px}.hero .btn:hover{background:#e8f3f1}.hero .btn svg{stroke:#17201d}
 .empty{text-align:center;color:var(--m);padding:60px 10px}
 dialog{border:1px solid var(--b);border-radius:12px;padding:22px;width:min(500px,94vw);box-shadow:0 20px 50px #0002;color:var(--t);background:var(--bg)}
-dialog::backdrop{background:#0004}#dI{width:min(640px,94vw)}#imL{max-height:240px;overflow:auto;margin:8px 0}h3{margin:0 0 6px}
+dialog::backdrop{background:#0004}.seg2{display:inline-flex;max-width:100%;border:1px solid var(--b);border-radius:12px;overflow:hidden;margin:2px 0 8px}.seg2 button{flex:none;padding:0 22px;height:40px;border:0;background:var(--bg);font-weight:600;font-size:14px;cursor:pointer}.seg2 button+button{border-left:1px solid var(--b)}.seg2 button.on{background:var(--pri);color:var(--prit)}.pbtn{height:40px;white-space:nowrap;padding:0 14px;justify-content:center}.pwn{display:block;border-radius:10px;padding:8px 10px;font-size:12.5px;margin-top:8px;background:var(--soft);border-left:3px solid var(--a)}.pwn.wa{border-left-color:var(--w)}#dC,#dCr{width:min(480px,94vw)}#cd{margin:2px 0 10px}#cfv,#cfn{margin-top:4px}.mkv .chip{margin-left:auto;background:var(--a);color:#fff;border-radius:20px;padding:2px 9px;font-size:11px;font-weight:600;font-style:normal;line-height:18px}.mkr{display:flex;gap:8px;align-items:stretch;flex:1;min-width:0}.mkr>input,.mkr>textarea{flex:1;min-width:0;width:auto}.mkr>.btn{align-self:flex-start;white-space:nowrap;height:40px;padding:0 14px;justify-content:center}.mkr>.mkv{flex:1;min-width:0;display:flex;align-items:flex-start;box-sizing:border-box;min-height:40px;max-height:320px;overflow:auto;padding:9px 14px;border:1px solid var(--b);border-radius:10px;background:var(--bg);color:var(--t)}.mkr.ta>.mkv{min-height:64px}.mkv i{color:var(--m);font-style:italic;font-size:13px;line-height:22px}.mkv canvas{display:block;max-width:100%}.mkv .dt{letter-spacing:2px;line-height:22px}#epn{margin:6px 0 0}#dI{width:min(640px,94vw)}#imL{max-height:240px;overflow:auto;margin:8px 0}h3{margin:0 0 6px}
 label{display:block;font-size:12px;color:var(--m);margin:10px 0 4px}
 .row{display:flex;gap:8px;align-items:center}.end{justify-content:flex-end;margin-top:18px}
 #toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--t);color:var(--bg);padding:9px 16px;border-radius:8px;display:none;z-index:9}
@@ -61,7 +61,7 @@ label{display:block;font-size:12px;color:var(--m);margin:10px 0 4px}
 .ck{width:28px;padding-right:0!important}.sc{width:12px;height:12px;margin:0;padding:0;accent-color:var(--a);cursor:pointer;vertical-align:middle}tr.sel td,.card.sel{background:var(--hv)}.card.sel{border-color:var(--a)}
 .chd{display:flex;gap:10px;align-items:center}.chd .ct{flex:1;min-width:0}
 #bbar{position:sticky;top:0;z-index:5;flex-wrap:wrap;gap:6px;align-items:center;background:var(--bg);border:1px solid var(--a);border-radius:10px;padding:8px 10px;margin-bottom:12px}#bn{font-weight:600;margin-right:auto}.dng{color:var(--r);border-color:var(--r)}
-.capw{display:flex;gap:6px;align-items:center;color:var(--w);font-size:12px;margin-top:6px}.capw svg{width:15px;height:15px}
+.capw{display:flex;gap:6px;align-items:center;color:var(--w);font-size:12px;margin-top:6px}.capw svg{width:15px;height:15px}#dP.sec [data-a=pweye],#dP.sec [data-a=pgen]{display:none}
 .qx{flex-wrap:wrap;gap:6px;margin-top:8px}.qx .btn{padding:5px 10px;font-size:12px}
 @media (pointer:coarse){.sc{width:22px;height:22px}}
 /* Vista a riquadri, selettore di vista e adattamenti per schermi piccoli e touch */
@@ -97,7 +97,7 @@ body.mo #nav{transform:none;visibility:visible;transition:transform .2s ease}
 /* Blocca e Sola lettura: le due azioni di protezione, raggruppate in un riquadro */
 .sg{display:inline-flex;align-items:center;gap:4px;padding:3px;border:1px solid var(--b);border-radius:11px;background:var(--bar)}
 .rob{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--w);color:var(--w);border-radius:8px;padding:7px 12px;background:var(--bg);white-space:nowrap}
-body.ro [data-a=new],body.ro [data-a=import],body.ro [data-a=export],body.ro [data-a=dup],body.ro [data-a=del],body.ro [data-a=ro],body.ro #bbar,body.ro .sc,body.ro #wn,#dE.ro [data-a=esave],#dE.ro [data-a=epgen],#dE.ro .qx,#dE.ro details.go{display:none!important}
+body.ro [data-a=new],body.ro [data-a=import],body.ro [data-a=export],body.ro [data-a=dup],body.ro [data-a=del],body.ro [data-a=ro],body.ro #bbar,body.ro .sc,body.ro #wn,#dE.ro [data-a=esave],#dE.ro [data-a=epgen],#dE.ro .qx,#dE.ro details.go,#dE.ro [data-a=fchg],#dE.ro [data-a=fcan]{display:none!important}
 </style></head><body>
 <div id="nf" role="alert" style="display:none"><span data-t="nfT"></span><button class="btn" data-a="nfx" data-t="nfOk"></button></div>
 <div class="mtop"><button class="mb" data-a="menu" data-ti="tMenu"><i data-i="menu"></i></button><span class="lg0"><i data-i="key"></i></span><b data-t="app"></b><span class="sp0"></span><button class="mb" data-a="msearch" data-ti="tSrch"><i data-i="search"></i></button><button class="mb pr" data-a="new" data-ti="tNewE"><i data-i="plus"></i></button></div>
@@ -133,10 +133,20 @@ body.ro [data-a=new],body.ro [data-a=import],body.ro [data-a=export],body.ro [da
 </main>
 
 <dialog id="dE"><h3 data-t="entry"></h3><input type="hidden" id="ei">
-<label data-t="title"></label><input id="et"><div class="row"><div style="flex:1"><label data-t="mail"></label><input id="eu" autocomplete="off" inputmode="email"></div><div style="flex:1"><label data-t="uname"></label><input id="es" autocomplete="off"></div></div>
-<label data-t="pwd"></label><div class="row"><input id="ep" type="password" autocomplete="new-password" data-in="epm" data-cap="#cwE">
+<label data-t="title"></label><input id="et"><label data-t="mail"></label><input id="eu" autocomplete="off" inputmode="email"><label data-t="uname"></label><input id="es" autocomplete="off">
+<label data-t="pwd"></label><div class="row"><div class="mkr" id="mkrp"></div></div><div id="epn" class="s"></div>
+<label>URL</label><input id="el"><label data-t="group"></label><input id="eg"><label data-t="notes"></label><textarea id="en" rows="3"></textarea>
+<div class="row"><div style="flex:1"><label data-t="lblD"></label><input id="ed" type="date"></div><div style="flex:1"><label data-t="lblX"></label><input id="ex" type="date"></div></div>
+<div class="row qx"><span class="s" data-t="qxL"></span><button type="button" class="btn" data-a="qx" data-arg="30d" data-t="q30"></button><button type="button" class="btn" data-a="qx" data-arg="60d" data-t="q60"></button><button type="button" class="btn" data-a="qx" data-arg="90d" data-t="q90"></button><button type="button" class="btn" data-a="qx" data-arg="6m" data-t="q6m"></button><button type="button" class="btn" data-a="qx" data-arg="1y" data-t="q1y"></button></div>
+<label style="display:flex;gap:8px;align-items:center;font-size:14px;color:var(--t);margin-top:12px"><input id="ef" type="checkbox" style="width:auto"><span data-t="mfaOn"></span></label>
+<div class="row end"><button class="btn" data-a="ecancel" data-t="cancel"></button><button class="btn pri" data-a="esave" data-t="saveE"></button></div></dialog>
+
+<dialog id="dC"><h3 id="ct"></h3><p id="cd" class="s"></p>
+<div id="cpw"><div><div id="eps" class="seg2" role="group"><button type="button" data-a="pmode" data-arg="1" data-t="pSecL"></button><button type="button" data-a="pmode" data-arg="0" data-t="pStdL"></button></div></div><div class="row"><input id="ep" type="password" autocomplete="new-password" data-in="epm" data-cap="#cwE">
+<button type="button" class="btn pbtn" data-a="ppaste" data-t="pPaste"></button>
 <button class="ib" data-ti="tShow" data-a="epeye"><i data-i="eye"></i></button>
 <button class="ib" data-ti="tGen" data-a="epgen"><i data-i="refresh"></i></button></div>
+<div id="cpn" class="pwn"></div>
 <div id="eq"><div class="bar"><i id="ebar"></i></div><div id="elab" class="s" style="min-height:18px"></div></div>
 <div id="cwE" class="capw" role="alert" style="display:none"><i data-i="warn"></i><span data-t="capsOn"></span></div>
 <details class="go"><summary data-t="goT"></summary>
@@ -145,11 +155,10 @@ body.ro [data-a=new],body.ro [data-a=import],body.ro [data-a=export],body.ro [da
 <div class="row" style="flex-wrap:wrap;gap:6px 16px;margin-top:8px"><label class="inl"><input type="checkbox" id="gcl" checked><span data-t="goL"></span></label><label class="inl"><input type="checkbox" id="gcu" checked><span data-t="goU"></span></label><label class="inl"><input type="checkbox" id="gcd" checked><span data-t="goD"></span></label><label class="inl"><input type="checkbox" id="gcs" checked><span data-t="goS"></span></label><label class="inl"><input type="checkbox" id="gcx" checked><span data-t="goX"></span></label></div></div>
 <div id="gW" style="display:none"><div class="row"><span class="s" data-t="goWn"></span><input id="gw" type="range" min="4" max="10" value="6" data-in="gopt"><b id="gwv">6</b></div>
 <div class="row" style="flex-wrap:wrap;gap:6px 16px;margin-top:8px"><label class="inl"><input type="checkbox" id="gcap"><span data-t="goCap"></span></label><label class="inl"><input type="checkbox" id="gnum"><span data-t="goNum"></span></label></div></div></details>
-<label>URL</label><input id="el"><label data-t="group"></label><input id="eg"><label data-t="notes"></label><textarea id="en" rows="3"></textarea>
-<div class="row"><div style="flex:1"><label data-t="lblD"></label><input id="ed" type="date"></div><div style="flex:1"><label data-t="lblX"></label><input id="ex" type="date"></div></div>
-<div class="row qx"><span class="s" data-t="qxL"></span><button type="button" class="btn" data-a="qx" data-arg="30d" data-t="q30"></button><button type="button" class="btn" data-a="qx" data-arg="60d" data-t="q60"></button><button type="button" class="btn" data-a="qx" data-arg="90d" data-t="q90"></button><button type="button" class="btn" data-a="qx" data-arg="6m" data-t="q6m"></button><button type="button" class="btn" data-a="qx" data-arg="1y" data-t="q1y"></button></div>
-<label style="display:flex;gap:8px;align-items:center;font-size:14px;color:var(--t);margin-top:12px"><input id="ef" type="checkbox" style="width:auto"><span data-t="mfaOn"></span></label>
-<div class="row end"><button class="btn" data-a="ecancel" data-t="cancel"></button><button class="btn pri" data-a="esave" data-t="saveE"></button></div></dialog>
+</div>
+<div id="cgn"><input id="cfv" autocomplete="off"><textarea id="cfn" rows="5"></textarea></div>
+<div id="cch" class="s" style="margin-top:8px"></div>
+<div class="row end" style="margin-top:12px"><button type="button" class="btn" data-a="ccancel" data-t="cancel"></button><button type="button" class="btn pri" data-a="capply" data-t="cApply"></button></div></dialog>
 
 <dialog id="dB"><h3 id="bt"></h3><p id="bp" class="s"></p>
 <div id="bG"><label data-t="group"></label><input id="bgi" list="bgl" autocomplete="off"><datalist id="bgl"></datalist></div>
@@ -162,6 +171,7 @@ body.ro [data-a=new],body.ro [data-a=import],body.ro [data-a=export],body.ro [da
 <label id="pro" class="rbx" style="display:none"><span class="rbi"><i data-i="eye"></i></span><span class="rbt"><b data-t="roLbl"></b><span class="s" data-t="roDsc"></span></span><input id="proc" class="sw" type="checkbox" role="switch"></label>
 <div id="pc"><label data-t="confirmPw"></label><div class="row"><input id="p2" type="password" autocomplete="new-password" data-cap="#cwP"><button type="button" class="ib" data-ti="tShow" data-a="pweye"><i data-i="eye"></i></button></div></div>
 <div id="cwP" class="capw" role="alert" style="display:none"><i data-i="warn"></i><span data-t="capsOn"></span></div>
+<div class="row" style="align-items:center;gap:8px;margin-top:8px"><span id="pst" class="s" style="flex:1"></span><button type="button" class="btn" id="psw" data-a="psec"></button></div>
 <div id="pe" style="color:var(--r);min-height:20px;margin-top:6px"></div>
 <div class="row end" style="margin-top:6px"><button class="btn" id="pn" data-t="cancel"></button><button class="btn pri" id="po" data-t="confirm"></button></div></dialog>
 
@@ -179,7 +189,7 @@ body.ro [data-a=new],body.ro [data-a=import],body.ro [data-a=export],body.ro [da
 
 <dialog id="dG"><div class="g"><div data-h="gd"></div>
 <div class="row" style="margin-top:12px;flex-wrap:wrap"><span class="s" data-t="tplT"></span><button class="btn" data-a="tpl" data-arg="csv"><i data-i="down"></i>CSV</button><button class="btn" data-a="tpl" data-arg="xlsx"><i data-i="down"></i>XLSX</button></div><div class="row end"><button class="btn pri" data-a="close" data-arg="#dG" data-t="close"></button></div></div></dialog>
-<dialog id="dC"><div class="g"><div data-h="cr"></div><div class="row end"><button class="btn pri" data-a="close" data-arg="#dC" data-t="close"></button></div></div></dialog>
+<dialog id="dCr"><div class="g"><div data-h="cr"></div><div class="row end"><button class="btn pri" data-a="close" data-arg="#dCr" data-t="close"></button></div></div></dialog>
 <div id="lk"><i data-i="lock"></i><h3 data-t="lkT"></h3><p class="s" data-t="lkM" style="max-width:440px"></p><p id="lkc" style="color:var(--r);font-weight:500;margin:0"></p><div class="row"><button class="btn pri" data-a="export" data-t="save"></button><button class="btn" data-a="resume" data-t="lkR"></button></div></div>
 <div id="wn" role="alert" style="display:none"><span id="wnt"></span><button class="btn pri" id="wns" data-a="export" data-t="wnSave"></button></div>
 <div id="toast"></div>
@@ -195,15 +205,15 @@ mfaOn:`MFA attiva`,mfa:`MFA`,yes:`Sì`,no:`No`,sum:`Riepilogo`,dueT:`Scadenze`,d
 tplT:`Scarica il modello per l’import:`,tplN:`modello-import`,tplEx:[`Email`,`Posta personale`,`nome@esempio.it`,`nomeutente`,`PasswordDiEsempio!2026`,`https://mail.esempio.it`,`Riga di esempio: cancellala`,`Sì`,`2026-01-15`,`2027-01-15`],
 dIns:`Inserimento`,dExp:`Scadenza`,lblD:`Data di inserimento (facoltativa)`,lblX:`Data di scadenza (facoltativa)`,stat:`Stato`,age:`Anzianità`,day:`giorni`,day1:`giorno`,mon:`mesi`,mon1:`mese`,yr:`anni`,yr1:`anno`,stExp:`scaduta da {n}`,stIn:`tra {n}`,today:`scade oggi`,rExpT:`Report scadenze`,rAgeT:`Report anzianità delle password`,rWithX:`account con data di scadenza`,rWithD:`account con data di inserimento`,noX:`Nessun account ha una data di scadenza: compila il campo “Scadenza” per vedere questo report.`,noD:`Nessun account ha una data di inserimento: compila il campo “Inserimento” per vedere questo report.`,eExp:`Scadute`,e30:`Entro 30 giorni`,e90:`Tra 31 e 90 giorni`,eLong:`Oltre 90 giorni`,a90:`Meno di 90 giorni`,a180:`90–180 giorni`,a365:`181–365 giorni`,aOld:`Oltre 1 anno`,aAvg:`Anzianità media`,more:`…e altri {n}`,
 mail:`Indirizzo email`,uname:`Username`,all:`Tutti`,blank:`(vuoto)`,noRes:`Nessuna voce corrisponde a ricerca e filtri.`,entries:`voci`,tTheme:`Tema chiaro / scuro`,sortT:`Clicca per ordinare A→Z (secondo clic: Z→A)`,clrT:`Azzera filtri e ricerca`,
-cr:`<h3>PortableKEY <span class="s">v1.1.0</span></h3><p class="s">Credits</p><h4>Sviluppatore</h4><p><a href="https://github.com/matteoseee" target="_blank" rel="noopener noreferrer">matteoseee</a></p><h4>Sito del progetto</h4><p><a href="https://github.com/matteoseee/PortableKEY" target="_blank" rel="noopener noreferrer">github.com/matteoseee/PortableKEY</a></p><h4>Licenza</h4><p><a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener noreferrer">GNU General Public License v3.0</a></p><p>PortableKEY è un software libero e open source: puoi usarlo, studiarlo, modificarlo e ridistribuirlo secondo i termini della GNU GPL versione 3.</p>`,tCred:`Informazioni e credits`,tMenu:`Menu`,tMenuX:`Chiudi il menu`,tSrch:`Cerca`,tNewE:`Nuova voce`,
+cr:`<h3>PortableKEY <span class="s">v1.2.0</span></h3><p class="s">Credits</p><h4>Sviluppatore</h4><p><a href="https://github.com/matteoseee" target="_blank" rel="noopener noreferrer">matteoseee</a></p><h4>Sito del progetto</h4><p><a href="https://github.com/matteoseee/PortableKEY" target="_blank" rel="noopener noreferrer">github.com/matteoseee/PortableKEY</a></p><h4>Licenza</h4><p><a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener noreferrer">GNU General Public License v3.0</a></p><p>PortableKEY è un software libero e open source: puoi usarlo, studiarlo, modificarlo e ridistribuirlo secondo i termini della GNU GPL versione 3.</p>`,tCred:`Informazioni e credits`,tMenu:`Menu`,tMenuX:`Chiudi il menu`,tSrch:`Cerca`,tNewE:`Nuova voce`,
 lkT:`Sessione bloccata per inattività`,lkM:`Hai modifiche non salvate: per non perderle i dati restano in memoria, ma sono nascosti. Salva un archivio cifrato per completare il blocco e rimuovere i dati dalla pagina, oppure riprendi a lavorare.`,lkR:`Riprendi`,autoLocked:`Bloccato per inattività: dati rimossi dalla pagina. Importa l’archivio per riaprirlo.`,lockedSaved:`Archivio salvato. Dati rimossi dalla pagina.`,migr:`archivio in formato precedente (300.000 iterazioni): salvalo di nuovo come archivio cifrato per rinforzarlo`,
 genP:`Genera frase`,genNote:`Annotala subito: non viene salvata da nessuna parte. Senza di essa non potrai riaprire l’archivio.`,weakQ:`La password risulta debole: se qualcuno ottiene il file potrebbe provare a indovinarla offline. Usarla comunque?`,plainQ:`Stai per salvare le password in chiaro, senza cifratura: chiunque abbia accesso al file potrà leggerle. Continuare?`,xWarn:`Attenzione: senza cifratura le password vengono scritte in chiaro nel file.`,sealErr:`Impossibile leggere una password in memoria: operazione annullata.`,sl0:`Debole`,sl1:`Discreta`,sl2:`Buona`,sl3:`Ottima`,
-short12:`meno di 12 caratteri: debole nel Riepilogo`,reuse1:`riusata in 1 altra voce`,reuseN:`riusata in {n} altre voci`,
+short12:`meno di 12 caratteri: debole nel Riepilogo`,reuse1:`riusata in 1 altra voce`,fShow:`Mostra`,fHide:`Nascondi`,fChg:`Cambia`,fAdd:`Aggiungi`,fEmpty:`vuoto`,fCan:`Annulla modifica`,fNew:`Nuovo valore (vuoto = elimina il campo)`,pKeep:`Password non modificata: {n} caratteri, resta cifrata`,fImg:`Valore mostrato come immagine`,cChg:`Cambia`,cAdd:`Aggiungi`,cDescKeep:`Il valore attuale resta cifrato finché non salvi la voce.`,cDescKeepP:`La password attuale ({n} caratteri) resta cifrata finché non salvi la voce.`,cDescM:`Hai già una modifica in sospeso per questo campo: quella che inserisci ora la sostituisce.`,cDescNew:`Questo campo è vuoto.`,cHint:`Lascia vuoto e premi Applica per eliminare il campo. La voce si salva con «Salva voce».`,cApply:`Applica`,cMod:`Modificata`,cDelN:`sarà eliminato`,pSecL:`Sicuro`,pStdL:`Standard`,pPaste:`Incolla`,pStdNote:`Campo standard: incolla e accenti ok, ma la password diventa un testo nel browser finché non viene liberato. Cambiare modalità svuota il campo.`,pNoText:`Negli appunti non c’è testo`,pDenied:`Lettura degli appunti non consentita o non disponibile: usa il campo Standard o digita la password`,pBad:`Il testo incollato contiene caratteri che il campo sicuro non accetta (accenti, simboli speciali, a capo). Non è stato inserito nulla: passa a Standard per incollarlo.`,pDone:`Incollata; appunti svuotati`,pEntSec:`Campo sicuro: solo caratteri ASCII, niente incolla. Il generatore scrive direttamente qui; l’occhio mostra la password come immagine.`,reuseN:`riusata in {n} altre voci`,
 rReuT:`Account con password riutilizzata`,rWeakT:`Account con password debole`,rPwAcc:`account con password`,lReu:`Password riutilizzata`,lWeak:`Password debole`,noReu:`Nessuna password riutilizzata.`,noWeak:`Nessuna password debole.`,
 lkC:`I dati e le modifiche non salvate verranno eliminati tra {t}`,lockExpired:`Blocco scaduto: dati e modifiche non salvate eliminati.`,
 goT:`Opzioni del generatore`,goChars:`Caratteri casuali`,goWords:`Frase di parole`,goLen:`Lunghezza`,goWn:`Parole`,goL:`Minuscole`,goU:`Maiuscole`,goD:`Numeri`,goS:`Simboli`,goX:`Escludi caratteri ambigui (0 O 1 l I)`,goCap:`Iniziali maiuscole`,goNum:`Aggiungi un numero`,goNone:`Seleziona almeno un tipo di carattere: ho riattivato le minuscole.`,stDirty:`Modifiche non salvate`,stClean:`Nessuna modifica da salvare`,stLast:`ultimo salvataggio {h}`,lkTb:`Sessione in pausa: hai lasciato la scheda`,lkMb:`I dati restano in memoria ma sono nascosti. Premi Riprendi per continuare: se non lo fai entro il tempo indicato, i dati vengono rimossi dalla pagina, comprese le modifiche non salvate. Se hai modifiche, puoi anche salvare un archivio cifrato.`,nfT:`Questa pagina è aperta da un sito web, non da un file sul tuo computer. Chi gestisce quel sito potrebbe averla modificata: per dati importanti scarica il file da una fonte fidata, verificane l’hash e aprilo in locale.`,nfOk:`Ho capito`,sortBy:`Ordina per`,fil:`Filtri`,fclr:`Azzera filtri`,vGrp:`Vista dell’elenco`,vTab:`Vista a tabella`,vCard:`Vista a riquadri`,copyOf:`Copia di`,tDup:`Duplica`,capsOn:`Bloc Maiusc attivo`,qxL:`Scadenza veloce, da oggi:`,q30:`+30 giorni`,q60:`+60 giorni`,q90:`+90 giorni`,q6m:`+6 mesi`,q1y:`+1 anno`,tSel:`Seleziona`,tSelAll:`Seleziona tutte le voci visibili`,selAll:`Seleziona tutte (visibili)`,bSel:`Selezionate:`,bGrp:`Sposta in gruppo`,bGrpH:`Lascia vuoto per togliere il gruppo.`,bExp:`Imposta scadenza`,bExpH:`Lascia vuoto per togliere la scadenza.`,bDel:`Elimina`,bClr:`Deseleziona`,bDone:`Voci modificate: {n}`,delN:`Eliminare le voci selezionate ({n})?`,
 wnT:`Blocco automatico tra {s} s: muovi il mouse o premi un tasto per restare.`,wnD:`Hai modifiche non salvate.`,wnSave:`Salva ora`,
-copied:`Copiato (sarà rimosso dagli appunti tra 20 s)`,needOne:`Inserisci almeno titolo, email, username o password`,delQ:`Eliminare questa voce?`,lockQ:`Ci sono modifiche non salvate. Bloccare e svuotare comunque?`,min12:`Usa almeno 12 caratteri.`,nomatch:`Le password non coincidono.`,
+copied:`Copiato (sarà rimosso dagli appunti tra 20 s)`,needOne:`Inserisci almeno titolo, email, username o password`,delQ:`Eliminare questa voce?`,lockQ:`Ci sono modifiche non salvate. Bloccare e svuotare comunque?`,min12:`Usa almeno 12 caratteri.`,secOn:`Campo sicuro: i caratteri diventano subito byte e la password non è mai conservata come testo. Solo ASCII, senza incolla né occhio.`,secOff:`Campo normale: accetta accenti, simboli e incolla.`,secToNormal:`Usa il campo normale`,secToSafe:`Usa il campo sicuro`,secAscii:`Nel campo sicuro sono ammessi solo caratteri ASCII (niente accenti). Per gli altri usa il campo normale.`,secMax:`Lunghezza massima raggiunta (128 caratteri).`,secPaste:`Incolla e inserimento automatico non sono disponibili nel campo sicuro.`,secKbd:`Questa tastiera non è compatibile con il campo sicuro: passo al campo normale, riscrivi la password.`,nomatch:`Le password non coincidono.`,
 encMsg:`Scegli la password per cifrare il file (almeno 12 caratteri). Non viene salvata da nessuna parte: conservala tu, senza non potrai riaprirlo.`,openMsg:`Archivio cifrato: inserisci la password per aprirlo.`,wrong:`Password errata o file danneggiato`,repQ:`OK = sostituisci i dati attuali\nAnnulla = aggiungi a quelli esistenti`,imported:`voci importate`,plT:`Salvataggio in chiaro`,plMsg:`Stai per scrivere tutte le password in chiaro, senza cifratura: chiunque abbia accesso al file potrà leggerle (comprese eventuali copie in cloud, backup o cronologia del computer). Usa questa opzione solo se è davvero necessario.`,plLbl:`Per continuare riscrivi il codice qui sotto (cambia a ogni volta)`,plBtn:`Salva in chiaro`,plTag:`IN-CHIARO`,plDel:`Elimina il file appena possibile e svuota il cestino`,tGo:`Apri sito`,noUrl:`Questa voce non ha un URL`,badUrl:`URL non valido`,badScheme:`Indirizzo non consentito: si aprono solo http e https`,goQ:`Aprire questo indirizzo in una nuova scheda?`,wHttp:`Connessione NON cifrata (http): password e dati possono essere intercettati`,wIdn:`Il dominio usa caratteri speciali (possibile sito che ne imita un altro): indirizzo reale {h}`,wIp:`È un indirizzo numerico, non il nome di un sito`,wCred:`L’indirizzo contiene nome utente o password prima del dominio: tecnica usata nel phishing`,imT:`Anteprima importazione`,imSum:`Nel file: {f} voci. Nell’archivio: {c}. Nuove: {n} · Diverse da quelle presenti: {d} · Già presenti uguali: {s}. La stessa voce si riconosce da titolo e gruppo; poi si confrontano tutti i campi tranne la data di inserimento.`,imSn:`Nuova`,imSd:`Diversa`,imSs:`Già presente`,imMn:`Aggiungi solo le nuove ({n})`,imMu:`Aggiungi le nuove e aggiorna le {d} diverse ({n})`,imMa:`Aggiungi tutte ({n}), anche i doppioni`,imMr:`Sostituisci tutto: cancella le {c} voci attuali`,impSkip:`saltate`,grpH:`Gruppi`,arOn:`Archivio aperto`,arOff:`Nessun archivio aperto`,alkT:`Blocco automatico dopo {n} minuti di inattività`,readErr:`Impossibile leggere il file`,unrec:`File non riconosciuto`,lkTp:`Blocco rapido attivato`,roBtn:`Sola lettura`,sgT:`Protezione dei dati`,roBadge:`Sola lettura`,tRo:`Sola lettura (si disattiva solo bloccando e riaprendo l’archivio)`,roQ:`Attivare la sola lettura?\nModifica, importazione ed esportazione verranno disattivate. Per tornare a modificare dovrai bloccare e riaprire l’archivio.`,roDirty:`Hai modifiche non salvate: salvale prima di attivare la sola lettura`,roOn:`Sola lettura attiva: azione non disponibile`,roLbl:`Sola lettura`,roDsc:`Consulta l’archivio senza poterlo modificare o esportare.`,pwOpenT:`Apri archivio`,roMerge:`sola lettura non attivata: i dati sono stati aggiunti a quelli esistenti`,roOnT:`Sola lettura attivata`,panicDone:`Blocco rapido: dati rimossi dalla pagina`,damaged:`File non valido o danneggiato (archivio incompleto o modificato)`,savedEnc:`File cifrato salvato`,savedPlain:`File salvato (non cifrato)`,
 gd:`<h3>Guida</h3>
 <h4>Come iniziare</h4><p>Il file funziona subito, anche vuoto: premi <b>Nuovo</b> e inserisci titolo, email, username, password, URL, gruppo e note. Il pulsante con le frecce nel campo password genera una password casuale; con “Opzioni del generatore” scegli lunghezza, tipi di caratteri (utile per i siti che rifiutano i simboli), esclusione dei caratteri ambigui oppure una frase di parole. Sotto il campo compare un indicatore di robustezza (non blocca nulla) che segnala anche se la password è già usata in altre voci. In alto a destra trovi il selettore della lingua (globo) e l’interruttore tema chiaro/scuro (sole/luna).</p>
@@ -220,15 +230,15 @@ mfaOn:`MFA enabled`,mfa:`MFA`,yes:`Yes`,no:`No`,sum:`Summary`,dueT:`Due dates`,d
 tplT:`Download the import template:`,tplN:`import-template`,tplEx:[`Email`,`Personal mail`,`name@example.com`,`username`,`ExamplePassword!2026`,`https://mail.example.com`,`Example row: delete it`,`Yes`,`2026-01-15`,`2027-01-15`],
 dIns:`Added`,dExp:`Expires`,lblD:`Date added (optional)`,lblX:`Expiry date (optional)`,stat:`Status`,age:`Age`,day:`days`,day1:`day`,mon:`months`,mon1:`month`,yr:`years`,yr1:`year`,stExp:`expired {n} ago`,stIn:`in {n}`,today:`expires today`,rExpT:`Expiry report`,rAgeT:`Password age report`,rWithX:`accounts have an expiry date`,rWithD:`accounts have a date added`,noX:`No account has an expiry date: fill in the “Expires” field to see this report.`,noD:`No account has a date added: fill in the “Added” field to see this report.`,eExp:`Expired`,e30:`Within 30 days`,e90:`In 31–90 days`,eLong:`More than 90 days`,a90:`Under 90 days`,a180:`90–180 days`,a365:`181–365 days`,aOld:`Over 1 year`,aAvg:`Average age`,more:`…and {n} more`,
 mail:`Email address`,uname:`Username`,all:`All`,blank:`(empty)`,noRes:`No entries match the search and filters.`,entries:`entries`,tTheme:`Light / dark theme`,sortT:`Click to sort A→Z (second click: Z→A)`,clrT:`Clear filters and search`,
-cr:`<h3>PortableKEY <span class="s">v1.1.0</span></h3><p class="s">Credits</p><h4>Developer</h4><p><a href="https://github.com/matteoseee" target="_blank" rel="noopener noreferrer">matteoseee</a></p><h4>Project website</h4><p><a href="https://github.com/matteoseee/PortableKEY" target="_blank" rel="noopener noreferrer">github.com/matteoseee/PortableKEY</a></p><h4>License</h4><p><a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener noreferrer">GNU General Public License v3.0</a></p><p>PortableKEY is a free and open source software: you can use, study, modify and redistribute it under the terms of the GNU GPL version 3.</p>`,tCred:`About and credits`,tMenu:`Menu`,tMenuX:`Close menu`,tSrch:`Search`,tNewE:`New entry`,
+cr:`<h3>PortableKEY <span class="s">v1.2.0</span></h3><p class="s">Credits</p><h4>Developer</h4><p><a href="https://github.com/matteoseee" target="_blank" rel="noopener noreferrer">matteoseee</a></p><h4>Project website</h4><p><a href="https://github.com/matteoseee/PortableKEY" target="_blank" rel="noopener noreferrer">github.com/matteoseee/PortableKEY</a></p><h4>License</h4><p><a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener noreferrer">GNU General Public License v3.0</a></p><p>PortableKEY is a free and open source software: you can use, study, modify and redistribute it under the terms of the GNU GPL version 3.</p>`,tCred:`About and credits`,tMenu:`Menu`,tMenuX:`Close menu`,tSrch:`Search`,tNewE:`New entry`,
 lkT:`Session locked due to inactivity`,lkM:`You have unsaved changes: to avoid losing them the data stays in memory, but hidden. Save an encrypted archive to complete the lock and remove the data from the page, or resume working.`,lkR:`Resume`,autoLocked:`Locked due to inactivity: data removed from the page. Import the archive to reopen it.`,lockedSaved:`Archive saved. Data removed from the page.`,migr:`archive in the previous format (300,000 iterations): save it again as an encrypted archive to strengthen it`,
 genP:`Generate phrase`,genNote:`Write it down now: it is not stored anywhere. Without it you won’t be able to reopen the archive.`,weakQ:`This password looks weak: if someone gets the file they could try to guess it offline. Use it anyway?`,plainQ:`You are about to save the passwords in plain text, without encryption: anyone with access to the file will be able to read them. Continue?`,xWarn:`Warning: without encryption the passwords are written in plain text in the file.`,sealErr:`Unable to read a password in memory: operation cancelled.`,sl0:`Weak`,sl1:`Fair`,sl2:`Good`,sl3:`Strong`,
-short12:`under 12 characters: weak in Summary`,reuse1:`reused in 1 other entry`,reuseN:`reused in {n} other entries`,
+short12:`under 12 characters: weak in Summary`,reuse1:`reused in 1 other entry`,fShow:`Show`,fHide:`Hide`,fChg:`Change`,fAdd:`Add`,fEmpty:`empty`,fCan:`Cancel change`,fNew:`New value (empty = delete the field)`,pKeep:`Password unchanged: {n} characters, stays encrypted`,fImg:`Value shown as an image`,cChg:`Change`,cAdd:`Add`,cDescKeep:`The current value stays encrypted until you save the entry.`,cDescKeepP:`The current password ({n} characters) stays encrypted until you save the entry.`,cDescM:`You already have a pending change for this field: what you enter now replaces it.`,cDescNew:`This field is empty.`,cHint:`Leave it empty and press Apply to delete the field. The entry is saved with “Save entry”.`,cApply:`Apply`,cMod:`Changed`,cDelN:`will be deleted`,pSecL:`Secure`,pStdL:`Standard`,pPaste:`Paste`,pStdNote:`Standard field: paste and accents work, but the password becomes text in the browser until it is freed. Switching mode clears the field.`,pNoText:`There is no text in the clipboard`,pDenied:`Clipboard reading is not allowed or not available: use the Standard field or type the password`,pBad:`The pasted text has characters the secure field does not accept (accents, special symbols, line breaks). Nothing was inserted: switch to Standard to paste it.`,pDone:`Pasted; clipboard cleared`,pEntSec:`Secure field: ASCII characters only, no paste. The generator writes straight into it; the eye shows the password as an image.`,reuseN:`reused in {n} other entries`,
 rReuT:`Accounts with a reused password`,rWeakT:`Accounts with a weak password`,rPwAcc:`accounts with a password`,lReu:`Password reused`,lWeak:`Password weak`,noReu:`No reused passwords.`,noWeak:`No weak passwords.`,
 lkC:`Data and unsaved changes will be deleted in {t}`,lockExpired:`Lock expired: data and unsaved changes deleted.`,
 goT:`Generator options`,goChars:`Random characters`,goWords:`Word phrase`,goLen:`Length`,goWn:`Words`,goL:`Lowercase`,goU:`Uppercase`,goD:`Numbers`,goS:`Symbols`,goX:`Exclude ambiguous characters (0 O 1 l I)`,goCap:`Capitalize words`,goNum:`Add a number`,goNone:`Select at least one character type: I turned lowercase back on.`,stDirty:`Unsaved changes`,stClean:`No changes to save`,stLast:`last saved {h}`,lkTb:`Session paused: you left the tab`,lkMb:`The data stays in memory but hidden. Press Resume to continue: if you do not within the time shown, the data is removed from the page, including unsaved changes. If you have changes, you can also save an encrypted archive.`,nfT:`This page is open from a website, not from a file on your computer. Whoever runs that site could have modified it: for important data, download the file from a trusted source, verify its hash and open it locally.`,nfOk:`Got it`,sortBy:`Sort by`,fil:`Filters`,fclr:`Clear filters`,vGrp:`List view`,vTab:`Table view`,vCard:`Card view`,copyOf:`Copy of`,tDup:`Duplicate`,capsOn:`Caps Lock is on`,qxL:`Quick expiry, from today:`,q30:`+30 days`,q60:`+60 days`,q90:`+90 days`,q6m:`+6 months`,q1y:`+1 year`,tSel:`Select`,tSelAll:`Select all visible entries`,selAll:`Select all (visible)`,bSel:`Selected:`,bGrp:`Move to group`,bGrpH:`Leave empty to remove the group.`,bExp:`Set expiry`,bExpH:`Leave empty to remove the expiry date.`,bDel:`Delete`,bClr:`Clear selection`,bDone:`Entries updated: {n}`,delN:`Delete the selected entries ({n})?`,
 wnT:`Auto-lock in {s} s: move the mouse or press a key to stay.`,wnD:`You have unsaved changes.`,wnSave:`Save now`,
-copied:`Copied (it will be cleared from the clipboard in 20 s)`,needOne:`Enter at least a title, email, username or password`,delQ:`Delete this entry?`,lockQ:`There are unsaved changes. Lock and clear anyway?`,min12:`Use at least 12 characters.`,nomatch:`The passwords don’t match.`,
+copied:`Copied (it will be cleared from the clipboard in 20 s)`,needOne:`Enter at least a title, email, username or password`,delQ:`Delete this entry?`,lockQ:`There are unsaved changes. Lock and clear anyway?`,min12:`Use at least 12 characters.`,secOn:`Secure field: each key becomes a byte right away and the password is never kept as text. ASCII only, no paste, no show button.`,secOff:`Normal field: accepts accents, symbols and paste.`,secToNormal:`Use the normal field`,secToSafe:`Use the secure field`,secAscii:`The secure field accepts only ASCII characters (no accents). Use the normal field for others.`,secMax:`Maximum length reached (128 characters).`,secPaste:`Paste and autofill are not available in the secure field.`,secKbd:`This keyboard is not compatible with the secure field: switching to the normal field, please retype the password.`,nomatch:`The passwords don’t match.`,
 encMsg:`Choose the password to encrypt the file (at least 12 characters). It is not stored anywhere: keep it yourself, without it you won’t be able to reopen the file.`,openMsg:`Encrypted archive: enter the password to open it.`,wrong:`Wrong password or damaged file`,repQ:`OK = replace the current data\nCancel = add to the existing entries`,imported:`entries imported`,plT:`Save as plain text`,plMsg:`You are about to write every password in plain text, without encryption: anyone with access to the file will be able to read them (including any cloud copies, backups or the computer’s history). Use this only if it is really necessary.`,plLbl:`To continue, type the code shown below (it changes every time)`,plBtn:`Save as plain text`,plTag:`PLAINTEXT`,plDel:`Delete the file as soon as possible and empty the recycle bin`,tGo:`Open website`,noUrl:`This entry has no URL`,badUrl:`Invalid URL`,badScheme:`Address not allowed: only http and https are opened`,goQ:`Open this address in a new tab?`,wHttp:`Connection is NOT encrypted (http): passwords and data can be intercepted`,wIdn:`The domain uses special characters (it may imitate another site): real address {h}`,wIp:`It is a numeric address, not a site name`,wCred:`The address has a user name or password before the domain: a technique used in phishing`,imT:`Import preview`,imSum:`In the file: {f} entries. In the archive: {c}. New: {n} · Different from existing: {d} · Already present, identical: {s}. The same entry is recognised by title and group; then all fields except the insertion date are compared.`,imSn:`New`,imSd:`Different`,imSs:`Already present`,imMn:`Add only the new ones ({n})`,imMu:`Add the new ones and update the {d} different ({n})`,imMa:`Add all ({n}), including duplicates`,imMr:`Replace everything: delete the {c} current entries`,impSkip:`skipped`,grpH:`Groups`,arOn:`Archive open`,arOff:`No archive open`,alkT:`Auto-lock after {n} minutes of inactivity`,readErr:`Unable to read the file`,unrec:`File not recognized`,lkTp:`Quick lock activated`,roBtn:`Read only`,sgT:`Data protection`,roBadge:`Read-only`,tRo:`Read-only (it turns off only by locking and reopening the archive)`,roQ:`Turn on read-only mode?\nEditing, importing and exporting will be disabled. To edit again you will have to lock and reopen the archive.`,roDirty:`You have unsaved changes: save them before turning on read-only mode`,roOn:`Read-only mode is on: action not available`,roLbl:`Read only`,roDsc:`Consult the archive without being able to edit or export it.`,pwOpenT:`Open archive`,roMerge:`read-only not turned on: the data was added to the existing entries`,roOnT:`Read-only mode on`,panicDone:`Quick lock: data removed from the page`,damaged:`Invalid or damaged file (incomplete or modified archive)`,savedEnc:`Encrypted file saved`,savedPlain:`File saved (not encrypted)`,
 gd:`<h3>Guide</h3>
 <h4>Getting started</h4><p>The tool works right away, even empty: press <b>New</b> and enter title, email, username, password, URL, group and notes. The arrows button in the password field generates a random password; with “Generator options” you choose the length, the character types (useful for sites that reject symbols), whether to exclude ambiguous characters, or a word phrase. A strength indicator under the field (it never blocks anything) also tells you if the password is already used in other entries. At the top right you’ll find the language selector (globe) and the light/dark theme switch (sun/moon).</p>
@@ -322,7 +332,7 @@ const reu=wp.filter(e=>cn.get(e.ph)>1).sort((a,b)=>cn.get(b.ph)-cn.get(a.ph)||(a
 /* Domini email: si raggruppa per impronta HMAC senza decifrare; si decifra una sola email per ciascuno dei (max 15) domini mostrati, solo per scriverne il nome. */
 const G=new Map();E.forEach(e=>{if(e.dh){if(!G.has(e.dh))G.set(e.dh,[]);G.get(e.dh).push(e)}});
 const GR=[...G.values()].sort((a,b)=>b.length-a.length||a[0].id-b[0].id),top=GR.slice(0,15);let names;
-try{names=await Promise.all(top.map(async x=>(await openS(x[0])).u.trim().toLowerCase().split('@').pop()))}catch{return toast(t('sealErr'))}if(e0!=epoch||view!='s'||locked)return;
+try{names=await Promise.all(top.map(async x=>(await openF(x[0],'u')).trim().toLowerCase().split('@').pop()))}catch{return toast(t('sealErr'))}if(e0!=epoch||view!='s'||locked)return;
 const D1=[...top.map((x,i)=>[names[i],x]).sort((a,b)=>b[1].length-a[1].length||CO.compare(a[0],b[0])),...GR.slice(15).map(x=>['',x])],nem=n-E.filter(e=>e.dh).length;
 const pw2=(L,lab,no)=>L.length?`<div class="tw"><table><thead><tr><th>${t('title')}</th><th>${t('stat')}</th></tr></thead><tbody>${L.slice(0,25).map(e=>`<tr><td>${esc(e.t)}</td><td class="bad">${ic('warn')}${lab}</td></tr>`).join('')}</tbody></table></div>`+(L.length>25?`<p class="s">${t('more').replace('{n}',L.length-25)}</p>`:''):`<p>${no}</p>`;
 v.innerHTML=`<div class="cards"><div class="cd"><div class="s">${t('stTot')}</div><div class="big">${n}</div></div>${cd(t('stMfa'),mf,n,'g')}${cd(t('stWeak'),weak.length,wp.length,'r')}${cd(t('stReuse'),reu.length,wp.length,'r')}</div>`
@@ -335,46 +345,51 @@ let TH='light';try{TH=localStorage.getItem('th')||(matchMedia('(prefers-color-sc
 function setTheme(v){TH=v;document.documentElement.dataset.theme=v;try{localStorage.setItem('th',v)}catch{}$('#thi').innerHTML=ic(v=='dark'?'sun':'moon')}
 function toggleTheme(){setTheme(TH=='dark'?'light':'dark')}
 /* ---- Password cifrate in memoria (difesa a più strati, best effort) ----
-   Durante l'uso ogni password è tenuta come Uint8Array cifrato (AES-GCM, chiave casuale di sessione NON esportabile, id della voce come dato associato).
-   Stesso trattamento per i campi non mostrati nell'elenco (email, username, URL, note), cifrati insieme in un unico blocco. Si decifra solo per copiare, modificare, esportare o costruire il riepilogo.
+   Durante l'uso ogni password è tenuta come Uint8Array cifrato (AES-GCM, chiave di sessione NON esportabile, id della voce come dato associato).
+   La chiave di sessione è casuale, oppure (aprendo un file PWM4 in un archivio vuoto) è la chiave derivata dal file: i record restano cifrati come nel file e non vengono mai decifrati in blocco.
+   Stesso trattamento per i campi non mostrati nell'elenco (email, username, URL, note), ognuno cifrato a parte: per copiare un campo si decifra solo quello. Si decifra per copiare, modificare, esportare o costruire il riepilogo.
    Per il report sui domini email si tiene anche l'impronta HMAC del dominio (non reversibile): per scrivere il nome dei domini mostrati si decifra al massimo un'email per dominio.
    Restano in chiaro titolo, gruppo, MFA e date (sono mostrati nell'elenco). Per i report sulle password restano lunghezza e un'impronta HMAC (chiave di sessione).
    Limiti: chi controlla il browser o la pagina può usare le stesse funzioni; la stringa in chiaro creata al momento dell'uso resta finché il motore JS la libera;
    la ricerca non guarda nei campi cifrati. Non è una cancellazione fisica della RAM. */
 let KP=null,saving=0;const SEC_F=['u','s','l','n'];
-function maskFields(){clearTimeout(rmT);$('#ep').type=$('#p1').type=$('#p2').type='password'}
+function maskFields(){clearTimeout(rmT);$('#ep').type=$('#p1').type=$('#p2').type='password';FK.forEach(fdHide);if(PV){PV=0;pRefresh()}}
 let rmT=0;const remask=()=>{clearTimeout(rmT);rmT=setTimeout(maskFields,20000)};
 const sk=()=>KP||(KP=Promise.all([crypto.subtle.generateKey({name:'AES-GCM',length:256},false,['encrypt','decrypt']),crypto.subtle.generateKey({name:'HMAC',hash:'SHA-256'},false,['sign'])]));
 const hex=u=>[...u].map(b=>b.toString(16).padStart(2,'0')).join('');
 const aad=(o,k)=>enc.encode(k+':'+o.id);
-async function sealF(o,k,txt){const[ky]=await sk(),iv=crypto.getRandomValues(new Uint8Array(12)),b=enc.encode(txt);try{const c=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv,additionalData:aad(o,k)},ky,b)),x=new Uint8Array(12+c.length);x.set(iv);x.set(c,12);return x}finally{b.fill(0)}}
-async function seal(o){const pw=o.p,sec={};let any=0;SEC_F.forEach(k=>{if(o[k]){sec[k]=o[k];any=1}delete o[k]});delete o.p;o.P=null;o.S=null;o.pl=0;o.ph='';
-if(pw){const[,h]=await sk(),b=enc.encode(pw);try{o.P=await sealF(o,'p',pw);o.ph=hex(new Uint8Array(await crypto.subtle.sign('HMAC',h,b)).slice(0,16));o.pl=[...pw].length}finally{b.fill(0)}}
-o.dh='';const em0=String(sec.u||'').trim();
-if(EMRE.test(em0)){const[,h]=await sk(),b=enc.encode('d:'+em0.toLowerCase().split('@').pop());try{o.dh=hex(new Uint8Array(await crypto.subtle.sign('HMAC',h,b)).slice(0,16))}finally{b.fill(0)}}
-if(any)o.S=await sealF(o,'f',JSON.stringify(sec));return o}
-const sealAll=async A=>{await Promise.all(A.map(seal));return A};
-async function openF(e,k,x){if(!x)return'';const[ky]=await sk();return dec.decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:x.slice(0,12),additionalData:aad(e,k)},ky,x.slice(12)))}
-const unseal=e=>openF(e,'p',e.P);
-async function openS(e){const j=e.S?JSON.parse(await openF(e,'f',e.S)):{};return{u:j.u||'',s:j.s||'',l:j.l||'',n:j.n||''}}
+/* Ogni campo sensibile (password, email, username, URL, note) è un blocco a sé: iv12 + AES-GCM, dato associato "<campo>:<id>". Il testo è riempito (4 byte di lunghezza vera + zeri) fino a multipli di 32 byte. */
+const FK=['p','u','s','l','n'];
+const pad=b=>{const o=new Uint8Array(Math.ceil((4+b.length)/32)*32);new DataView(o.buffer).setUint32(0,b.length);o.set(b,4);return o};
+const unp=o=>{const n=new DataView(o.buffer,o.byteOffset).getUint32(0);if(n>o.length-4)throw new Error('format');return o.subarray(4,4+n)};
+async function sealB(o,k,b){const[ky]=await sk(),iv=crypto.getRandomValues(new Uint8Array(12)),p=pad(b);try{const c=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv,additionalData:aad(o,k)},ky,p)),x=new Uint8Array(12+c.length);x.set(iv);x.set(c,12);return x}finally{p.fill(0)}}
+/* src+keep: campi della voce originale lasciati cifrati così come sono (stesso id) o ricifrati da byte a byte con il nuovo id (duplica). */
+async function seal(o,src,keep,pb){const[sy,h]=await sk(),F={p:null,u:null,s:null,l:null,n:null};o.pl=0;o.ph='';o.dh='';
+for(const k of FK){if(keep&&keep.has(k)){const x=src.F[k];if(src.id==o.id)F[k]=x;else{const b=await openB(sy,k+':'+src.id,x);try{F[k]=await sealB(o,k,b)}finally{b.fill(0)}}if(k=='p'){o.ph=src.ph;o.pl=src.pl}else if(k=='u')o.dh=src.dh;continue}
+if(k=='p'&&pb&&pb.length){F.p=await sealB(o,'p',pb);o.ph=await h16(h,pb);o.pl=pb.length;continue}const v=o[k];delete o[k];if(!v)continue;const b=enc.encode(v);try{F[k]=await sealB(o,k,b);if(k=='p'){o.ph=await h16(h,b);o.pl=[...v].length}else if(k=='u')o.dh=await dmn(h,v)}finally{b.fill(0)}}
+o.F=F;return o}
+const sealAll=async A=>{await Promise.all(A.map(o=>seal(o)));return A};
+async function openF(e,k){const x=e.F&&e.F[k];if(!x)return'';const[ky]=await sk(),b=await openB(ky,k+':'+e.id,x);try{return dec.decode(b)}finally{b.fill(0)}}
+const unseal=e=>openF(e,'p');
+async function openS(e){const[u,s,l,n]=await Promise.all(SEC_F.map(k=>openF(e,k)));return{u,s,l,n}}
 const openAll=()=>Promise.all(E.map(async e=>({...e,p:await unseal(e),...await openS(e)})));
 /* Indicatore di robustezza nella voce: non blocca nulla; segnala anche il riuso in altre voci (confronto di impronte HMAC, senza decifrare le altre password). */
 let rcv=0;
 async function reuseCount(v){const[,h]=await sk(),b=enc.encode(v);let f;try{f=hex(new Uint8Array(await crypto.subtle.sign('HMAC',h,b)).slice(0,16))}finally{b.fill(0)}const me=$('#ei').value;return E.filter(e=>e.ph===f&&String(e.id)!==String(me)).length}
-function entryMeter(){const v=$('#ep').value,s=strength(v),i=$('#ebar'),c=++rcv;i.style.width=Math.min(100,Math.round(s.b))+'%';i.className=['r','a','g','g'][s.l];
-const base=v?t('sl'+s.l)+' · ~'+Math.round(s.b)+' bit'+([...v].length<12?' · '+t('short12'):''):'';$('#elab').textContent=base;
-if(v)reuseCount(v).then(n=>{if(c==rcv&&n)$('#elab').textContent=base+' · '+(n==1?t('reuse1'):t('reuseN').replace('{n}',n))}).catch(()=>{})}
+function entryMeter(){const sec=pOn(),v=sec?'':$('#ep').value,n=sec?PN:[...v].length,s=sec?strengthB(PB,PN):strength(v),i=$('#ebar'),c=++rcv;i.style.width=Math.min(100,Math.round(s.b))+'%';i.className=['r','a','g','g'][s.l];
+const base=n?t('sl'+s.l)+' · ~'+Math.round(s.b)+' bit'+(n<12?' · '+t('short12'):''):'';$('#elab').textContent=base;
+if(n)(sec?reuseCountB():reuseCount(v)).then(n=>{if(c==rcv&&n)$('#elab').textContent=base+' · '+(n==1?t('reuse1'):t('reuseN').replace('{n}',n))}).catch(()=>{})}
 /* Appunti: un solo timer (annullato a ogni nuova copia); la pulizia avviene anche al blocco/rilascio dei dati. writeText può fallire se la pagina non ha il focus: è un limite del browser. */
 let clipT=0,clipOn=0,RO=0;
 function applyRO(){document.body.classList.toggle('ro',!!RO);const b=$('#rob');b.style.display=RO?'':'none';b.innerHTML=RO?ic('eye')+'<span>'+esc(t('roBadge'))+'</span>':''}
 function roForm(on){document.querySelectorAll('#dE input:not([type=hidden]),#dE textarea').forEach(x=>{if(['checkbox','radio','range'].includes(x.type))x.disabled=on;else x.readOnly=on});$('#dE').classList.toggle('ro',on)}
 function setRO(){if(RO||locked)return;if(dirty)return toast(t('roDirty'));if(!confirm(t('roQ')))return;RO=1;closeDlg();applyRO();render();toast(t('roOnT'))}
 function clearClip(){clearTimeout(clipT);clipT=0;if(clipOn){clipOn=0;try{navigator.clipboard&&navigator.clipboard.writeText('').catch(()=>{})}catch{}}}
-async function cp(id,k){const e0=epoch,e=E.find(x=>x.id==id);if(!e)return;let v;try{v=k=='p'?await unseal(e):SEC_F.includes(k)?(await openS(e))[k]:String(e[k]||'')}catch{return toast(t('sealErr'))}if(e0!=epoch)return;
+async function cp(id,k){const e0=epoch,e=E.find(x=>x.id==id);if(!e)return;let v;try{v=k=='p'||SEC_F.includes(k)?await openF(e,k):String(e[k]||'')}catch{return toast(t('sealErr'))}if(e0!=epoch)return;
 try{await navigator.clipboard.writeText(v)}catch{const a=document.createElement('textarea');a.value=v;a.setAttribute('readonly','');a.style.cssText='position:fixed;left:-9999px;top:0;opacity:0';document.body.append(a);a.select();try{document.execCommand('copy')}catch{}a.value='';a.remove();try{getSelection().removeAllRanges()}catch{}}
 clearTimeout(clipT);clipOn=1;clipT=setTimeout(clearClip,20000);toast(t('copied'))}
 /* Apertura sicura di un link: solo http/https, mai con opener né referrer; avvisa su http, domini con caratteri speciali (possibili imitazioni), indirizzi numerici e credenziali nell'indirizzo. */
-async function go(id){const e0=epoch,e=E.find(x=>x.id==id);if(!e)return;let u;try{u=(await openS(e)).l.trim()}catch{return toast(t('sealErr'))}if(e0!=epoch)return;
+async function go(id){const e0=epoch,e=E.find(x=>x.id==id);if(!e)return;let u;try{u=(await openF(e,'l')).trim()}catch{return toast(t('sealErr'))}if(e0!=epoch)return;
 if(!u)return toast(t('noUrl'));
 const sch=/^[a-z0-9.-]+:\d+(\/|$)/i.test(u)?null:u.match(/^([a-z][a-z0-9+.-]*):/i);if(sch&&!/^https?$/i.test(sch[1]))return toast(t('badScheme'));
 let U;try{U=new URL(sch?u:'https://'+u)}catch{return toast(t('badUrl'))}
@@ -392,15 +407,108 @@ const GS={l:'abcdefghijklmnopqrstuvwxyz',u:'ABCDEFGHIJKLMNOPQRSTUVWXYZ',d:'01234
 function genPw(o){o=o||{};if(o.mode=='w'){let w=phrase(Math.min(10,Math.max(4,o.n||6)));if(o.cap)w=w.split('-').map(x=>x[0].toUpperCase()+x.slice(1)).join('-');if(o.num)w+='-'+String(rnd(90)+10);return w}
 const set=o.x===0?GS:GA,ks=['l','u','d','s'].filter(k=>o[k]),K=ks.length?ks:['l','d'],n=Math.min(64,Math.max(8,K.length,o.len||20)),all=K.map(k=>set[k]).join(''),r=K.map(k=>set[k][rnd(set[k].length)]);
 while(r.length<n)r.push(all[rnd(all.length)]);for(let i=r.length-1;i>0;i--){const j=rnd(i+1);[r[i],r[j]]=[r[j],r[i]]}return r.join('')}
+/* Generatore a byte: stessi alfabeti di genPw ma il risultato è un Uint8Array (ASCII), mai una stringa intera. */
+function genPwB(o){o=o||{};const out=[];
+if(o.mode=='w'){const n=Math.min(10,Math.max(4,o.n||6)),L=WL.length,b=new Uint32Array(1),lim=Math.floor(4294967296/L)*L;let c=0;
+while(c<n){crypto.getRandomValues(b);if(b[0]>=lim)continue;const w=WL[b[0]%L];if(c)out.push(45);for(let i=0;i<w.length;i++){let x=w.charCodeAt(i);if(!i&&o.cap&&x>96&&x<123)x-=32;out.push(x)}c++}
+if(o.num){const q=rnd(90)+10;out.push(45,48+((q/10)|0),48+q%10)}}
+else{const set=o.x===0?GS:GA,ks=['l','u','d','s'].filter(k=>o[k]),K=ks.length?ks:['l','d'],n=Math.min(64,Math.max(8,K.length,o.len||20)),all=K.map(k=>set[k]).join(''),r=K.map(k=>set[k].charCodeAt(rnd(set[k].length)));
+while(r.length<n)r.push(all.charCodeAt(rnd(all.length)));for(let i=r.length-1;i>0;i--){const j=rnd(i+1);[r[i],r[j]]=[r[j],r[i]]}for(const x of r)out.push(x);r.fill(0)}
+const a=Uint8Array.from(out);out.fill(0);return a}
 function gen(){return genPw({len:20,l:1,u:1,d:1,s:1})}
 function genOpts(){const c=i=>!!$(i).checked;return c('#gm2')?{mode:'w',n:+$('#gw').value,cap:c('#gcap'),num:c('#gnum')}:{mode:'c',len:+$('#gl').value,l:c('#gcl'),u:c('#gcu'),d:c('#gcd'),s:c('#gcs'),x:c('#gcx')?1:0}}
 function goUi(){const w=!!$('#gm2').checked;$('#gC').style.display=w?'none':'';$('#gW').style.display=w?'':'none';$('#glv').textContent=$('#gl').value;$('#gwv').textContent=$('#gw').value}
 const KF=['g','t','u','s','p','l','n'],KM=[...KF,'m','d','x'];
-async function edit(id,dup){const e0=epoch,e=E.find(x=>x.id==id)||{};let pw='',sec={};try{pw=e.P?await unseal(e):'';sec=e.S?await openS(e):{}}catch{return toast(t('sealErr'))}if(e0!=epoch)return;
-KF.forEach(k=>$('#e'+k).value=k=='p'?pw:SEC_F.includes(k)?sec[k]||'':e[k]||'');$('#ei').value=id||'';$('#ef').checked=!!e.m;$('#ed').value=e.d||'';$('#ex').value=e.x||'';$('#ep').type='password';if(dup){/* Duplica: stessi dati come NUOVA voce; inserimento = oggi (se la voce originale lo aveva), scadenza vuota */$('#ei').value='';$('#et').value=((t('copyOf')+' '+$('#et').value).trim());$('#ed').value=e.d?ymdL(new Date()):'';$('#ex').value=''}entryMeter();roForm(!!RO);$('#dE').showModal()}
-async function saveE(){if(saving||RO)return;const e0=epoch,o={};KF.forEach(k=>o[k]=$('#e'+k).value);o.m=$('#ef').checked?'1':'';o.d=$('#ed').value;o.x=$('#ex').value;if(!o.t&&!o.u&&!o.s&&!o.p)return toast(t('needOne'));
-const id=$('#ei').value,ex=id?E.find(x=>x.id==id):null;o.id=ex?ex.id:++uid;saving=1;
-try{await seal(o);if(e0!=epoch)return;if(ex)Object.assign(ex,o);else E.push(o);dirty=1;clearForm();$('#dE').close();render()}catch{toast(t('sealErr'))}finally{saving=0}}
+/* ---- Campi segreti della voce, "a richiesta" ----
+   Aprendo una voce non si decifra nulla di segreto: password, email, username, URL e note sono segnaposto con "Mostra" e "Cambia".
+   "Mostra" decifra solo quel campo e lo DISEGNA su un canvas, carattere per carattere dai byte (mai l'intero testo come stringa e nessun testo nella pagina);
+   si nasconde da solo dopo 20 secondi, alla chiusura e al blocco. "Cambia" apre una casella vuota per quel campo: i campi non toccati restano cifrati
+   esattamente come sono. Limiti: ciò che digiti o incolli è una stringa finché il motore JS la libera; chi controlla la pagina o fotografa lo schermo può leggere il canvas. */
+let FD={src:null,m:{},T:{},pwB:null,pwS:'',pwSec:0},C={k:null};
+/* Password della voce: campo sicuro (come la master). Ogni tasto ASCII diventa un byte in PB; il generatore scrive i byte direttamente in PB;
+   l'occhio disegna PB su un canvas. Al salvataggio PB va alla cifratura e viene azzerato. Su touch/IME si usa il campo normale. */
+const PB=new Uint8Array(256);let PN=0,PS=0,PV=0,pPref=null;const pDef=()=>pPref==null?matchMedia('(pointer:fine)').matches:pPref;
+function pWipe(){PB.fill(0);PN=0}
+function pOn(){return PS&&C.k=='p'}
+function pRefresh(){const i=$('#ep'),old=$('#epv');if(old){const cv=old.querySelector('canvas');if(cv)cv.width=cv.height=0;old.remove()}
+if(!pOn()){return}
+i.value='\u2022'.repeat(PN);
+if(PV&&PN){const v=document.createElement('div');v.className='mkv';v.id='epv';const cv=document.createElement('canvas');cv.setAttribute('role','img');cv.setAttribute('aria-label',t('fImg'));v.append(cv);i.style.display='none';i.before(v);fdDraw(cv,PB.subarray(0,PN))}else i.style.display=''}
+function pMode(on){PS=on?1:0;pPref=!!on;pWipe();PV=0;{const i=$('#ep');i.value='';i.type='password'}cPw();entryMeter();$('#ep').focus()}
+function pFallback(){pMode(0);toast(t('secKbd'))}
+function pMsg(m){const n=$('#cpn');n.className='pwn wa';n.style.display='';n.textContent=t(m)}
+/* Incolla nel campo sicuro: si leggono gli appunti come byte (Blob -> ArrayBuffer), mai come stringa; si accetta solo ASCII su una riga, si tolgono gli a capo finali e si svuotano gli appunti. */
+async function pPaste(){if(!pOn())return;let b;
+try{const it=await navigator.clipboard.read();let bl=null;for(const x of it)if(x.types.includes('text/plain')){bl=await x.getType('text/plain');break}
+if(!bl)return pMsg('pNoText');b=new Uint8Array(await bl.arrayBuffer())}catch{return pMsg('pDenied')}
+try{let n=b.length;while(n&&(b[n-1]==10||b[n-1]==13))n--;if(!n)return pMsg('pNoText');if(n>128)return toast(t('secMax'));
+for(let i=0;i<n;i++)if(b[i]<32||b[i]>126)return pMsg('pBad');
+PB.fill(0);PB.set(b.subarray(0,n));PN=n;PV=0;cPw();entryMeter();toast(t('pDone'));navigator.clipboard.writeText('').catch(()=>{})}finally{b.fill(0)}}
+function pKey(e){const k=e.key;if(!e.isTrusted){e.preventDefault();return}
+if(k=='Backspace'){e.preventDefault();if(e.ctrlKey||e.metaKey){PB.fill(0);PN=0}else if(PN)PB[--PN]=0;pRefresh();entryMeter();return}
+if(k=='Unidentified'||k=='Process'||e.isComposing){e.preventDefault();pFallback();return}
+if(k=='Dead'){e.preventDefault();toast(t('secAscii'));return}
+if(k.length!=1||((e.ctrlKey||e.metaKey||e.altKey)&&!e.getModifierState('AltGraph')))return;
+e.preventDefault();const c=k.charCodeAt(0);
+if(c<32||c>126){toast(t('secAscii'));return}
+if(PN>=128){toast(t('secMax'));return}
+PB[PN++]=c;PV=0;pRefresh();entryMeter()}
+async function reuseCountB(){const[,h]=await sk(),b=PB.slice(0,PN);let f;try{f=await h16(h,b)}finally{b.fill(0)}const me=$('#ei').value;return E.filter(e=>e.ph===f&&String(e.id)!==String(me)).length}
+function fdInit(){const ep=$('#ep');ep.addEventListener('keydown',e=>{if(pOn())pKey(e)});ep.addEventListener('beforeinput',e=>{if(!pOn())return;e.preventDefault();if(/Composition/.test(e.inputType))pFallback();else toast(t('secAscii'))});FK.forEach(k=>{if(k=='p')return;const i=$('#e'+k),c=document.createElement('div');c.className='mkr'+(k=='n'?' ta':'');c.id='mkr'+k;i.before(c);c.append(i)});$('#dC').addEventListener('close',cClean);$('#dC').addEventListener('keydown',e=>{const x=e.target;if(e.key=='Enter'&&e.isTrusted&&x.tagName=='INPUT'&&!['radio','checkbox','range'].includes(x.type)){e.preventDefault();cApply()}})}
+const fdBtn=(l,a,k)=>{const b=document.createElement('button');b.type='button';b.className='btn';b.dataset.a=a;b.dataset.arg=k;b.textContent=t(l);return b};
+function fdClr(c,keep){[...c.children].forEach(x=>{if(x===keep)return;const cv=x.querySelector&&x.querySelector('canvas');if(cv)cv.width=cv.height=0;x.remove()})}
+const fdPend=k=>k=='p'?!(FD.pwB&&FD.pwB.length)&&!FD.pwS:!$('#e'+k).value;
+function fdRender(k){const c=$('#mkr'+k),i=$('#e'+k),m=FD.m[k],has=!!(FD.src&&FD.src.F&&FD.src.F[k]),ed=m=='e',isP=k=='p';fdClr(c,isP?null:i);
+if(!isP){i.style.display=ed?'':'none';i.placeholder=''}
+if(!ed){const v=document.createElement('div');v.className='mkv';
+if(m=='v'){const cv=document.createElement('canvas');cv.id='mkc'+k;cv.setAttribute('role','img');cv.setAttribute('aria-label',t('fImg'));v.append(cv)}
+else if(m=='k'){const d=document.createElement('span');d.className='dt';d.textContent='•'.repeat(12);v.append(d)}
+else if(m=='m'){if(fdPend(k)){const d=document.createElement('i');d.textContent=t('cDelN');v.append(d)}else{const d=document.createElement('span');d.className='dt';d.textContent='•'.repeat(12);v.append(d)}const g=document.createElement('span');g.className='chip';g.textContent=t('cMod');v.append(g)}
+else{const d=document.createElement('i');d.textContent=t('fEmpty');v.append(d)}
+if(isP)c.append(v);else i.before(v);
+if(m=='k')c.append(fdBtn('fShow','fshow',k),fdBtn('fChg','fchg',k));else if(m=='v')c.append(fdBtn('fHide','fhide',k),fdBtn('fChg','fchg',k));else if(m=='m')c.append(fdBtn('fChg','fchg',k),fdBtn('fCan','fcan',k));else c.append(fdBtn('fAdd','fchg',k))}
+if(isP){const n=$('#epn');n.textContent='';n.className='s';n.style.display='';if(m=='k'&&has){const s=FD.src,r=E.filter(x=>x.ph&&x.ph===s.ph&&x.id!==s.id).length;n.textContent=t('pKeep').replace('{n}',s.pl)+(r?' · '+(r==1?t('reuse1'):t('reuseN').replace('{n}',r)):'')}}}
+/* Finestra dedicata a un solo campo: "Cambia"/"Aggiungi" la apre, "Applica" mette il valore in sospeso nel modulo, "Salva voce" lo cifra. */
+const CL={p:'pwd',u:'mail',s:'uname',l:'url',n:'notes'};
+function cPw(){$('#eps').querySelectorAll('button').forEach(x=>{const on=(x.dataset.arg=='1')==!!PS;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on)});document.querySelector('[data-a=ppaste]').style.display=PS?'':'none';const n=$('#cpn');n.className='pwn'+(PS?'':' wa');n.style.display='';n.textContent=t(PS?'pEntSec':'pStdNote');$('#ep').style.display='';pRefresh()}
+function cOpen(k){if(RO)return;const s=FD.src,has=!!(s&&s.F&&s.F[k]),m=FD.m[k];clearTimeout(FD.T[k]);if(m=='v')fdHide(k);C.k=k;
+$('#ct').textContent=t(has||m=='m'?'cChg':'cAdd')+' · '+t(CL[k]);
+$('#cd').textContent=m=='m'?t('cDescM'):has?t(k=='p'?'cDescKeepP':'cDescKeep').replace('{n}',s.pl):t('cDescNew');$('#cch').textContent=t('cHint');
+const isP=k=='p',ta=k=='n';$('#cpw').style.display=isP?'':'none';$('#cfv').style.display=isP||ta?'none':'';$('#cfn').style.display=ta?'':'none';
+if(isP){pWipe();PV=0;PS=pDef()?1:0;{const i=$('#ep');i.value='';i.type='password'}cPw();entryMeter()}
+else{const e=ta?$('#cfn'):$('#cfv');e.value='';if(!ta)e.inputMode=k=='u'?'email':k=='l'?'url':'text'}
+$('#dC').showModal();(isP?$('#ep'):ta?$('#cfn'):$('#cfv')).focus()}
+function cApply(){const k=C.k;if(!k)return;
+if(k=='p'){if(FD.pwB)FD.pwB.fill(0);FD.pwB=null;FD.pwS='';if(pOn()){if(PN)FD.pwB=PB.slice(0,PN);FD.pwSec=1}else{FD.pwS=$('#ep').value;FD.pwSec=0}pWipe();PV=0;$('#ep').value=''}
+else{const e=k=='n'?$('#cfn'):$('#cfv');$('#e'+k).value=e.value;e.value=''}
+FD.m[k]='m';C.k=null;$('#dC').close();fdRender(k)}
+function cClean(){pWipe();PV=0;C.k=null;$('#ep').value='';$('#cfv').value=$('#cfn').value='';pRefresh()}
+/* Dai byte ai punti Unicode (UTF-8 a mano) e da lì al canvas, un carattere per volta: la stringa intera non esiste. */
+function fdDraw(cv,b){const cp=[];for(let i=0;i<b.length;){const c=b[i];let n=1,p=c;if(c>=240){n=4;p=c&7}else if(c>=224){n=3;p=c&15}else if(c>=192){n=2;p=c&31}else if(c>=128)p=65533;for(let j=1;j<n;j++)p=(p<<6)|((b[i+j]||0)&63);cp.push(p>1114111||(p>=55296&&p<57344)?65533:p);i+=n}
+const box=cv.parentNode,dpr=Math.max(1,window.devicePixelRatio||1),F='16px ui-monospace,Menlo,Consolas,monospace',W=Math.max(120,box.clientWidth-30),x=cv.getContext('2d');x.font=F;
+const wd=new Map(),cw=p=>{let w=wd.get(p);if(w==null){w=x.measureText(String.fromCodePoint(p)).width;wd.set(p,w)}return w},L=[];let cur=[],cx=0,sp=-1;
+for(const p of cp){if(p==10){L.push(cur);cur=[];cx=0;sp=-1;continue}if(p==13)continue;const q=p==9?32:p;if(q<32)continue;const w=cw(q);
+if(cx+w>W&&cur.length){if(sp>0){const rest=cur.splice(sp+1);L.push(cur);cur=rest;cx=rest.reduce((a,z)=>a+cw(z),0)}else{L.push(cur);cur=[];cx=0}sp=-1}
+cur.push(q);cx+=w;if(q==32)sp=cur.length-1}
+L.push(cur);const H=Math.max(22,L.length*22);cv.width=Math.ceil(W*dpr);cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';
+x.scale(dpr,dpr);x.font=F;x.fillStyle=getComputedStyle(box).color;x.textBaseline='middle';
+L.forEach((l,r)=>{let px=0;for(const p of l){x.fillText(String.fromCodePoint(p),px,11+r*22);px+=cw(p)}});
+cp.fill(0);L.forEach(l=>l.fill(0));cp.length=0}
+async function fdShow(k){const e0=epoch,s=FD.src;if(!s||!s.F||!s.F[k]||FD.m[k]!='k')return;let b;try{const[ky]=await sk();b=await openB(ky,k+':'+s.id,s.F[k])}catch{return toast(t('sealErr'))}
+try{if(e0!=epoch||FD.src!==s||FD.m[k]!='k'||!$('#dE').open)return;FD.m[k]='v';fdRender(k);fdDraw($('#mkc'+k),b);clearTimeout(FD.T[k]);FD.T[k]=setTimeout(()=>fdHide(k),20000)}finally{b.fill(0)}}
+function fdHide(k){clearTimeout(FD.T[k]);if(FD.m[k]=='v'){FD.m[k]='k';fdRender(k)}}
+function fdChg(k){cOpen(k)}
+function fdCan(k){if(k=='p'){if(FD.pwB)FD.pwB.fill(0);FD.pwB=null;FD.pwS='';FD.pwSec=0}$('#e'+k).value='';FD.m[k]=FD.src&&FD.src.F&&FD.src.F[k]?'k':'0';fdRender(k)}
+function fdReset(){if($('#dC').open)$('#dC').close();if(FD.pwB)FD.pwB.fill(0);pWipe();PV=0;PS=0;{const o=$('#epv');if(o){const cv=o.querySelector('canvas');if(cv)cv.width=cv.height=0;o.remove()}}Object.values(FD.T).forEach(clearTimeout);FD={src:null,m:{},T:{},pwB:null,pwS:'',pwSec:0};FK.forEach(k=>{const c=$('#mkr'+k);if(c)fdClr(c,$('#e'+k))})}
+function edit(id,dup){const e=E.find(x=>x.id==id)||{};fdReset();FD.src=e.F?e:null;$('#et').value=e.t||'';$('#eg').value=e.g||'';
+FK.forEach(k=>{$('#e'+k).value='';FD.m[k]=e.id?(FD.src&&FD.src.F[k]?'k':'0'):(k=='p'?'0':'e')});
+$('#ei').value=id||'';$('#ef').checked=!!e.m;$('#ed').value=e.d||'';$('#ex').value=e.x||'';$('#ep').type='password';if(dup){/* Duplica: stessi dati come NUOVA voce; inserimento = oggi (se la voce originale lo aveva), scadenza vuota */$('#ei').value='';$('#et').value=((t('copyOf')+' '+$('#et').value).trim());$('#ed').value=e.d?ymdL(new Date()):'';$('#ex').value=''}
+entryMeter();roForm(!!RO);FK.forEach(fdRender);$('#dE').showModal()}
+async function saveE(){if(saving||RO)return;const e0=epoch,o={};o.g=$('#eg').value;o.t=$('#et').value;o.m=$('#ef').checked?'1':'';o.d=$('#ed').value;o.x=$('#ex').value;
+const keep=new Set();const pbytes=FD.m.p=='m'&&FD.pwSec&&FD.pwB&&FD.pwB.length?FD.pwB:null;FK.forEach(k=>{const m=FD.m[k];if(m=='e'||m=='m'){if(k=='p'){if(!pbytes)o.p=FD.pwS||''}else o[k]=$('#e'+k).value}else if(FD.src&&FD.src.F&&FD.src.F[k])keep.add(k)});
+if(!o.t&&!['u','s','p'].some(k=>keep.has(k)||o[k]||(k=='p'&&pbytes)))return toast(t('needOne'));
+const id=$('#ei').value,ex=id?E.find(x=>x.id==id):null;o.id=ex?ex.id:++uid;saving=1;const pb=pbytes;
+try{await seal(o,FD.src,keep,pb);if(e0!=epoch)return;if(ex)Object.assign(ex,o);else E.push(o);dirty=1;clearForm();$('#dE').close();render()}catch{toast(t('sealErr'))}finally{saving=0}}
 function del(id){if(RO)return;if(confirm(t('delQ'))){E=E.filter(e=>e.id!=id);dirty=1;render()}}
 function lock(){if(dirty&&!confirm(t('lockQ')))return;wipe()}
 /* Blocco per inattività (2 minuti). Si basa su un'ora di ultima attività e non solo su un timer, così regge a schede in background e sospensione.
@@ -411,8 +519,8 @@ const IDLE=120000,LOCK_MAX=600000,WARN=15000;/* Blocco immediato quando la sched
 const BG=1000,AUTO=20000;let hiddenAt=0,hid0=0,hidLk=0;
 try{if(/^https?:$/.test(location.protocol))$('#nf').style.display='flex'}catch{}
 let pwCancel=null,imCancel=null,plCancel=null,locked=0,epoch=0,lastAct=Date.now(),lockedAt=0,wnOn=0,savedAt=null;
-function clearForm(){roForm(false);rcv++;$('#ebar').style.width='0%';$('#elab').textContent='';KF.forEach(k=>$('#e'+k).value='');$('#ef').checked=false;$('#ed').value=$('#ex').value=$('#ei').value='';$('#ep').type='password';$('#cwE').style.display='none'}
-function closeDlg(){if(pwCancel)pwCancel();if(imCancel)imCancel();if(plCancel)plCancel();$('#p1').value=$('#p2').value='';clearForm();$('#dE').close();$('#dX').close();$('#dB').close();$('#bgl').textContent='';$('#bgi').value=$('#bxi').value=''}
+function clearForm(){fdReset();roForm(false);rcv++;$('#ebar').style.width='0%';$('#elab').textContent='';KF.forEach(k=>$('#e'+k).value='');$('#ef').checked=false;$('#ed').value=$('#ex').value=$('#ei').value='';$('#ep').type='password';$('#cwE').style.display='none'}
+function closeDlg(){if(pwCancel)pwCancel();if(imCancel)imCancel();if(plCancel)plCancel();secWipe();$('#p1').value=$('#p2').value='';clearForm();$('#dE').close();$('#dX').close();$('#dB').close();$('#bgl').textContent='';$('#bgi').value=$('#bxi').value=''}
 function wipe(){navOpen(0);clearClip();snap=null;RO=0;applyRO();epoch++;closeDlg();hideWn();savedAt=null;E=[];SEL.clear();KP=null;dirty=0;FL={};locked=0;$('#lk').style.display='none';$('#q').value='';['#tb','#cv'].forEach(k=>{$(k).textContent=''});render()}
 /* Due motivi di blocco. 'i' = inattività (2 min): senza modifiche non salvate i dati vengono rilasciati subito; con modifiche restano nascosti per altri 10 minuti (12 totali dall'ultima attività).
    'b' = cambio scheda (almeno BG ms in background): la sessione va SEMPRE in pausa, con o senza modifiche non salvate: dati nascosti e schermata "Riprendi", per un massimo di 10 minuti dal momento del cambio; poi i dati vengono rilasciati, anche con modifiche pendenti.
@@ -453,27 +561,112 @@ function onActivity(){if(!locked){lastAct=Date.now();if(wnOn)hideWn()}else if($(
 onbeforeunload=e=>{if(dirty){e.preventDefault();return''}};
 /* password */
 function togglePw(){const v=$('#p1').type=='password'?'text':'password';$('#p1').type=$('#p2').type=v;if(v=='text')remask();$('#p1').focus()}
-function askPw(cf,msg){return new Promise(res=>{const d=$('#dP');{const h=$('#dP h3');h.dataset.t=cf?'pwT':'pwOpenT';h.textContent=t(h.dataset.t)}$('#pm').textContent=msg||'';$('#pro').style.display=cf?'none':'flex';$('#proc').checked=false;$('#pc').style.display=cf?'':'none';$('#pq').style.display=cf?'':'none';$('#pnote').textContent='';$('#pbar').style.width='0%';$('#plab').textContent='';$('#p1').value=$('#p2').value=$('#pe').textContent='';$('#p1').type=$('#p2').type='password';
-const done=v=>{pwCancel=null;$('#cwP').style.display='none';$('#p1').value=$('#p2').value='';$('#p1').type=$('#p2').type='password';d.close();const f=document.activeElement;if(f&&f.blur)f.blur();res(v)};pwCancel=()=>done(null);$('#pn').onclick=ev=>{if(ev.isTrusted)done(null)};d.oncancel=()=>done(null);
-const ok=()=>{const a=$('#p1').value;if(cf){if([...a].length<12)return $('#pe').textContent=t('min12');if(a!=$('#p2').value)return $('#pe').textContent=t('nomatch');if(strength(a).l==0&&!confirm(t('weakQ')))return}else if(!a)return;done(a)};$('#po').onclick=ev=>{if(ev.isTrusted)ok()};
-$('#p1').onkeydown=$('#p2').onkeydown=e=>{if(e.key=='Enter'){e.preventDefault();if(e.isTrusted)ok()}};d.showModal();$('#p1').focus()})}
+/* Campo sicuro per la master password: ogni tasto diventa subito un byte (ASCII) in un Uint8Array e la password intera non esiste mai come testo.
+   Il campo mostra solo dei pallini (contenuto non segreto). Niente incolla, occhio né generatore; per accenti, simboli o telefono c'è il campo normale.
+   Su schermi con mouse è il campo predefinito; su telefono/tablet o con una tastiera non compatibile si passa al campo normale. */
+const SB=[new Uint8Array(128),new Uint8Array(128)],SN=[0,0];let SM=0,smPref=null;
+function secWipe(){SB[0].fill(0);SB[1].fill(0);SN[0]=SN[1]=0}
+const eqB=(a,b,n)=>{let d=0;for(let i=0;i<n;i++)d|=a[i]^b[i];return!d};
+function secShow(i){$(i?'#p2':'#p1').value='•'.repeat(SN[i]);if(!i)pwMeter()}
+function setSec(on){SM=on?1:0;secWipe();$('#dP').classList.toggle('sec',!!SM);for(const x of[$('#p1'),$('#p2')]){x.value='';x.type='password'}$('#pst').textContent=t(SM?'secOn':'secOff');$('#psw').textContent=t(SM?'secToNormal':'secToSafe');$('#pe').textContent='';pwMeter()}
+function secToggle(){smPref=!SM;setSec(smPref);$('#p1').focus()}
+function secKey(i,e){const k=e.key;if(!e.isTrusted){e.preventDefault();return}
+if(k=='Backspace'){e.preventDefault();if(e.ctrlKey||e.metaKey){SB[i].fill(0);SN[i]=0}else if(SN[i])SB[i][--SN[i]]=0;$('#pe').textContent='';secShow(i);return}
+if(k=='Unidentified'||k=='Process'||e.isComposing){e.preventDefault();smPref=false;setSec(0);$('#pe').textContent=t('secKbd');return}
+if(k=='Dead'){e.preventDefault();$('#pe').textContent=t('secAscii');return}
+if(k.length!=1||((e.ctrlKey||e.metaKey||e.altKey)&&!e.getModifierState('AltGraph')))return;
+e.preventDefault();const c=k.charCodeAt(0);
+if(c<32||c>126){$('#pe').textContent=t('secAscii');return}
+if(SN[i]>=SB[i].length){$('#pe').textContent=t('secMax');return}
+SB[i][SN[i]++]=c;$('#pe').textContent='';secShow(i)}
+function askPw(cf,msg){return new Promise(res=>{const d=$('#dP');{const h=$('#dP h3');h.dataset.t=cf?'pwT':'pwOpenT';h.textContent=t(h.dataset.t)}$('#pm').textContent=msg||'';$('#pro').style.display=cf?'none':'flex';$('#proc').checked=false;$('#pc').style.display=cf?'':'none';$('#pq').style.display=cf?'':'none';$('#pnote').textContent='';$('#pbar').style.width='0%';$('#plab').textContent='';$('#pe').textContent='';setSec(smPref==null?matchMedia('(pointer:fine)').matches:smPref);
+const done=v=>{pwCancel=null;secWipe();$('#cwP').style.display='none';$('#p1').value=$('#p2').value='';$('#p1').type=$('#p2').type='password';d.close();const f=document.activeElement;if(f&&f.blur)f.blur();res(v)};pwCancel=()=>done(null);$('#pn').onclick=ev=>{if(ev.isTrusted)done(null)};d.oncancel=()=>done(null);
+const ok=()=>{if(SM){const b=SB[0],n=SN[0];if(cf){if(n<12)return $('#pe').textContent=t('min12');if(n!=SN[1]||!eqB(b,SB[1],n))return $('#pe').textContent=t('nomatch');if(strengthB(b,n).l==0&&!confirm(t('weakQ')))return}else if(!n)return;done(b.slice(0,n));return}
+const a=$('#p1').value;if(cf){if([...a].length<12)return $('#pe').textContent=t('min12');if(a!=$('#p2').value)return $('#pe').textContent=t('nomatch');if(strength(a).l==0&&!confirm(t('weakQ')))return}else if(!a)return;done(a)};$('#po').onclick=ev=>{if(ev.isTrusted)ok()};
+$('#p1').onkeydown=$('#p2').onkeydown=e=>{if(e.key=='Enter'){e.preventDefault();if(e.isTrusted)ok()}else if(SM)secKey(e.target.id=='p2'?1:0,e)};
+$('#p1').onbeforeinput=$('#p2').onbeforeinput=e=>{if(SM){e.preventDefault();const y=e.inputType||'';if(/^insert/.test(y))$('#pe').textContent=t(y=='insertText'?'secAscii':'secPaste')}};
+$('#p1').oninput=$('#p2').oninput=e=>{if(SM)secShow(e.target.id=='p2'?1:0)};
+d.showModal();$('#p1').focus()})}
 /* AES-256-GCM */
 const b64=u=>{let s='';for(let i=0;i<u.length;i+=8192)s+=String.fromCharCode.apply(null,u.subarray(i,i+8192));return btoa(s)};
 /* Formato PWM2: byte0=versione(2) byte1=id KDF(1=PBKDF2-SHA256) byte2-5=iterazioni(uint32 BE) | salt16 | iv12 | cifrato.
    I primi 6 byte sono autenticati come AAD di AES-GCM. PWM1 (300.000 iter., senza AAD) resta leggibile. */
 const ITER=1000000,ITER_MIN=300000,ITER_MAX=5000000;
-async function key(pw,salt,it){const k=await crypto.subtle.importKey('raw',enc.encode(pw),'PBKDF2',0,['deriveKey']);return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:it,hash:'SHA-256'},k,{name:'AES-GCM',length:256},0,['encrypt','decrypt'])}
+/* La password arriva come testo (campo normale) o già come byte (campo sicuro). */
+const pbs=p=>typeof p=='string'?enc.encode(p):p,nfc=p=>typeof p=='string'?p.normalize('NFC'):p,cand=p=>typeof p=='string'?[...new Set([p.normalize('NFC'),p,p.normalize('NFD')])]:[p];
+async function key(pw,salt,it){const pb=pbs(pw),k=await crypto.subtle.importKey('raw',pb,'PBKDF2',0,['deriveKey']);if(pb!==pw)pb.fill(0);return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:it,hash:'SHA-256'},k,{name:'AES-GCM',length:256},0,['encrypt','decrypt'])}
 async function encr(pw,t){const s=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12)),h=new Uint8Array(6);h[0]=2;h[1]=1;new DataView(h.buffer).setUint32(2,ITER);
-const c=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv,additionalData:h},await key(pw.normalize('NFC'),s,ITER),enc.encode(t))),o=new Uint8Array(34+c.length);o.set(h);o.set(s,6);o.set(iv,22);o.set(c,34);return'PWM2:'+b64(o)}
+const c=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv,additionalData:h},await key(nfc(pw),s,ITER),enc.encode(t))),o=new Uint8Array(34+c.length);o.set(h);o.set(s,6);o.set(iv,22);o.set(c,34);return'PWM2:'+b64(o)}
 /* Verifica formato e parametri senza password (errori "formato", non "password errata"). */
 function pars(a){const u=Uint8Array.from(atob(a.slice(5)),c=>c.charCodeAt(0));
 if(a.startsWith('PWM1:')){if(u.length<44)throw new Error('format');return{u,old:1,it:300000}}
+if(a.startsWith('PWM3:')||a.startsWith('PWM4:')){if(u.length<56||u[0]!=(a[3]=='4'?4:3)||u[1]!=1)throw new Error('format');const i3=new DataView(u.buffer,u.byteOffset).getUint32(2);if(i3<ITER_MIN||i3>ITER_MAX)throw new Error('params');return{u,v3:1,it:i3}}
 if(!a.startsWith('PWM2:')||u.length<50||u[0]!=2||u[1]!=1)throw new Error('format');
 const it=new DataView(u.buffer,u.byteOffset).getUint32(2);if(it<ITER_MIN||it>ITER_MAX)throw new Error('params');return{u,old:0,it}}
 /* La password viene normalizzata NFC (stessa password digitata su sistemi diversi); in lettura si provano anche la forma originale e quella NFD (solo se diverse), per gli archivi più vecchi. */
-async function decr(pw,a){const{u,old,it}=pars(a),C=[...new Set([pw.normalize('NFC'),pw,pw.normalize('NFD')])];let er;
+async function decr(pw,a){const{u,old,it}=pars(a),C=cand(pw);let er;
 for(const p of C){try{return dec.decode(old?await crypto.subtle.decrypt({name:'AES-GCM',iv:u.slice(16,28)},await key(p,u.slice(0,16),it),u.slice(28)):await crypto.subtle.decrypt({name:'AES-GCM',iv:u.slice(22,34),additionalData:u.slice(0,6)},await key(p,u.slice(6,22),it),u.slice(34)))}catch(x){er=x}}throw er}
-const arm=s=>{const i=s.search(/PWM[12]:/);return i<0?null:s.slice(i).replace(/[^A-Za-z0-9+\/=:]/g,'')};
+/* Formato PWM4 (v1.2.0): byte0=4 byte1=1 byte2-5=iterazioni byte6-21=salt | u32 lunghezza indice | indice (iv12+AES-GCM, AAD = intestazione + "I") |
+   (nell'indice anche un HMAC dell'intero blocco dei record) per ogni voce, nell'ordine password, email, username, URL, note: u32 lunghezza + campo cifrato (0 = assente).
+   Ogni campo è un AES-GCM separato con AAD "<campo>:<id>"; il testo è riempito (lunghezza vera + zeri) fino a multipli di 32 byte, così la lunghezza di un record non rivela quella del campo; l'indice è riempito a multipli di 256 byte.
+   L'indice (titolo, gruppo, MFA, date, id, impronte, campi presenti) è l'unica parte decifrata all'apertura: i campi sensibili restano cifrati così come sono nel file.
+   Chiavi: PBKDF2 -> 256 bit -> HKDF in due chiavi NON estraibili (AES-GCM e HMAC); i 256 bit grezzi vengono azzerati subito.
+   Il formato PWM3 (password + un solo blocco JSON per gli altri campi, senza riempimento) resta leggibile: si converte voce per voce. */
+const cat=(...a)=>{const o=new Uint8Array(a.reduce((n,x)=>n+x.length,0));let q=0;a.forEach(x=>{o.set(x,q);q+=x.length});return o};
+const u32=n=>{const b=new Uint8Array(4);new DataView(b.buffer).setUint32(0,n);return b};
+async function fkeys(pw,salt,it){const pb=pbs(pw),k=await crypto.subtle.importKey('raw',pb,'PBKDF2',0,['deriveBits']);if(pb!==pw)pb.fill(0);const bits=new Uint8Array(await crypto.subtle.deriveBits({name:'PBKDF2',salt,iterations:it,hash:'SHA-256'},k,256));
+try{const m=await crypto.subtle.importKey('raw',bits,'HKDF',0,['deriveKey']),z=new Uint8Array(0);
+return await Promise.all([crypto.subtle.deriveKey({name:'HKDF',hash:'SHA-256',salt:z,info:enc.encode('PortableKEY/aes')},m,{name:'AES-GCM',length:256},0,['encrypt','decrypt']),crypto.subtle.deriveKey({name:'HKDF',hash:'SHA-256',salt:z,info:enc.encode('PortableKEY/hmac')},m,{name:'HMAC',hash:'SHA-256'},0,['sign','verify'])])}finally{bits.fill(0)}}
+async function sealK(ky,a,b){const iv=crypto.getRandomValues(new Uint8Array(12)),c=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv,additionalData:a},ky,b)),x=new Uint8Array(12+c.length);x.set(iv);x.set(c,12);return x}
+const openB=async(ky,a,x)=>unp(new Uint8Array(await crypto.subtle.decrypt({name:'AES-GCM',iv:x.slice(0,12),additionalData:enc.encode(a)},ky,x.slice(12))));
+const openL=async(ky,a,x)=>new Uint8Array(await crypto.subtle.decrypt({name:'AES-GCM',iv:x.slice(0,12),additionalData:enc.encode(a)},ky,x.slice(12)));
+const h16=async(hk,b)=>hex(new Uint8Array(await crypto.subtle.sign('HMAC',hk,b)).slice(0,16));
+const dmn=async(hk,v)=>{const em=String(v||'').trim();if(!EMRE.test(em))return'';const b=enc.encode('d:'+em.toLowerCase().split('@').pop());try{return await h16(hk,b)}finally{b.fill(0)}};
+/* Salvataggio: campo per campo (decifra con la chiave di sessione, ricifra con la nuova); non esiste mai in memoria l'archivio intero in chiaro. */
+async function encr4(pw,L){const s=crypto.getRandomValues(new Uint8Array(16)),h=new Uint8Array(22);h[0]=4;h[1]=1;new DataView(h.buffer).setUint32(2,ITER);h.set(s,6);
+const[ak,hk]=await fkeys(nfc(pw),s,ITER),M=[],R=[],[sy]=await sk();
+for(const e of L){const m={i:e.id,g:e.g,t:e.t,m:e.m,d:e.d,x:e.x,pl:e.pl,ph:'',dh:'',f:0};
+for(let j=0;j<5;j++){const k=FK[j],x=e.F&&e.F[k];if(!x){R.push(u32(0));continue}
+const b=await openB(sy,k+':'+e.id,x);let q;try{const pb=pad(b);try{q=await sealK(ak,enc.encode(k+':'+e.id),pb)}finally{pb.fill(0)}m.f|=1<<j;if(k=='p')m.ph=await h16(hk,b);else if(k=='u')m.dh=await dmn(hk,dec.decode(b))}finally{b.fill(0)}
+R.push(u32(q.length),q)}
+M.push(m)}
+const rg=cat(...R),mac=new Uint8Array(await crypto.subtle.sign('HMAC',hk,rg)),ib=enc.encode(JSON.stringify({e:M,k:hex(mac)})),ip=new Uint8Array(Math.ceil(ib.length/256)*256).fill(32);ip.set(ib);
+const ix=await sealK(ak,cat(h,enc.encode('I')),ip);return'PWM4:'+b64(cat(h,u32(ix.length),ix,rg))}
+/* Apertura: decifra solo l'indice. I campi (password, email, username, URL, note) restano cifrati; le chiavi del file diventano le chiavi di sessione. */
+async function open4(pw,a){const{u,it}=pars(a),h=u.slice(0,22),dv=new DataView(u.buffer,u.byteOffset),il=dv.getUint32(22);if(il<28||26+il>u.length)throw new Error('format');
+const ix=u.slice(26,26+il),C=cand(pw);let er,ks,M;
+for(const q of C){try{const k=await fkeys(q,h.slice(6,22),it);M=JSON.parse(dec.decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:ix.slice(0,12),additionalData:cat(h,enc.encode('I'))},k[0],ix.slice(12))));ks=k;break}catch(x){er=x}}
+if(!ks)throw er;if(!M||!Array.isArray(M.e)||!/^[0-9a-f]{64}$/.test(M.k||''))throw new Error('format');
+/* integrità di tutti i record senza decifrarli: HMAC (chiave del file) sul blocco dei record */
+if(!await crypto.subtle.verify('HMAC',ks[1],Uint8Array.from(M.k.match(/../g),x=>parseInt(x,16)),u.subarray(26+il)))throw new Error('format');
+let o=26+il;const rd=()=>{if(o+4>u.length)throw new Error('format');const n=dv.getUint32(o);o+=4;if(n&&(n<28+12||o+n>u.length))throw new Error('format');const x=n?u.slice(o,o+n):null;o+=n;return x},ids=new Set(),
+N=M.e.map(m=>{const id=m&&m.i,f=m&&m.f,F={};if(!Number.isInteger(id)||id<1||id>2147483647||ids.has(id)||!Number.isInteger(f)||f<0||f>31)throw new Error('format');ids.add(id);
+FK.forEach((k,j)=>{const x=rd();if(!!x!=!!((f>>j)&1))throw new Error('format');F[k]=x});
+return{id,g:String(m.g??''),t:String(m.t??''),m:m.m?'1':'',d:nd(m.d),x:nd(m.x),F,pl:Math.max(0,Math.min(1e6,+m.pl||0)),ph:/^[0-9a-f]{32}$/.test(m.ph)?m.ph:'',dh:/^[0-9a-f]{32}$/.test(m.dh)?m.dh:''}});
+if(o!=u.length)throw new Error('format');return{N,ks,v4:1}}
+/* Lettura del vecchio PWM3 (password + un blocco JSON): solo indice all'apertura, poi conversione voce per voce. */
+async function open3(pw,a){const{u,it}=pars(a),h=u.slice(0,22),dv=new DataView(u.buffer,u.byteOffset),il=dv.getUint32(22);if(il<28||26+il>u.length)throw new Error('format');
+const ix=u.slice(26,26+il),C=cand(pw);let er,ks,M;
+for(const q of C){try{const k=await fkeys(q,h.slice(6,22),it);M=JSON.parse(dec.decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:ix.slice(0,12),additionalData:cat(h,enc.encode('I'))},k[0],ix.slice(12))));ks=k;break}catch(x){er=x}}
+if(!ks)throw er;if(!M||!Array.isArray(M.e)||!/^[0-9a-f]{64}$/.test(M.k||''))throw new Error('format');
+/* integrità di tutti i record senza decifrarli: HMAC (chiave del file) sul blocco dei record */
+if(!await crypto.subtle.verify('HMAC',ks[1],Uint8Array.from(M.k.match(/../g),x=>parseInt(x,16)),u.subarray(26+il)))throw new Error('format');
+let o=26+il;const rd=()=>{if(o+4>u.length)throw new Error('format');const n=dv.getUint32(o);o+=4;if(n&&(n<28||o+n>u.length))throw new Error('format');const x=n?u.slice(o,o+n):null;o+=n;return x},ids=new Set(),
+N=M.e.map(m=>{const P=rd(),S=rd(),id=m&&m.i;if(!Number.isInteger(id)||id<1||id>2147483647||ids.has(id)||!!P!=!!m.hp||!!S!=!!m.hs)throw new Error('format');ids.add(id);
+return{id,g:String(m.g??''),t:String(m.t??''),m:m.m?'1':'',d:nd(m.d),x:nd(m.x),P,S,pl:Math.max(0,Math.min(1e6,+m.pl||0)),ph:/^[0-9a-f]{32}$/.test(m.ph)?m.ph:'',dh:/^[0-9a-f]{32}$/.test(m.dh)?m.dh:''}});
+if(o!=u.length)throw new Error('format');return{N,ks}}
+/* Unione con un archivio già aperto, o apertura in un archivio non vuoto: voce per voce, dalla chiave del file a quella di sessione (nuovi id). */
+async function reseal4(X){const[ak]=X.ks,[,sh]=await sk(),out=[];
+for(const n of X.N){const o={id:++uid,g:n.g,t:n.t,m:n.m,d:n.d,x:n.x,F:{},pl:n.pl,ph:'',dh:''};
+for(const k of FK){const x=n.F[k];o.F[k]=null;if(!x)continue;const b=await openB(ak,k+':'+n.id,x);try{o.F[k]=await sealB(o,k,b);if(k=='p')o.ph=await h16(sh,b);else if(k=='u')o.dh=await dmn(sh,dec.decode(b))}finally{b.fill(0)}}
+out.push(o)}return out}
+async function conv3(X){const[ak]=X.ks,[,sh]=await sk(),out=[];
+for(const n of X.N){const o={id:++uid,g:n.g,t:n.t,m:n.m,d:n.d,x:n.x,F:{p:null,u:null,s:null,l:null,n:null},pl:n.pl,ph:'',dh:''};
+if(n.P){const b=await openL(ak,'p:'+n.id,n.P);try{o.F.p=await sealB(o,'p',b);o.ph=await h16(sh,b)}finally{b.fill(0)}}
+if(n.S){const b=await openL(ak,'f:'+n.id,n.S);let j;try{j=JSON.parse(dec.decode(b))}finally{b.fill(0)}
+for(const k of SEC_F){const v=String(j[k]||'');if(!v)continue;const c=enc.encode(v);try{o.F[k]=await sealB(o,k,c);if(k=='u')o.dh=await dmn(sh,v)}finally{c.fill(0)}}}
+out.push(o)}return out}
+const arm=s=>{const i=s.search(/PWM[1234]:/);return i<0?null:s.slice(i).replace(/[^A-Za-z0-9+\/=:]/g,'')};
 /* CSV */
 function pcsv(t){const l=t.split('\n')[0],d=(l.match(/;/g)||[]).length>(l.match(/,/g)||[]).length?';':',';let R=[],r=[],c='',q=0;
 for(let i=0;i<t.length;i++){const h=t[i];if(q){if(h=='"'){if(t[i+1]=='"'){c+='"';i++}else q=0}else c+=h}
@@ -527,10 +720,9 @@ o.onclick=ev=>{if(ev.isTrusted&&act()&&ok())done(true)};i.onkeydown=e=>{if(e.key
 async function exp(){if(RO)return;const e0=epoch,f=$('#xf').value,c=f=='pwm'||$('#xc').checked;let pw=null,a,wr,tl,ents;
 if(!c&&!await askPlain())return;if(e0!=epoch)return;
 if(c){pw=await askPw(1,t('encMsg'));if(!pw||e0!=epoch)return}
-try{ents=await openAll()}catch{return toast(t('sealErr'))}
+let rows;if(c){try{a=await encr4(pw,[...E])}catch{return toast(t('sealErr'))}finally{if(pw instanceof Uint8Array)pw.fill(0);pw=null}}else{try{ents=await openAll()}catch{return toast(t('sealErr'))}}
 if(e0!=epoch)return;
-const rows=[H(),...ents.map(e=>KM.map(k=>k=='m'?(e.m?t('yes'):t('no')):e[k]||''))];
-if(c){try{a=await encr(pw,JSON.stringify(rows))}finally{pw=null}if(e0!=epoch)return;wr=a.match(/.{1,8000}/g).map(x=>[x]);tl=a.match(/.{1,76}/g)}
+if(c){wr=a.match(/.{1,8000}/g).map(x=>[x]);tl=a.match(/.{1,76}/g)}else rows=[H(),...ents.map(e=>KM.map(k=>k=='m'?(e.m?t('yes'):t('no')):e[k]||''))];
 let b;
 if(f=='pwm'||f=='txt')b=new Blob([c?tl.join('\n'):plain(ents).join('\n')],{type:'text/plain'});
 else if(f=='csv')b=new Blob(['\uFEFF'+csv(c?wr:sf(rows))],{type:'text/csv'});
@@ -560,12 +752,12 @@ $('#imK').onclick=ev=>{if(!ev.isTrusted||!act())return;const m=(d.querySelector(
 if(m=='n')add=C.filter(c=>c[1]=='n').map(c=>c[0]);else if(m=='u'){add=C.filter(c=>c[1]!='s').map(c=>c[0]);drop=new Set(C.filter(c=>c[1]=='d').flatMap(c=>M.get(kk(c[0])).map(e=>e.id)))}
 done({m,add,drop})};d.showModal();$('#imK').focus()})}
 $('#fi').onchange=async ev=>{if(!ev.isTrusted||RO){ev.target.value='';return}const f=ev.target.files[0];ev.target.value='';if(!f)return;
-try{const e0=epoch,n=f.name.toLowerCase();let R,a,pw;
+try{const e0=epoch,n=f.name.toLowerCase();let R,a,pw,X;
 if(n.endsWith('.xlsx'))R=await readX(await f.arrayBuffer());
 else{const tx=dec.decode(await f.arrayBuffer()).replace(/^\uFEFF/,'');if(n.endsWith('.csv'))R=pcsv(tx);else{a=arm(tx);if(!a)return toast(t('unrec'))}}
 if(R)a=arm(R.flat().join(''));
-if(a){try{pars(a)}catch{return toast(t('damaged'))}for(;;){pw=await askPw(0,t('openMsg'));if(pw==null)return;try{R=JSON.parse(await decr(pw,a));break}catch(x){if(x&&x.name=='OperationError')toast(t('wrong'));else return toast(t('damaged'))}}}
-if(e0!=epoch)return;const wantRO=!!a&&$('#proc').checked,N=mapRows(R,!a);await sealAll(N);if(e0!=epoch)return;let mode='a',add=N,drop=null,skip=0;if(E.length){if(!N.length)return toast('0 '+t('imported'));const r=await impAsk(N);if(!r||e0!=epoch)return;mode=r.m;add=r.add;drop=r.drop;skip=N.length-add.length}const rep=mode=='r';
+if(a){try{pars(a)}catch{return toast(t('damaged'))}for(;;){pw=await askPw(0,t('openMsg'));if(pw==null)return;try{if(/^PWM[34]:/.test(a))X=await(a[3]=='4'?open4:open3)(pw,a);else R=JSON.parse(await decr(pw,a));break}catch(x){if(x&&x.name=='OperationError')toast(t('wrong'));else return toast(t('damaged'))}finally{if(pw instanceof Uint8Array)pw.fill(0)}}}
+if(e0!=epoch)return;const wantRO=!!a&&$('#proc').checked,fast=!!X&&!!X.v4&&!E.length;let N=X?(fast?X.N:await(X.v4?reseal4:conv3)(X)):mapRows(R,!a);if(!X)await sealAll(N);if(e0!=epoch)return;if(fast){KP=Promise.resolve(X.ks);uid=Math.max(uid,...N.map(n=>n.id))}let mode='a',add=N,drop=null,skip=0;if(E.length){if(!N.length)return toast('0 '+t('imported'));const r=await impAsk(N);if(!r||e0!=epoch)return;mode=r.m;add=r.add;drop=r.drop;skip=N.length-add.length}const rep=mode=='r';
 const had=E.length>0,leg=!!a&&a.startsWith('PWM1:'),clean=!!a&&(!had||rep)&&!leg;E=rep?N:[...E.filter(e=>!(drop&&drop.has(e.id))),...add];if(drop)drop.forEach(i=>SEL.delete(i));const ro=wantRO&&(!had||rep);dirty=(clean||ro)?0:1;if(clean||ro)savedAt=null;if(ro){RO=1;applyRO()}render();toast(add.length+' '+t('imported')+(skip?' · '+skip+' '+t('impSkip'):'')+(leg&&!ro?' · '+t('migr'):'')+(wantRO&&!ro?' · '+t('roMerge'):'')+(ro?' · '+t('roBadge'):''),(leg||wantRO)&&!ro?9000:0)}catch(e){toast(t('readErr'))}};
 /* ---- Eventi: nessun gestore inline (più facile da verificare e compatibile con una CSP più restrittiva in futuro) ---- */
 /* ---- Scadenza veloce, avviso Bloc Maiusc, selezione multipla ---- */
@@ -585,16 +777,16 @@ function bulkDel(){if(RO)return;const n=SEL.size;if(!n||!confirm(t('delN').repla
 $('#vG').addEventListener('keydown',e=>{if(e.key=='Enter'&&e.target.id=='gri'){e.preventDefault();if(e.isTrusted&&act())gRename()}});
 document.addEventListener('keydown',e=>{if(e.key=='Escape'&&document.body.classList.contains('mo'))navOpen(0)});$('#q').addEventListener('keydown',e=>{if(e.key=='Enter')navOpen(0)});
 $('#dB').addEventListener('keydown',e=>{if(e.key=='Enter'){e.preventDefault();if(e.isTrusted&&act())bulkOk()}});
-const ACT={new:()=>edit(),dup:b=>edit(b.dataset.id,1),qx:b=>{$('#ex').value=addQ(b.dataset.arg)},bqx:b=>{$('#bxi').value=addQ(b.dataset.arg)},bgrp:()=>bulkDlg('g'),bexp:()=>bulkDlg('x'),bdel:()=>bulkDel(),bclr:()=>{SEL.clear();updSel()},bok:()=>bulkOk(),import:()=>$('#fi').click(),export:()=>$('#dX').showModal(),lock:()=>lock(),guide:()=>$('#dG').showModal(),credits:()=>$('#dC').showModal(),theme:()=>toggleTheme(),vmode:b=>setVm(b.dataset.arg),cdir:()=>{so.d=-so.d;render()},nfx:()=>{$('#nf').style.display='none'},ro:()=>setRO(),
-view:b=>{GE=null;navOpen(0);setView(b.dataset.arg)},menu:()=>navOpen(1),menux:()=>navOpen(0),msearch:()=>{navOpen(1);$('#q').focus()},gren:b=>{GE=b.dataset.arg;render()},gok:()=>gRename(),gcan:()=>{GE=null;render()},gdel:b=>gRemove(b.dataset.arg),gf:b=>{const g=b.dataset.arg;navOpen(0);view='l';setF('g',FL.g===g?'':g)},sort:b=>sortBy(b.dataset.arg),clrf:()=>clrF(),epeye:()=>{$('#ep').type=$('#ep').type=='password'?'text':'password';if($('#ep').type=='text')remask()},epgen:()=>{const o=genOpts();if(o.mode=='c'&&!(o.l||o.u||o.d||o.s)){$('#gcl').checked=true;o.l=true;toast(t('goNone'))}$('#ep').value=genPw(o);$('#ep').type='text';remask();entryMeter()},
-ecancel:()=>{clearForm();$('#dE').close()},esave:()=>saveE(),pweye:()=>togglePw(),pgen:()=>genPhrase(),close:b=>$(b.dataset.arg).close(),doexp:()=>exp(),tpl:b=>tpl(b.dataset.arg),resume:()=>resume(),
+const ACT={new:()=>edit(),dup:b=>edit(b.dataset.id,1),qx:b=>{$('#ex').value=addQ(b.dataset.arg)},bqx:b=>{$('#bxi').value=addQ(b.dataset.arg)},bgrp:()=>bulkDlg('g'),bexp:()=>bulkDlg('x'),bdel:()=>bulkDel(),bclr:()=>{SEL.clear();updSel()},bok:()=>bulkOk(),import:()=>$('#fi').click(),export:()=>$('#dX').showModal(),lock:()=>lock(),guide:()=>$('#dG').showModal(),credits:()=>$('#dCr').showModal(),theme:()=>toggleTheme(),vmode:b=>setVm(b.dataset.arg),cdir:()=>{so.d=-so.d;render()},nfx:()=>{$('#nf').style.display='none'},ro:()=>setRO(),
+view:b=>{GE=null;navOpen(0);setView(b.dataset.arg)},menu:()=>navOpen(1),menux:()=>navOpen(0),msearch:()=>{navOpen(1);$('#q').focus()},gren:b=>{GE=b.dataset.arg;render()},gok:()=>gRename(),gcan:()=>{GE=null;render()},gdel:b=>gRemove(b.dataset.arg),gf:b=>{const g=b.dataset.arg;navOpen(0);view='l';setF('g',FL.g===g?'':g)},sort:b=>sortBy(b.dataset.arg),clrf:()=>clrF(),epeye:()=>{if(pOn()){PV=PV?0:1;pRefresh();if(PV)remask();return}$('#ep').type=$('#ep').type=='password'?'text':'password';if($('#ep').type=='text')remask()},epgen:()=>{const o=genOpts();if(o.mode=='c'&&!(o.l||o.u||o.d||o.s)){$('#gcl').checked=true;o.l=true;toast(t('goNone'))}if(pOn()){const r=genPwB(o);PB.fill(0);PB.set(r);PN=r.length;r.fill(0);PV=1;pRefresh();remask();entryMeter();return}$('#ep').value=genPw(o);$('#ep').type='text';remask();entryMeter()},
+ecancel:()=>{clearForm();$('#dE').close()},esave:()=>saveE(),pweye:()=>togglePw(),psec:()=>secToggle(),fshow:b=>fdShow(b.dataset.arg),ccancel:()=>$('#dC').close(),capply:()=>cApply(),pmode:b=>pMode(b.dataset.arg=='1'),ppaste:()=>pPaste(),fhide:b=>fdHide(b.dataset.arg),fchg:b=>fdChg(b.dataset.arg),fcan:b=>fdCan(b.dataset.arg),pgen:()=>genPhrase(),close:b=>$(b.dataset.arg).close(),doexp:()=>exp(),tpl:b=>tpl(b.dataset.arg),resume:()=>resume(),
 cp:b=>cp(b.dataset.id,b.dataset.fld),go:b=>go(b.dataset.id),edit:b=>edit(b.dataset.id),del:b=>del(b.dataset.id)};
 const CHG={lang:b=>setLang(b.value),sel:b=>{const id=+b.dataset.id;if(b.checked)SEL.add(id);else SEL.delete(id);updSel()},selall:b=>{if(b.checked)lastIds.forEach(id=>SEL.add(id));else SEL.clear();updSel()},csort:b=>{so={k:b.value,d:so.d};render()},filter:b=>setF(b.dataset.f,b.value),xwarn:()=>xwarn(),gopt:()=>goUi()},INP={render:()=>render(),pw:()=>pwMeter(),epm:()=>entryMeter(),gopt:()=>goUi()};
 const hit=(ev,a)=>{const x=ev&&ev.target;return x&&x.closest?x.closest('['+a+']'):null};
 /* Solo l'utente: gli eventi creati da script (el.click(), dispatchEvent, estensioni) hanno isTrusted=false e vengono ignorati.
    Per le azioni che leggono o modificano dati serve anche l'attivazione utente recente. A pagina bloccata passano solo poche azioni.
    È un rafforzamento, non una garanzia: input generato dal sistema operativo o da estensioni con permessi di debug risulta identico a quello umano. */
-const ROB=new Set(['gren','gok','gdel','new','dup','del','bdel','bgrp','bexp','bok','import','export','doexp','esave','epgen','qx','bqx']),LOK=new Set(['resume','export','doexp','close']),SENS=new Set(['gok','gdel','cp','go','edit','dup','del','esave','doexp','import','bdel','bok']),has=(o,k)=>Object.prototype.hasOwnProperty.call(o,k),
+const ROB=new Set(['gren','gok','gdel','new','dup','del','bdel','bgrp','bexp','bok','import','export','doexp','esave','epgen','qx','bqx','fchg','fcan','pmode','capply']),LOK=new Set(['resume','export','doexp','close','psec']),SENS=new Set(['gok','gdel','cp','go','edit','dup','del','esave','doexp','import','bdel','bok','fshow','ppaste']),has=(o,k)=>Object.prototype.hasOwnProperty.call(o,k),
 act=()=>!navigator.userActivation||navigator.userActivation.isActive;
 function onClick(ev){if(!ev.isTrusted)return;const b=hit(ev,'data-a');if(!b)return;const a=b.dataset.a;if(!has(ACT,a))return;
 if(locked&&!(LOK.has(a)&&(a!='close'||b.dataset.arg=='#dX')))return;if(RO&&ROB.has(a)){toast(t('roOn'));return}if(SENS.has(a)&&!act())return;ACT[a](b,ev)}
@@ -610,12 +802,27 @@ if(w.length>=4&&w.join('').length>=n*0.7){let b;if(w.every(x=>WLS.has(x))&&sep.l
 let pool=0;if(/[a-z]/.test(pw))pool+=26;if(/[A-Z]/.test(pw))pool+=26;if(/[0-9]/.test(pw))pool+=10;if(/[^A-Za-z0-9]/.test(pw))pool+=33;
 const S=new Set();let e=0,pc=-9;a.forEach(c=>{const k=c.codePointAt(0),d=Math.abs(k-pc),q=c.toLowerCase();let x=S.has(q)?0.5:1;if(d==0)x=0.1;else if(d==1)x=Math.min(x,0.25);S.add(q);pc=k;e+=x});
 let b=e*Math.log2(pool||1);if(COMMON.some(x=>low.includes(x)))b=Math.min(b,28);if(kbd(low))b=Math.min(b,30);return{b,l:lv(b)}}
-function pwMeter(){const v=$('#p1').value,s=strength(v),i=$('#pbar');i.style.width=Math.min(100,Math.round(s.b))+'%';i.className=['r','a','g','g'][s.l];$('#plab').textContent=v?t('sl'+s.l)+' · ~'+Math.round(s.b)+' bit':''}
+/* Come strength(), ma sui byte (campo sicuro): le parole si confrontano con l'elenco byte per byte, senza creare stringhe con pezzi della password. */
+const WB=(()=>{const m={};WL.forEach(w=>{(m[w.length]=m[w.length]||[]).push(enc.encode(w))});return m})(),CB=COMMON.map(x=>enc.encode(x)),KW=KB.flatMap(r=>Array.from({length:r.length-3},(_,i)=>enc.encode(r.slice(i,i+4))));
+const hasB=(b,n,p)=>{for(let i=0;i+p.length<=n;i++){let j=0;while(j<p.length&&b[i+j]==p[j])j++;if(j==p.length)return true}return false};
+function strengthB(a,n){if(!n)return{b:0,l:0};const lv=b=>b<40?0:b<60?1:b<80?2:3,L=new Uint8Array(n);
+try{for(let i=0;i<n;i++)L[i]=a[i]>64&&a[i]<91?a[i]+32:a[i];
+const isL=c=>c>96&&c<123,W=[];let sep=0,sp2=0;
+for(let i=0;i<n;){if(isL(L[i])){let j=i;while(j<n&&isL(L[j]))j++;if(j-i>=3)W.push([i,j-i]);i=j}else{sep++;if(![45,32,46,95].includes(L[i]))sp2++;i++}}
+const wl=W.reduce((x,y)=>x+y[1],0),cm=CB.some(p=>hasB(L,n,p)),kb=KW.some(p=>hasB(L,n,p));
+if(W.length>=4&&wl>=n*0.7){let b;const ok=W.every(([s,l])=>(WB[l]||[]).some(w=>{for(let k=0;k<l;k++)if(w[k]!=L[s+k])return false;return true}));
+if(ok&&sep<=W.length*1.5)b=W.length*Math.log2(WL.length);else b=W.length*11+sp2*3;
+b=Math.min(b,n*6);if(cm)b=Math.min(b,28);if(kb)b=Math.min(b,30);return{b,l:lv(b)}}
+let lo=0,up=0,dg=0,ot=0;for(let i=0;i<n;i++){const c=a[i];if(c>96&&c<123)lo=1;else if(c>64&&c<91)up=1;else if(c>47&&c<58)dg=1;else ot=1}
+const pool=(lo?26:0)+(up?26:0)+(dg?10:0)+(ot?33:0),S=new Set();let e=0,pc=-9;
+for(let i=0;i<n;i++){const k=a[i],d=Math.abs(k-pc),q=L[i];let x=S.has(q)?0.5:1;if(d==0)x=0.1;else if(d==1)x=Math.min(x,0.25);S.add(q);pc=k;e+=x}
+let b=e*Math.log2(pool||1);if(cm)b=Math.min(b,28);if(kb)b=Math.min(b,30);return{b,l:lv(b)}}finally{L.fill(0)}}
+function pwMeter(){const v=SM?'':$('#p1').value,s=SM?strengthB(SB[0],SN[0]):strength(v),i=$('#pbar');i.style.width=Math.min(100,Math.round(s.b))+'%';i.className=['r','a','g','g'][s.l];$('#plab').textContent=(SM?SN[0]:v)?t('sl'+s.l)+' · ~'+Math.round(s.b)+' bit':''}
 function genPhrase(){const w=phrase(8);$('#p1').value=$('#p2').value=w;$('#p1').type=$('#p2').type='text';remask();$('#pnote').textContent=t('genNote');pwMeter()}
 /* Niente correttore/tastiera predittiva e niente richieste di salvataggio credenziali (best effort: dipende dal browser) */
 function hardenInputs(L=document.querySelectorAll('input,textarea')){document.documentElement.spellcheck=false;
 [...L].forEach(e=>{if(['file','hidden','checkbox'].includes(e.type))return;[['autocomplete',e.type=='password'?'new-password':'off'],['autocapitalize','off'],['autocorrect','off'],['spellcheck','false'],['data-lpignore','true'],['data-1p-ignore','true'],['data-bwignore','true'],['data-form-type','other']].forEach(([k,v])=>e.setAttribute(k,v))})}
 ['dragover','drop'].forEach(v=>addEventListener(v,e=>{const d=e.dataTransfer;if(d&&[...d.types].includes('Files'))e.preventDefault()}));
-hardenInputs();$('#dE').addEventListener('close',clearForm);setTheme(TH);applyLang();
+fdInit();hardenInputs();$('#dE').addEventListener('close',clearForm);setTheme(TH);applyLang();
 })();
 </script></body></html>
