@@ -77,6 +77,16 @@ To reopen the archive: *Import*, pick the file, enter the password. That's it.
  
 > 💡 Inside the app you'll find a **Guide** with a downloadable import template (CSV or XLSX) ready to fill in.
 
+## 😉✅ Recommended use
+
+The key objective is to have a balance between security and user experience.
+
+By combining Firewall rules, dedicated browser and a browser's dead proxy, the recommended solution is trying to solve this dilemma:
+
+<img width="771" height="662" alt="PortableKey_Workflow-Page-2" src="https://github.com/user-attachments/assets/0bf6baba-ff82-458f-8b0f-385585e71028" />
+
+> ⚠️ Firewall rules may differ from OS to OS.
+
 ---
 
 ## 🧰 What it can do
