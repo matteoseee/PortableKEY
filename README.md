@@ -163,7 +163,7 @@ The two values must be identical. Take the reference hash from the release page 
 ## 🫆 Security Scan
 
 This release is scanned with Virus Total services, and it's security report is fully available at the link below:
-https://www.virustotal.com/gui/file/8b9b652ba05bfed72a21c1d0ea780621126269c928dfffa6c9dfe245d4d46571
+https://www.virustotal.com/gui/file/43d4124aa6605277da1164c775a4cc09db1cbcb8533aa489426334694cf3e0f8
 
 ---
 
