@@ -47,9 +47,9 @@ Works with any modern, up-to-date browsers, on any OS with a GUI.
 
 ---
 
-## ✨ Open Source
+## ✨ Code is open to read
 
-PortableKEY  no obfuscated code, no build step that could hide something else. What you read is exactly what runs, line by line.
+PortableKEY has no obfuscated code, no build step that could hide something else. What you read is exactly what runs, line by line.
 
 Open `PortableKEY.html` in Notepad and read everything it does
 
@@ -60,9 +60,6 @@ Open `PortableKEY.html` in Notepad and read everything it does
 | External dependencies | Dozens | **Zero** |
 | Internet connection | Often required | **Never** |
 | Where your data lives | A service, an app, a database | **A file you control** |
-
-Want to check that it sends nothing over the network? Open the file and search for `fetch` or `XMLHttpRequest`: you won't find them. 
-On top of that, a Content Security Policy makes the browser itself refuse any network access from the page.
 
 ---
 
