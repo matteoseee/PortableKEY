@@ -277,7 +277,9 @@ The project is a single file: reading it, understanding it and improving it is w
 
 ## 📄 License
 
-PortableKEY is free software, released under the **GNU General Public License v3.0**. See the [LICENSE](LICENSE) file.
+PortableKEY is free software, released under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International**.
+
+See the [LICENSE](LICENSE) file.
 
 ---
 
