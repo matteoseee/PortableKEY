@@ -277,7 +277,15 @@ The project is a single file: reading it, understanding it and improving it is w
 
 ## 📄 License
 
-PortableKEY is free software, released under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International**.
+PortableKEY © 2026 is licensed under **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International** <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" width="16" height="16"> <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY" width="16" height="16"> <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC" width="16" height="16"> <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" alt="ND" width="16" height="16">
+
+In short, you may copy and redistribute PortableKEY in any medium or format, unmodified, for non-commercial purposes only, as long as you give appropriate credit and include a link to the license.
+
+BY – credit must be given to the creator.
+
+NC – only non-commercial use is permitted.
+
+ND – no derivatives or adaptations may be shared.
 
 See the [LICENSE](LICENSE) file.
 
