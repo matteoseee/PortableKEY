@@ -1,4 +1,4 @@
-[![Release](https://img.shields.io/github/v/release/matteoseee/PortableKEY)](https://github.com/matteoseee/PortableKEY/releases) [![License](https://img.shields.io/github/license/matteoseee/PortableKEY)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/matteoseee/PortableKEY)](https://github.com/matteoseee/PortableKEY/releases) [![license](https://img.shields.io/badge/license-CC%20BY--NC--ND%204.0-lightgrey)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 
 # 🗝️ PortableKEY
