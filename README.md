@@ -13,6 +13,9 @@ PortableKEY only requires a browser, no installation, no account, no internet. O
 
 ## 🚀 How to use it
 
+https://github.com/user-attachments/assets/1ffbdb47-e41d-4451-8f1e-da0991912068
+
+
 1. **Download** `PortableKEY.html`.
 2. **Open** it with your browser (double-click).
 3. **Add** your entries by hand, or **import** a CSV/XLSX file with the *Import* button.
