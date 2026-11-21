@@ -44,9 +44,7 @@ On screens narrower than 900 px the interface switches to a phone layout, with n
 - Due dates, Summary and Groups adapt to the narrow width, and the light and dark themes work the same
 - the same protections apply: auto-lock, lock when the tab goes to the background, clipboard cleared after 20 seconds, no network access
 
-Tested on real devices and emulated phone screens in Chromium, Safari on iOS included, are still to be verified, so please report anything odd.
-
-<img width="2400" height="1500" alt="features-phone" src="https://github.com/user-attachments/assets/15a0ef12-1985-43f4-bca8-f9cc0e3d8e28" />
+<img width="2400" height="1206" alt="699554212-15a0ef12-1985-43f4-bca8-f9cc0e3d8e28" src="https://github.com/user-attachments/assets/22c30f92-6a41-43e0-b0de-45b2498a14ac" />
 
 ---
 
@@ -148,7 +146,7 @@ https://www.virustotal.com/gui/file/414e2fa81e283eeedd51a75aaa74ed50d0c9e0d5884a
 | `.pwm` archive | ✅ | ✅ | ✅ (always) |
 | CSV | ✅ | ✅ | ✅ |
 | XLSX | ✅ | ✅ | ✅ |
-| TXT | ✅ (if encrypted) | ✅ | ✅ |
+| TXT | ✅ | ✅ | ✅ |
 
 Import detects encrypted files on its own and asks for the password. Column headers can be in Italian or English, including those from KeePass exports.
 
