@@ -9,11 +9,51 @@
 
 PortableKEY only requires a browser, no installation, no account, no internet. Open it, use it, carry it with you.
 
-<img width="2400" height="1500" alt="hero-flat" src="https://github.com/user-attachments/assets/69429124-ba79-4261-a20d-bf541b36d461" />
+<img width="2400" height="1500" alt="cover-2400x1500A" src="https://github.com/user-attachments/assets/199ecf27-2580-43aa-8e82-718327ba3445" />
+
+## 🚀 How to use it
+
+1. **Download** `PortableKEY.html`.
+2. **Open** it with your browser (double-click).
+3. **Add** your entries by hand, or **import** a CSV/XLSX file with the *Import* button.
+4. **Save** with *Save / Export*: choose an encryption password, keep it yourself, and get your `.pwm` archive.
+
+To reopen the archive: *Import*, pick the file, enter the password. That's it.
+ 
+> 💡 Inside the app you'll find a **Guide** with a downloadable import template (CSV or XLSX) ready to fill in.
+
+## 😉✅ Recommended use
+
+The key objective is to have a balance between security and user experience.
+
+By combining Firewall rules, dedicated browser and a browser's dead proxy, the recommended solution is trying to solve this dilemma:
+
+<img width="3200" height="2000" alt="setup-isolated-browser" src="https://github.com/user-attachments/assets/abd121a9-ef1b-415b-b364-fa5b34d1a6ef" />
+
+> ⚠️ Firewall rules may differ from OS to OS.
 
 ---
 
-## 🕵️ How it works?
+## 📱 Smartphone 
+
+On screens narrower than 900 px the interface switches to a phone layout, with no separate app and no extra file:
+
+- a **top bar** with the three-line button, the search and the quick **New** button
+- the side menu becomes a **slide-in drawer** (List, Due dates, Summary, Groups, archive status, Lock, Read only, language and theme); it closes by tapping outside it, and always closes on Lock
+- **card view** of the list, with the same actions as on the computer (copy, open website, edit)
+- Due dates, Summary and Groups adapt to the narrow width, and the light and dark themes work the same
+- the same protections apply: auto-lock, lock when the tab goes to the background, clipboard cleared after 20 seconds, no network access
+
+Tested on real devices and emulated phone screens in Chromium, Safari on iOS included, are still to be verified, so please report anything odd.
+
+<img width="2400" height="1500" alt="features-phone" src="https://github.com/user-attachments/assets/15a0ef12-1985-43f4-bca8-f9cc0e3d8e28" />
+
+---
+
+---
+## 🔒 Security: no bluffs
+
+### 🕵️ How it works?
 
 **Passwords are stored inside an AES-256 encrypted .pwm file. The master password is never stored and is intentionally forgotten after the file is created or opened** .
 
@@ -39,15 +79,7 @@ PortableKEY only requires a browser, no installation, no account, no internet. O
 | Title, group, MFA, dates | Encrypted | In clear (the list shows them) | Never |
 | Preferences (language, theme, table/cards) | No | No | Yes: only these |
 
----
-
-## 🌐 Compatibility
-
-Works with any modern, up-to-date browsers, on any OS with a GUI.
-
----
-
-## ✨ Code is open to read
+### ✨ Code is open to read
 
 PortableKEY has no obfuscated code, no build step that could hide something else. What you read is exactly what runs, line by line.
 
@@ -61,80 +93,7 @@ Open `PortableKEY.html` in Notepad and read everything it does
 | Internet connection | Often required | **Never** |
 | Where your data lives | A service, an app, a database | **A file you control** |
 
----
-
-## 🚀 How to use it
-
-1. **Download** `PortableKEY.html`.
-2. **Open** it with your browser (double-click).
-3. **Add** your entries by hand, or **import** a CSV/XLSX file with the *Import* button.
-4. **Save** with *Save / Export*: choose an encryption password, keep it yourself, and get your `.pwm` archive.
-
-To reopen the archive: *Import*, pick the file, enter the password. That's it.
- 
-> 💡 Inside the app you'll find a **Guide** with a downloadable import template (CSV or XLSX) ready to fill in.
-
-## 😉✅ Recommended use
-
-The key objective is to have a balance between security and user experience.
-
-By combining Firewall rules, dedicated browser and a browser's dead proxy, the recommended solution is trying to solve this dilemma:
-
-<img width="771" height="662" alt="PortableKey_Workflow-Page-2" src="https://github.com/user-attachments/assets/0bf6baba-ff82-458f-8b0f-385585e71028" />
-
-> ⚠️ Firewall rules may differ from OS to OS.
-
----
-
-## 🧰 What it can do
-
-**Entry management**
-- Title, group, email, username, password, URL, notes
-- **MFA** column to track where you've enabled multi-factor authentication
-- **Date added** and **expiry date**, both optional
-- A deliberately minimal list (title, group, MFA, added and expiry dates): email, username, URL, password and notes appear only when you open an entry or copy them with one click
-- Search (title and group, the visible data), A→Z sorting and combinable dropdown filters on every visible column, configurable password generator (length, character types, ambiguous characters, or a random passphrase)
-- One-click copy: the clipboard is cleared after 20 seconds
-- The Content-Security-Policy pins the app's code by hash (`script-src 'sha256-…'`): the browser refuses to run any other script, and a modified file does not start. No external dependencies, no network access. If you edit the script you must recalculate that hash, and keep LF line endings (use `*.html -text` in `.gitattributes`)
-- Side menu (same look as PortableBUDGET) with list, summary, groups with counts (click to filter), archive status, Lock and Read only; **Ctrl+K** jumps to the search box
-- **Open website** button on every entry: new tab without link back to the app, only http/https, with warnings for http, look-alike (IDN) domains, numeric addresses and credentials in the address
-- **Import preview** when merging into an open archive: new, different and already-present entries, with the choice of what to add or update
-- Plain-text export requires retyping a random code and produces a file named `…IN-CHIARO…`/`…PLAINTEXT…`
-- Eye button on the password fields of the entry form and of the encryption dialog (there is none in the list, which only has copy buttons)
-- Strength indicator on every entry password (it never blocks anything), with a warning when the password is reused in other entries
-- Exported files are named with date and time (`password-YYYY-MM-DD_HH-MM.ext`), so you can keep progressive versions
-
-<img width="1389" height="868" alt="preview_entry" src="https://github.com/user-attachments/assets/2a8f941f-50bb-4c2f-a370-748ad55ae450" />
-
-**Security summary** 📊
-
-A dedicated tab gives you the full picture:
-- percentage of accounts with **MFA**
-- percentage of **weak** passwords (under 12 characters) and **reused** ones
-- **reused and weak password lists**: only the titles of the affected accounts, flagged in red with a warning triangle
-- **email domain distribution**: how many accounts use addresses on the same domain (domains are counted through one-way fingerprints; at most one email per displayed domain is decrypted, only to write its name)
-- **expiry report**: expired, expiring within 30 and 90 days
-- **age report**: how long it has been since you changed certain passwords
-
-<img width="1389" height="868" alt="preview_summary" src="https://github.com/user-attachments/assets/ef5098b7-7cd9-46a8-bb1d-c30d1cfc1d54" />
-
-**Smartphone** 📱
-
-On screens narrower than 900 px the interface switches to a phone layout, with no separate app and no extra file:
-
-- a **top bar** with the three-line button, the search and the quick **New** button
-- the side menu becomes a **slide-in drawer** (List, Due dates, Summary, Groups, archive status, Lock, Read only, language and theme); it closes by tapping outside it, and always closes on Lock
-- **card view** of the list, with the same actions as on the computer (copy, open website, edit)
-- Due dates, Summary and Groups adapt to the narrow width, and the light and dark themes work the same
-- the same protections apply: auto-lock, lock when the tab goes to the background, clipboard cleared after 20 seconds, no network access
-
-Tested on real devices and emulated phone screens in Chromium, Safari on iOS included, are still to be verified, so please report anything odd.
-
-<img width="2400" height="1500" alt="features-phone" src="https://github.com/user-attachments/assets/15a0ef12-1985-43f4-bca8-f9cc0e3d8e28" />
-
----
-
-## 🔒 Security: no bluffs
+## 📋🔓 All other security details
 
 - Encryption uses your browser's **Web Crypto API**, the same technology that protects HTTPS connections. No third-party libraries.
 - Every encrypted save generates fresh random values: saving the same archive twice produces two different files.
@@ -149,6 +108,12 @@ Tested on real devices and emulated phone screens in Chromium, Safari on iOS inc
 - **Secure/Standard switch** on the entry password (new entries and Change): Secure is the default on mouse computers; the **Paste** button reads the clipboard as bytes (never a string), accepts one line of ASCII only and then clears the clipboard. Standard allows accents and normal paste but the password becomes text in the browser.
 - **"Change" opens a dedicated window for one field** (since 1.2.0): it shows only that field and its tools; **Apply** puts the new value on hold (the form shows a "Changed" label and **Cancel change**) and nothing is encrypted until you press Save entry. Empty + Apply deletes the field.
 - In unencrypted CSV and XLSX exports, values starting with `=`, `+`, `-` or `@` get a leading apostrophe to prevent **formula injection** in spreadsheets (it is removed again when you re-import the file).
+
+---
+
+## 🌐 Compatibility
+
+Works with any modern, up-to-date browsers, on any OS with a GUI.
 
 ---
 
@@ -189,33 +154,7 @@ Import detects encrypted files on its own and asks for the password. Column head
 
 ---
 
-### ⚠️ Good to know
-
-- **Forgotten password = lost data.** There is no recovery, and that's the point.
-- The HTML file **doesn't save by itself**: if you close the page without exporting, changes are lost (the browser warns you).
-- **Unencrypted** exports write passwords in plain text: use them only when you really need to (the app warns you and asks for confirmation first).
-- **Quick lock:** press `Esc` twice or `Ctrl+Shift+L`: with no unsaved changes the data leaves the page immediately; otherwise the lock screen appears.
-- **Read-only:** a header button (or the *Read only* switch when entering the password to open an archive) turns off editing, importing and exporting for the session, to consult the archive on a computer that is not yours. It turns off only by locking and reopening the archive.
-
-<img width="2400" height="1500" alt="tab-open" src="https://github.com/user-attachments/assets/e896de38-0252-45d7-9eea-611956e93ba4" />
-
-- **User only:** the page ignores clicks and keys generated by scripts or extensions and, while locked, accepts only *Resume* and *Save / Export*. Hardening, not a guarantee: an extension with elevated permissions, or a program simulating input at operating-system level, looks the same as a user.
-- **Safer use:** open the file in a private window or a dedicated browser profile **with no extensions** (an extension with access to pages can read their content; on Firefox they also run on local files). Turn on disk encryption and, if you can, disable hibernation: temporary copies of data in memory cannot be zeroed from a web page and might end up on disk.
-- **Clipboard and revealed passwords:** copied passwords are cleared after 20 seconds (or immediately on lock); passwords shown with the eye button hide again after 20 seconds. The browser may refuse to clear the clipboard if the page is in the background.
-- **Auto-lock:** after 2 minutes without activity the page releases the data (to reopen the archive you import it again with its password). If you have unsaved changes, to avoid losing them the data stays in memory but is hidden behind a lock screen, with a countdown. **If you do nothing for 10 more minutes (12 in total), the data and the unsaved changes are deleted**: save an encrypted archive or resume before that.
-
-<img width="2400" height="1500" alt="tab-paused" src="https://github.com/user-attachments/assets/56ed938b-3c64-4b6c-ba7a-26afddf7175b" />
-
-- **Hidden tab:** if you leave the tab for at least 1 second, the session is paused (data hidden, *Resume* screen). If you are back within 20 seconds, the page reopens by itself; *Resume* restores your search and position. You have 10 minutes from the switch to resume, with or without unsaved changes; after that the data is released from the page. It never exceeds 12 minutes from the last activity.
-- **Opened from a website:** if the address is `http(s)://`, a banner warns that the site could have modified the file. Download it from a trusted source, verify its hash and open it locally. Releasing data from the page does not guarantee physical erasure from RAM.
-- Archives saved in the new format cannot be opened by older copies of PortableKEY: keep the old archive until you have checked the new one.
-- No software can protect you from an already compromised computer (keyloggers, malware). Use PortableKEY on devices you trust.
-- The project hasn't undergone an independent security audit. The code is right there, readable: if you do this for a living, **review it and tell us what you find**.
-- Always download the file from a source you trust: a tampered copy is the real risk of any program, and here you can at least verify it.
-
----
-
-## 🧭 At a glance
+## 🧭 Features summary
 
 - 🧳 **Truly portable**: one file, zero dependencies. USB stick, shared folder, external drive.
 - 🔌 **Works offline**: no network requests, no telemetry.
