@@ -119,9 +119,9 @@ Works with any modern, up-to-date browsers, on any OS with a GUI.
 
 The SHA-256 hash of each release is published here and in the release notes on GitHub. 
  
-**file's Hash:** `414e2fa81e283eeedd51a75aaa74ed50d0c9e0d5884ae1a5b5fc2bda12464192`
+**file's Hash:** `d0443162cf97ed4bae9064edfa4475cea4e5fe4abc36f5082a496725d41119eb`
 
-**CSP's Hash:** `sha256-gtmLaxsFUbeci6+7i4kgbFE13W/kYw9S7q8+vjb5VZI=`
+**CSP's Hash:** `sha256-bhKo0lEsBx+wRnzzFyKKyskdlh7DRR842602p0/iOPE=`
  
 Before using a copy of `PortableKEY.html`, compute its hash and compare it with the one on the release page:
  
@@ -135,7 +135,7 @@ The two values must be identical. Take the reference hash from the release page 
 ## 🫆 Security Scan
 
 This release is scanned with Virus Total services, and it's security report is fully available at the link below:
-https://www.virustotal.com/gui/file/414e2fa81e283eeedd51a75aaa74ed50d0c9e0d5884ae1a5b5fc2bda12464192
+https://www.virustotal.com/gui/file/d0443162cf97ed4bae9064edfa4475cea4e5fe4abc36f5082a496725d41119eb
 
 ---
 
